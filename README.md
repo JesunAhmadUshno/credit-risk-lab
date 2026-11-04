@@ -4,6 +4,11 @@ Credit risk modelling done in the open: probability-of-default models,
 model validation, IFRS 9 style staging, and expected credit loss, built on a
 public dataset with every number measured and reproducible.
 
+**Live dashboard: https://jesunahmadushno.github.io/credit-risk-lab/**
+(React app in `web/`: model grades, ROC curves, staging, calibration, gains,
+drift, and an ECL sensitivity simulator. An offline single-file fallback,
+`dashboard.html`, is described below.)
+
 ## Why this exists
 
 Risk-modelling roles ask for four things: develop models, validate models,
@@ -67,11 +72,24 @@ the dashboard.
 
 ## Dashboard
 
-Open `dashboard.html` in any browser (double-click works, it is a single
-file with inline SVG charts and no JavaScript): model comparison with
-grades and named deductions, accounts and ECL by stage, the champion's
-calibration chart, and the test-set score distribution by outcome.
-Regenerate it any time with `src/dashboard.py` after a run.
+**Live (GitHub Pages): https://jesunahmadushno.github.io/credit-risk-lab/**
+
+The React dashboard (`web/`, deployed by `.github/workflows/pages.yml`)
+has five tabs: Overview (KPIs and the champion grade gauge), Models
+(scorecard grades, group bars, named deductions, ROC curves for both
+models), Portfolio (clickable stage cards, accounts / ECL / default-rate
+charts), Validation (per-model calibration, gains and lift with a sortable
+decile table, score distribution, feature drift), and Simulator (LGD, PD
+shift, and lifetime-horizon sliders that recompute ECL by stage live from
+the published aggregates; a sensitivity calculation, not a model re-run).
+Its data file is generated, never hand-typed:
+`.venv/bin/python scripts/export_dashboard_data.py` (see `web/README.md`).
+
+Offline fallback: open `dashboard.html` in any browser (double-click works,
+it is a single file with inline SVG charts and no JavaScript): model
+comparison with grades and named deductions, accounts and ECL by stage, the
+champion's calibration chart, and the test-set score distribution by
+outcome. Regenerate it any time with `src/dashboard.py` after a run.
 
 | Stage | Accounts | Observed default rate | EAD (NT$) | ECL (NT$) |
 | --- | --- | --- | --- | --- |
