@@ -5,18 +5,192 @@
   "train_rows": 21000,
   "test_rows": 9000
  },
+ "config": {
+  "lgd": 0.45,
+  "lifetime_years": 3,
+  "seed": 42,
+  "test_size": 0.3,
+  "calibration_bins": 10,
+  "psi_bins": 10,
+  "score_distribution_bins": 20,
+  "staging": {
+   "stage3_dpd_months": 3,
+   "stage2_dpd_months": 1,
+   "sicr_pd_multiple_of_median": 2.0,
+   "sicr_pd_floor": 0.1
+  },
+  "notes": "lgd and lifetime_years are stated lab assumptions, not measured values. Staging thresholds are the lab's written IFRS 9 style policy."
+ },
+ "data_quality": {
+  "rows": 30000,
+  "columns": 25,
+  "missing_rate_per_column": {
+   "ID": 0.0,
+   "LIMIT_BAL": 0.0,
+   "SEX": 0.0,
+   "EDUCATION": 0.0,
+   "MARRIAGE": 0.0,
+   "AGE": 0.0,
+   "PAY_0": 0.0,
+   "PAY_2": 0.0,
+   "PAY_3": 0.0,
+   "PAY_4": 0.0,
+   "PAY_5": 0.0,
+   "PAY_6": 0.0,
+   "BILL_AMT1": 0.0,
+   "BILL_AMT2": 0.0,
+   "BILL_AMT3": 0.0,
+   "BILL_AMT4": 0.0,
+   "BILL_AMT5": 0.0,
+   "BILL_AMT6": 0.0,
+   "PAY_AMT1": 0.0,
+   "PAY_AMT2": 0.0,
+   "PAY_AMT3": 0.0,
+   "PAY_AMT4": 0.0,
+   "PAY_AMT5": 0.0,
+   "PAY_AMT6": 0.0,
+   "default": 0.0
+  },
+  "duplicate_id_count": 0
+ },
+ "feature_drift": {
+  "LIMIT_BAL": 0.0008,
+  "AGE": 0.0007,
+  "BILL_AMT1": 0.0007,
+  "PAY_AMT1": 0.0015,
+  "utilization": 0.0007,
+  "pay_ratio": 0.0009,
+  "delinq_mean": 0.0002,
+  "delinq_max": 0.0003,
+  "bill_trend": 0.0009,
+  "PAY_0": 0.0003,
+  "PAY_2": 0.0,
+  "PAY_3": 0.0001,
+  "PAY_4": 0.0002,
+  "PAY_5": 0.0002,
+  "PAY_6": 0.0003,
+  "SEX": 0.0,
+  "EDUCATION": 0.0008,
+  "MARRIAGE": 0.0001
+ },
  "models": {
   "logistic_regression": {
    "auc": 0.7518,
    "ks": 0.4008,
    "gini": 0.5036,
-   "brier": 0.1416
+   "brier": 0.1416,
+   "score_psi": 0.0014,
+   "calibration": [
+    {
+     "n": 900,
+     "pred": 0.067,
+     "obs": 0.0611
+    },
+    {
+     "n": 901,
+     "pred": 0.0953,
+     "obs": 0.0988
+    },
+    {
+     "n": 899,
+     "pred": 0.1109,
+     "obs": 0.119
+    },
+    {
+     "n": 900,
+     "pred": 0.1229,
+     "obs": 0.12
+    },
+    {
+     "n": 900,
+     "pred": 0.1347,
+     "obs": 0.15
+    },
+    {
+     "n": 900,
+     "pred": 0.1486,
+     "obs": 0.1333
+    },
+    {
+     "n": 900,
+     "pred": 0.1827,
+     "obs": 0.1878
+    },
+    {
+     "n": 900,
+     "pred": 0.2818,
+     "obs": 0.2489
+    },
+    {
+     "n": 900,
+     "pred": 0.412,
+     "obs": 0.4478
+    },
+    {
+     "n": 900,
+     "pred": 0.6529,
+     "obs": 0.6456
+    }
+   ]
   },
   "gradient_boosting": {
    "auc": 0.781,
    "ks": 0.4196,
    "gini": 0.5621,
-   "brier": 0.1355
+   "brier": 0.1355,
+   "score_psi": 0.0007,
+   "calibration": [
+    {
+     "n": 900,
+     "pred": 0.049,
+     "obs": 0.0267
+    },
+    {
+     "n": 900,
+     "pred": 0.07,
+     "obs": 0.0667
+    },
+    {
+     "n": 900,
+     "pred": 0.0908,
+     "obs": 0.1022
+    },
+    {
+     "n": 900,
+     "pred": 0.1112,
+     "obs": 0.1089
+    },
+    {
+     "n": 900,
+     "pred": 0.1351,
+     "obs": 0.1556
+    },
+    {
+     "n": 900,
+     "pred": 0.1594,
+     "obs": 0.1844
+    },
+    {
+     "n": 900,
+     "pred": 0.1979,
+     "obs": 0.1856
+    },
+    {
+     "n": 900,
+     "pred": 0.2636,
+     "obs": 0.28
+    },
+    {
+     "n": 900,
+     "pred": 0.4128,
+     "obs": 0.4111
+    },
+    {
+     "n": 900,
+     "pred": 0.711,
+     "obs": 0.6911
+    }
+   ]
   }
  },
  "champion": "gradient_boosting",
@@ -73,10 +247,132 @@
     "pred": 0.711,
     "obs": 0.6911
    }
+  ],
+  "score_distribution": [
+   {
+    "bin_start": 0.0,
+    "bin_end": 0.05,
+    "non_default": 448,
+    "default": 11
+   },
+   {
+    "bin_start": 0.05,
+    "bin_end": 0.1,
+    "non_default": 2043,
+    "default": 160
+   },
+   {
+    "bin_start": 0.1,
+    "bin_end": 0.15,
+    "non_default": 1710,
+    "default": 269
+   },
+   {
+    "bin_start": 0.15,
+    "bin_end": 0.2,
+    "non_default": 1023,
+    "default": 226
+   },
+   {
+    "bin_start": 0.2,
+    "bin_end": 0.25,
+    "non_default": 586,
+    "default": 163
+   },
+   {
+    "bin_start": 0.25,
+    "bin_end": 0.3,
+    "non_default": 333,
+    "default": 127
+   },
+   {
+    "bin_start": 0.3,
+    "bin_end": 0.35,
+    "non_default": 251,
+    "default": 138
+   },
+   {
+    "bin_start": 0.35,
+    "bin_end": 0.4,
+    "non_default": 119,
+    "default": 78
+   },
+   {
+    "bin_start": 0.4,
+    "bin_end": 0.45,
+    "non_default": 70,
+    "default": 52
+   },
+   {
+    "bin_start": 0.45,
+    "bin_end": 0.5,
+    "non_default": 60,
+    "default": 53
+   },
+   {
+    "bin_start": 0.5,
+    "bin_end": 0.55,
+    "non_default": 49,
+    "default": 40
+   },
+   {
+    "bin_start": 0.55,
+    "bin_end": 0.6,
+    "non_default": 53,
+    "default": 67
+   },
+   {
+    "bin_start": 0.6,
+    "bin_end": 0.65,
+    "non_default": 47,
+    "default": 86
+   },
+   {
+    "bin_start": 0.65,
+    "bin_end": 0.7,
+    "non_default": 94,
+    "default": 155
+   },
+   {
+    "bin_start": 0.7,
+    "bin_end": 0.75,
+    "non_default": 61,
+    "default": 130
+   },
+   {
+    "bin_start": 0.75,
+    "bin_end": 0.8,
+    "non_default": 56,
+    "default": 188
+   },
+   {
+    "bin_start": 0.8,
+    "bin_end": 0.85,
+    "non_default": 6,
+    "default": 48
+   },
+   {
+    "bin_start": 0.85,
+    "bin_end": 0.9,
+    "non_default": 0,
+    "default": 0
+   },
+   {
+    "bin_start": 0.9,
+    "bin_end": 0.95,
+    "non_default": 0,
+    "default": 0
+   },
+   {
+    "bin_start": 0.95,
+    "bin_end": 1.0,
+    "non_default": 0,
+    "default": 0
+   }
   ]
  },
  "staging": {
-  "policy": "Stage 3: PAY_0 >= 3 (90+ DPD proxy). Stage 2: PAY_0 >= 1 (30+ DPD) or PD >= 2x median PD and > 10%. Stage 1: rest.",
+  "policy": "Stage 3: PAY_0 >= 3 (90+ DPD proxy). Stage 2: PAY_0 >= 1 (30+ DPD) or PD >= 2.0x median PD and > 0.1. Stage 1: rest.",
   "lgd_assumption": 0.45,
   "lifetime_years_assumption": 3,
   "by_stage": [

@@ -1,0 +1,135 @@
+{
+ "generated_from": "results/results.json (pipeline run output; no hand-typed figures)",
+ "scorecard": "Discrimination 500 (AUC/KS/Gini), Calibration 300 (Brier + calibration MAE), Stability 200 (score PSI). Bands: A 900+, B 800+, C 700+, D 600+, F below 600.",
+ "champion": "gradient_boosting",
+ "ranking": [
+  "gradient_boosting",
+  "logistic_regression"
+ ],
+ "models": {
+  "logistic_regression": {
+   "model": "logistic_regression",
+   "total_points": 772.18,
+   "letter_band": "C",
+   "groups": {
+    "discrimination": 320.53,
+    "calibration": 253.05,
+    "stability": 198.6
+   },
+   "components": [
+    {
+     "component": "AUC",
+     "points": 157.38,
+     "max_points": 250,
+     "deduction": 92.62,
+     "detail": "AUC 0.7518 vs benchmark 0.90 (floor 0.50)"
+    },
+    {
+     "component": "KS",
+     "points": 100.2,
+     "max_points": 150,
+     "deduction": 49.8,
+     "detail": "KS 0.4008 vs benchmark 0.60"
+    },
+    {
+     "component": "Gini",
+     "points": 62.95,
+     "max_points": 100,
+     "deduction": 37.05,
+     "detail": "Gini 0.5036 vs benchmark 0.80"
+    },
+    {
+     "component": "Brier score",
+     "points": 108.4,
+     "max_points": 150,
+     "deduction": 41.6,
+     "detail": "Brier 0.1416; full marks at 0.10, zero at 0.25"
+    },
+    {
+     "component": "Calibration MAE",
+     "points": 144.65,
+     "max_points": 150,
+     "deduction": 5.35,
+     "detail": "mean |predicted - observed| 0.0132 across 10 bins; full marks at 0.01, zero at 0.10"
+    },
+    {
+     "component": "Score PSI (stability)",
+     "points": 198.6,
+     "max_points": 200,
+     "deduction": 1.4,
+     "detail": "score PSI 0.0014 train vs test; 100 of 200 at PSI 0.10, zero at PSI 0.25"
+    }
+   ],
+   "inputs": {
+    "auc": 0.7518,
+    "ks": 0.4008,
+    "gini": 0.5036,
+    "brier": 0.1416,
+    "score_psi": 0.0014,
+    "calibration_mae": 0.0132
+   }
+  },
+  "gradient_boosting": {
+   "model": "gradient_boosting",
+   "total_points": 808.73,
+   "letter_band": "B",
+   "groups": {
+    "discrimination": 350.78,
+    "calibration": 258.65,
+    "stability": 199.3
+   },
+   "components": [
+    {
+     "component": "AUC",
+     "points": 175.62,
+     "max_points": 250,
+     "deduction": 74.38,
+     "detail": "AUC 0.7810 vs benchmark 0.90 (floor 0.50)"
+    },
+    {
+     "component": "KS",
+     "points": 104.9,
+     "max_points": 150,
+     "deduction": 45.1,
+     "detail": "KS 0.4196 vs benchmark 0.60"
+    },
+    {
+     "component": "Gini",
+     "points": 70.26,
+     "max_points": 100,
+     "deduction": 29.74,
+     "detail": "Gini 0.5621 vs benchmark 0.80"
+    },
+    {
+     "component": "Brier score",
+     "points": 114.5,
+     "max_points": 150,
+     "deduction": 35.5,
+     "detail": "Brier 0.1355; full marks at 0.10, zero at 0.25"
+    },
+    {
+     "component": "Calibration MAE",
+     "points": 144.15,
+     "max_points": 150,
+     "deduction": 5.85,
+     "detail": "mean |predicted - observed| 0.0135 across 10 bins; full marks at 0.01, zero at 0.10"
+    },
+    {
+     "component": "Score PSI (stability)",
+     "points": 199.3,
+     "max_points": 200,
+     "deduction": 0.7,
+     "detail": "score PSI 0.0007 train vs test; 100 of 200 at PSI 0.10, zero at PSI 0.25"
+    }
+   ],
+   "inputs": {
+    "auc": 0.781,
+    "ks": 0.4196,
+    "gini": 0.5621,
+    "brier": 0.1355,
+    "score_psi": 0.0007,
+    "calibration_mae": 0.0135
+   }
+  }
+ }
+}
