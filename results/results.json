@@ -1,0 +1,108 @@
+{
+ "dataset": {
+  "rows": 30000,
+  "default_rate": 0.2212,
+  "train_rows": 21000,
+  "test_rows": 9000
+ },
+ "models": {
+  "logistic_regression": {
+   "auc": 0.7518,
+   "ks": 0.4008,
+   "gini": 0.5036,
+   "brier": 0.1416
+  },
+  "gradient_boosting": {
+   "auc": 0.781,
+   "ks": 0.4196,
+   "gini": 0.5621,
+   "brier": 0.1355
+  }
+ },
+ "champion": "gradient_boosting",
+ "validation": {
+  "score_psi_train_vs_test": 0.0007,
+  "calibration_test": [
+   {
+    "n": 900,
+    "pred": 0.049,
+    "obs": 0.0267
+   },
+   {
+    "n": 900,
+    "pred": 0.07,
+    "obs": 0.0667
+   },
+   {
+    "n": 900,
+    "pred": 0.0908,
+    "obs": 0.1022
+   },
+   {
+    "n": 900,
+    "pred": 0.1112,
+    "obs": 0.1089
+   },
+   {
+    "n": 900,
+    "pred": 0.1351,
+    "obs": 0.1556
+   },
+   {
+    "n": 900,
+    "pred": 0.1594,
+    "obs": 0.1844
+   },
+   {
+    "n": 900,
+    "pred": 0.1979,
+    "obs": 0.1856
+   },
+   {
+    "n": 900,
+    "pred": 0.2636,
+    "obs": 0.28
+   },
+   {
+    "n": 900,
+    "pred": 0.4128,
+    "obs": 0.4111
+   },
+   {
+    "n": 900,
+    "pred": 0.711,
+    "obs": 0.6911
+   }
+  ]
+ },
+ "staging": {
+  "policy": "Stage 3: PAY_0 >= 3 (90+ DPD proxy). Stage 2: PAY_0 >= 1 (30+ DPD) or PD >= 2x median PD and > 10%. Stage 1: rest.",
+  "lgd_assumption": 0.45,
+  "lifetime_years_assumption": 3,
+  "by_stage": [
+   {
+    "stage": 1,
+    "accounts": 22099,
+    "ead": 1224621954,
+    "ecl": 63068435.85,
+    "observed_default_rate": 0.12
+   },
+   {
+    "stage": 2,
+    "accounts": 7438,
+    "ead": 288778113,
+    "ecl": 113688443.14,
+    "observed_default_rate": 0.48
+   },
+   {
+    "stage": 3,
+    "accounts": 463,
+    "ead": 23981190,
+    "ecl": 10791535.5,
+    "observed_default_rate": 0.72
+   }
+  ],
+  "total_ecl": 187548414.49,
+  "total_ead": 1537381257.0
+ }
+}

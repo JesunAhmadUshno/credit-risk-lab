@@ -1,0 +1,4 @@
+.venv/
+__pycache__/
+data/credit.zip
+.pytest_cache/
