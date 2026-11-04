@@ -2,7 +2,9 @@
 """Export dashboard data for the React app.
 
 Reads results/results.json and results/model_grades.json (both produced by
-the Python pipeline) and writes web/src/data/results.ts. On top of that
+the Python pipeline) plus the wave-2 research outputs (results/scenarios.json,
+results/behavioural_v2.json, results/study.json, RESEARCH.md) and writes
+web/src/data/results.ts. On top of that
 pass-through it computes the chart series the dashboard needs (ROC curves
 for both models, the champion decile gains/lift table, per-stage simulator
 aggregates) by importing the pipeline's own functions with the same config,
@@ -124,6 +126,96 @@ def derived_series(results: dict) -> dict:
     return {"roc": roc, "deciles": deciles, "simulatorStages": simulator}
 
 
+def research_payload() -> dict:
+    """Wave-2 research data: scenarios, behavioural v2, fair access study.
+
+    Numbers pass through from the results files written by src/scenarios.py,
+    src/behavioural_v2.py and src/study.py. The thesis text is extracted
+    from RESEARCH.md (the paragraph under '## Thesis' plus its numbered
+    questions), never retyped here.
+    """
+    scenarios = json.loads((ROOT / "results" / "scenarios.json").read_text())
+    behavioural = json.loads(
+        (ROOT / "results" / "behavioural_v2.json").read_text())
+    study = json.loads((ROOT / "results" / "study.json").read_text())
+
+    thesis_lines, questions, in_thesis = [], [], False
+    for line in (ROOT / "RESEARCH.md").read_text().splitlines():
+        if line.startswith("## Thesis"):
+            in_thesis = True
+            continue
+        if in_thesis and line.startswith("## "):
+            break
+        if not in_thesis:
+            continue
+        text = line.strip()
+        if not text:
+            continue
+        if len(text) > 3 and text[0].isdigit() and text[1:3] == ". ":
+            questions.append(text[3:])
+        else:
+            thesis_lines.append(text)
+
+    scen_rows = []
+    for name in ("upside", "base", "downside"):
+        s = scenarios["scenarios"][name]
+        scen_rows.append({
+            "name": name,
+            "weight": s["weight"],
+            "pdMultiplier": s["pd_multiplier"],
+            "totalEcl": s["total_ecl"],
+            "byStage": s["by_stage"],
+        })
+    a = study["creditworthy_rejects"]
+    b = study["thin_file"]
+    lg = study["fairness"]["largest_gap"]
+    return {
+        "thesis": " ".join(thesis_lines),
+        "thesisQuestions": questions,
+        "scenarios": {
+            "rows": scen_rows,
+            "weightedEcl": scenarios["weighted_ecl"],
+            "baselineEcl": scenarios["baseline_total_ecl"],
+            "baselFloor": {
+                "lgdAssumption": scenarios["basel_floor"]["lgd_assumption"],
+                "eclAtAssumption":
+                    scenarios["basel_floor"]["ecl_at_lgd_assumption"],
+                "lgdFloor": scenarios["basel_floor"]["qrre_lgd_floor"],
+                "eclAtFloor": scenarios["basel_floor"]["ecl_at_qrre_lgd_floor"],
+            },
+        },
+        "behaviouralV2": {
+            "v1": behavioural["v1_gradient_boosting"],
+            "v2": behavioural["v2_gradient_boosting_plus_transitions"],
+            "deltaAuc": behavioural["delta_auc"],
+            "beatsV1": behavioural["v2_beats_v1"],
+            "transitionFeatures": behavioural["transition_features"],
+        },
+        "study": {
+            "cutoffPd": a["cutoff_pd"],
+            "targetRate": a["risk_appetite"]["target_approved_default_rate"],
+            "achievedRate": a["achieved_approved_default_rate"],
+            "testAccounts": a["test_accounts"],
+            "approved": a["approved"],
+            "rejected": a["rejected"],
+            "approvalRate": a["approval_rate"],
+            "creditworthyRejects": a["creditworthy_rejects"],
+            "creditworthyShareOfRejected":
+                a["creditworthy_share_of_rejected"],
+            "thinFileAuc": b["auc"],
+            "fullModelAuc": b["full_model_auc"],
+            "thinFileFeatures": b["features"],
+            "largestGap": {
+                "variable": lg["variable"],
+                "gap": lg["gap"],
+                "higherGroup": lg["higher_group"],
+                "lowerGroup": lg["lower_group"],
+            },
+            "fairnessByVariable": study["fairness"]["by_variable"],
+        },
+    }
+
+
 def main() -> None:
     results = json.loads((ROOT / "results" / "results.json").read_text())
     grades = json.loads((ROOT / "results" / "model_grades.json").read_text())
@@ -148,6 +240,7 @@ def main() -> None:
             "ranking": grades["ranking"],
             "models": grades["models"],
         },
+        "research": research_payload(),
     }
 
     OUT.parent.mkdir(parents=True, exist_ok=True)

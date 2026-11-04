@@ -1,0 +1,194 @@
+{
+ "generated_from": "Champion model, same split and seed as the published run; all counts observed on the held-out test set.",
+ "creditworthy_rejects": {
+  "risk_appetite": {
+   "rule": "Approve every account with PD at or below the threshold where the approved book's observed default rate matches the Stage 1 observed default rate (the lab's performing-book rate) from results/results.json.",
+   "target_approved_default_rate": 0.12
+  },
+  "cutoff_pd": 0.2293,
+  "achieved_approved_default_rate": 0.12,
+  "test_accounts": 9000,
+  "approved": 6375,
+  "rejected": 2625,
+  "approval_rate": 0.7083,
+  "creditworthy_rejects": 1399,
+  "creditworthy_share_of_rejected": 0.533,
+  "creditworthy_share_of_test_set": 0.1554
+ },
+ "thin_file": {
+  "features": [
+   "utilization",
+   "pay_ratio",
+   "delinq_mean",
+   "delinq_max",
+   "bill_trend",
+   "dpd_months",
+   "PAY_0",
+   "PAY_2",
+   "PAY_3",
+   "PAY_4",
+   "PAY_5",
+   "PAY_6"
+  ],
+  "excluded_as_bureau_style": [
+   "LIMIT_BAL",
+   "AGE",
+   "SEX",
+   "EDUCATION",
+   "MARRIAGE",
+   "BILL_AMT1..BILL_AMT6",
+   "PAY_AMT1..PAY_AMT6"
+  ],
+  "auc": 0.7687,
+  "full_model_auc": 0.781,
+  "auc_gap_vs_full": -0.0123
+ },
+ "fairness": {
+  "by_variable": {
+   "SEX": {
+    "groups": [
+     {
+      "group": "Female",
+      "n": 5437,
+      "approved": 3928,
+      "approval_rate": 0.7225,
+      "default_rate": 0.2099,
+      "auc": 0.7861
+     },
+     {
+      "group": "Male",
+      "n": 3563,
+      "approved": 2447,
+      "approval_rate": 0.6868,
+      "default_rate": 0.2386,
+      "auc": 0.7719
+     }
+    ],
+    "approval_rate_gap": 0.0357
+   },
+   "AGE_BAND": {
+    "groups": [
+     {
+      "group": "Under 30",
+      "n": 2882,
+      "approved": 1999,
+      "approval_rate": 0.6936,
+      "default_rate": 0.2245,
+      "auc": 0.7845
+     },
+     {
+      "group": "30-44",
+      "n": 4483,
+      "approved": 3285,
+      "approval_rate": 0.7328,
+      "default_rate": 0.2061,
+      "auc": 0.777
+     },
+     {
+      "group": "45-59",
+      "n": 1518,
+      "approved": 1020,
+      "approval_rate": 0.6719,
+      "default_rate": 0.2516,
+      "auc": 0.7888
+     },
+     {
+      "group": "60+",
+      "n": 117,
+      "approved": 71,
+      "approval_rate": 0.6068,
+      "default_rate": 0.3248,
+      "auc": 0.7152
+     }
+    ],
+    "approval_rate_gap": 0.126
+   },
+   "EDUCATION": {
+    "groups": [
+     {
+      "group": "Graduate school",
+      "n": 3206,
+      "approved": 2425,
+      "approval_rate": 0.7564,
+      "default_rate": 0.1868,
+      "auc": 0.7851
+     },
+     {
+      "group": "High school",
+      "n": 1477,
+      "approved": 960,
+      "approval_rate": 0.65,
+      "default_rate": 0.2532,
+      "auc": 0.7477
+     },
+     {
+      "group": "Other",
+      "n": 120,
+      "approved": 113,
+      "approval_rate": 0.9417,
+      "default_rate": 0.0667,
+      "auc": 0.6172
+     },
+     {
+      "group": "University",
+      "n": 4197,
+      "approved": 2877,
+      "approval_rate": 0.6855,
+      "default_rate": 0.2406,
+      "auc": 0.7824
+     }
+    ],
+    "approval_rate_gap": 0.2917
+   },
+   "MARRIAGE": {
+    "groups": [
+     {
+      "group": "Married",
+      "n": 4133,
+      "approved": 2867,
+      "approval_rate": 0.6937,
+      "default_rate": 0.2391,
+      "auc": 0.7823
+     },
+     {
+      "group": "Other",
+      "n": 111,
+      "approved": 75,
+      "approval_rate": 0.6757,
+      "default_rate": 0.1802,
+      "auc": 0.7038
+     },
+     {
+      "group": "Single",
+      "n": 4756,
+      "approved": 3433,
+      "approval_rate": 0.7218,
+      "default_rate": 0.2067,
+      "auc": 0.7807
+     }
+    ],
+    "approval_rate_gap": 0.0461
+   }
+  },
+  "largest_gap": {
+   "variable": "EDUCATION",
+   "gap": 0.2917,
+   "higher_group": {
+    "group": "Other",
+    "n": 120,
+    "approved": 113,
+    "approval_rate": 0.9417,
+    "default_rate": 0.0667,
+    "auc": 0.6172
+   },
+   "lower_group": {
+    "group": "High school",
+    "n": 1477,
+    "approved": 960,
+    "approval_rate": 0.65,
+    "default_rate": 0.2532,
+    "auc": 0.7477
+   }
+  }
+ }
+}

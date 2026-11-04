@@ -52,6 +52,10 @@ DEFAULT_CONFIG = {
         "sicr_pd_multiple_of_median": 2.0,
         "sicr_pd_floor": 0.10,
     },
+    "scenarios": {
+        "weights": {"base": 0.5, "upside": 0.2, "downside": 0.3},
+        "pd_multipliers": {"base": 1.0, "upside": 0.85, "downside": 1.3},
+    },
 }
 
 

@@ -23,6 +23,19 @@ export const data = {
    "sicr_pd_multiple_of_median": 2.0,
    "sicr_pd_floor": 0.1
   },
+  "scenarios": {
+   "weights": {
+    "base": 0.5,
+    "downside": 0.3,
+    "upside": 0.2
+   },
+   "pd_multipliers": {
+    "base": 1.0,
+    "downside": 1.3,
+    "upside": 0.85
+   },
+   "notes": "Scenario weights and PD multipliers are stated lab assumptions for the IFRS 9 style scenario-weighting exercise, not measured values."
+  },
   "notes": "lgd and lifetime_years are stated lab assumptions, not measured values. Staging thresholds are the lab's written IFRS 9 style policy."
  },
  "dataQuality": {
@@ -373,7 +386,41 @@ export const data = {
     "non_default": 0,
     "default": 0
    }
-  ]
+  ],
+  "hosmer_lemeshow": {
+   "logistic_regression": {
+    "statistic": 14.707,
+    "dof": 8,
+    "p_value": 0.0651,
+    "groups": 10
+   },
+   "gradient_boosting": {
+    "statistic": 22.54,
+    "dof": 8,
+    "p_value": 0.004,
+    "groups": 10
+   }
+  },
+  "csi_per_feature": {
+   "LIMIT_BAL": 0.0008,
+   "AGE": 0.0007,
+   "BILL_AMT1": 0.0007,
+   "PAY_AMT1": 0.0015,
+   "utilization": 0.0007,
+   "pay_ratio": 0.0009,
+   "delinq_mean": 0.0002,
+   "delinq_max": 0.0003,
+   "bill_trend": 0.0009,
+   "PAY_0": 0.0003,
+   "PAY_2": 0.0,
+   "PAY_3": 0.0001,
+   "PAY_4": 0.0002,
+   "PAY_5": 0.0002,
+   "PAY_6": 0.0003,
+   "SEX": 0.0,
+   "EDUCATION": 0.0008,
+   "MARRIAGE": 0.0001
+  }
  },
  "staging": {
   "policy": "Stage 3: PAY_0 >= 3 (90+ DPD proxy). Stage 2: PAY_0 >= 1 (30+ DPD) or PD >= 2.0x median PD and > 0.1. Stage 1: rest.",
@@ -1862,6 +1909,306 @@ export const data = {
      "brier": 0.1355,
      "score_psi": 0.0007,
      "calibration_mae": 0.0135
+    }
+   }
+  }
+ },
+ "research": {
+  "thesis": "Credit scoring decides who gets access to credit. A standard scorecard rejects some applicants who would have repaid, and the cost falls hardest on people with thin files: newcomers who arrive creditworthy and credit-invisible. This lab studies that gap with measured work, not opinion: accuracy does that buy? errors? The pipeline (PD models, validation, IFRS 9 style staging, ECL) is the instrument. The study is the point.",
+  "thesisQuestions": [
+   "How many creditworthy applicants does a cut-off scorecard reject?",
+   "Can behavioural features alone score a thin-file applicant, and how much",
+   "Does the model treat demographic groups differently, in approvals and in"
+  ],
+  "scenarios": {
+   "rows": [
+    {
+     "name": "upside",
+     "weight": 0.2,
+     "pdMultiplier": 0.85,
+     "totalEcl": 171347226.56,
+     "byStage": [
+      {
+       "stage": 1,
+       "accounts": 22099,
+       "ead": 1224621954,
+       "ecl": 53608170.47,
+       "observed_default_rate": 0.12
+      },
+      {
+       "stage": 2,
+       "accounts": 7438,
+       "ead": 288778113,
+       "ecl": 106947520.59,
+       "observed_default_rate": 0.48
+      },
+      {
+       "stage": 3,
+       "accounts": 463,
+       "ead": 23981190,
+       "ecl": 10791535.5,
+       "observed_default_rate": 0.72
+      }
+     ]
+    },
+    {
+     "name": "base",
+     "weight": 0.5,
+     "pdMultiplier": 1.0,
+     "totalEcl": 187548414.49,
+     "byStage": [
+      {
+       "stage": 1,
+       "accounts": 22099,
+       "ead": 1224621954,
+       "ecl": 63068435.85,
+       "observed_default_rate": 0.12
+      },
+      {
+       "stage": 2,
+       "accounts": 7438,
+       "ead": 288778113,
+       "ecl": 113688443.14,
+       "observed_default_rate": 0.48
+      },
+      {
+       "stage": 3,
+       "accounts": 463,
+       "ead": 23981190,
+       "ecl": 10791535.5,
+       "observed_default_rate": 0.72
+      }
+     ]
+    },
+    {
+     "name": "downside",
+     "weight": 0.3,
+     "pdMultiplier": 1.3,
+     "totalEcl": 214201103.73,
+     "byStage": [
+      {
+       "stage": 1,
+       "accounts": 22099,
+       "ead": 1224621954,
+       "ecl": 81988966.61,
+       "observed_default_rate": 0.12
+      },
+      {
+       "stage": 2,
+       "accounts": 7438,
+       "ead": 288778113,
+       "ecl": 121420601.62,
+       "observed_default_rate": 0.48
+      },
+      {
+       "stage": 3,
+       "accounts": 463,
+       "ead": 23981190,
+       "ecl": 10791535.5,
+       "observed_default_rate": 0.72
+      }
+     ]
+    }
+   ],
+   "weightedEcl": 192303983.68,
+   "baselineEcl": 187548414.49,
+   "baselFloor": {
+    "lgdAssumption": 0.45,
+    "eclAtAssumption": 187548414.49,
+    "lgdFloor": 0.5,
+    "eclAtFloor": 208387127.21
+   }
+  },
+  "behaviouralV2": {
+   "v1": {
+    "auc": 0.781,
+    "ks": 0.4196,
+    "brier": 0.1355
+   },
+   "v2": {
+    "auc": 0.7818,
+    "ks": 0.4185,
+    "brier": 0.1354
+   },
+   "deltaAuc": 0.0008,
+   "beatsV1": true,
+   "transitionFeatures": [
+    "dpd_worsen_steps",
+    "dpd_max_consec",
+    "dpd_slope",
+    "dpd_recent3_mean"
+   ]
+  },
+  "study": {
+   "cutoffPd": 0.2293,
+   "targetRate": 0.12,
+   "achievedRate": 0.12,
+   "testAccounts": 9000,
+   "approved": 6375,
+   "rejected": 2625,
+   "approvalRate": 0.7083,
+   "creditworthyRejects": 1399,
+   "creditworthyShareOfRejected": 0.533,
+   "thinFileAuc": 0.7687,
+   "fullModelAuc": 0.781,
+   "thinFileFeatures": [
+    "utilization",
+    "pay_ratio",
+    "delinq_mean",
+    "delinq_max",
+    "bill_trend",
+    "dpd_months",
+    "PAY_0",
+    "PAY_2",
+    "PAY_3",
+    "PAY_4",
+    "PAY_5",
+    "PAY_6"
+   ],
+   "largestGap": {
+    "variable": "EDUCATION",
+    "gap": 0.2917,
+    "higherGroup": {
+     "group": "Other",
+     "n": 120,
+     "approved": 113,
+     "approval_rate": 0.9417,
+     "default_rate": 0.0667,
+     "auc": 0.6172
+    },
+    "lowerGroup": {
+     "group": "High school",
+     "n": 1477,
+     "approved": 960,
+     "approval_rate": 0.65,
+     "default_rate": 0.2532,
+     "auc": 0.7477
+    }
+   },
+   "fairnessByVariable": {
+    "SEX": {
+     "groups": [
+      {
+       "group": "Female",
+       "n": 5437,
+       "approved": 3928,
+       "approval_rate": 0.7225,
+       "default_rate": 0.2099,
+       "auc": 0.7861
+      },
+      {
+       "group": "Male",
+       "n": 3563,
+       "approved": 2447,
+       "approval_rate": 0.6868,
+       "default_rate": 0.2386,
+       "auc": 0.7719
+      }
+     ],
+     "approval_rate_gap": 0.0357
+    },
+    "AGE_BAND": {
+     "groups": [
+      {
+       "group": "Under 30",
+       "n": 2882,
+       "approved": 1999,
+       "approval_rate": 0.6936,
+       "default_rate": 0.2245,
+       "auc": 0.7845
+      },
+      {
+       "group": "30-44",
+       "n": 4483,
+       "approved": 3285,
+       "approval_rate": 0.7328,
+       "default_rate": 0.2061,
+       "auc": 0.777
+      },
+      {
+       "group": "45-59",
+       "n": 1518,
+       "approved": 1020,
+       "approval_rate": 0.6719,
+       "default_rate": 0.2516,
+       "auc": 0.7888
+      },
+      {
+       "group": "60+",
+       "n": 117,
+       "approved": 71,
+       "approval_rate": 0.6068,
+       "default_rate": 0.3248,
+       "auc": 0.7152
+      }
+     ],
+     "approval_rate_gap": 0.126
+    },
+    "EDUCATION": {
+     "groups": [
+      {
+       "group": "Graduate school",
+       "n": 3206,
+       "approved": 2425,
+       "approval_rate": 0.7564,
+       "default_rate": 0.1868,
+       "auc": 0.7851
+      },
+      {
+       "group": "High school",
+       "n": 1477,
+       "approved": 960,
+       "approval_rate": 0.65,
+       "default_rate": 0.2532,
+       "auc": 0.7477
+      },
+      {
+       "group": "Other",
+       "n": 120,
+       "approved": 113,
+       "approval_rate": 0.9417,
+       "default_rate": 0.0667,
+       "auc": 0.6172
+      },
+      {
+       "group": "University",
+       "n": 4197,
+       "approved": 2877,
+       "approval_rate": 0.6855,
+       "default_rate": 0.2406,
+       "auc": 0.7824
+      }
+     ],
+     "approval_rate_gap": 0.2917
+    },
+    "MARRIAGE": {
+     "groups": [
+      {
+       "group": "Married",
+       "n": 4133,
+       "approved": 2867,
+       "approval_rate": 0.6937,
+       "default_rate": 0.2391,
+       "auc": 0.7823
+      },
+      {
+       "group": "Other",
+       "n": 111,
+       "approved": 75,
+       "approval_rate": 0.6757,
+       "default_rate": 0.1802,
+       "auc": 0.7038
+      },
+      {
+       "group": "Single",
+       "n": 4756,
+       "approved": 3433,
+       "approval_rate": 0.7218,
+       "default_rate": 0.2067,
+       "auc": 0.7807
+      }
+     ],
+     "approval_rate_gap": 0.0461
     }
    }
   }

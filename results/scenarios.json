@@ -1,0 +1,113 @@
+{
+ "generated_from": "Champion PDs refit on the full portfolio with the pipeline's own functions; staging policy unchanged; scenario weights and PD multipliers from config.json (stated assumptions).",
+ "weights": {
+  "base": 0.5,
+  "downside": 0.3,
+  "upside": 0.2
+ },
+ "pd_multipliers": {
+  "base": 1.0,
+  "downside": 1.3,
+  "upside": 0.85
+ },
+ "lgd": 0.45,
+ "baseline_total_ecl": 187548414.49,
+ "baseline_matches_results_json": true,
+ "scenarios": {
+  "base": {
+   "weight": 0.5,
+   "pd_multiplier": 1.0,
+   "total_ecl": 187548414.49,
+   "total_ead": 1537381257.0,
+   "by_stage": [
+    {
+     "stage": 1,
+     "accounts": 22099,
+     "ead": 1224621954,
+     "ecl": 63068435.85,
+     "observed_default_rate": 0.12
+    },
+    {
+     "stage": 2,
+     "accounts": 7438,
+     "ead": 288778113,
+     "ecl": 113688443.14,
+     "observed_default_rate": 0.48
+    },
+    {
+     "stage": 3,
+     "accounts": 463,
+     "ead": 23981190,
+     "ecl": 10791535.5,
+     "observed_default_rate": 0.72
+    }
+   ]
+  },
+  "upside": {
+   "weight": 0.2,
+   "pd_multiplier": 0.85,
+   "total_ecl": 171347226.56,
+   "total_ead": 1537381257.0,
+   "by_stage": [
+    {
+     "stage": 1,
+     "accounts": 22099,
+     "ead": 1224621954,
+     "ecl": 53608170.47,
+     "observed_default_rate": 0.12
+    },
+    {
+     "stage": 2,
+     "accounts": 7438,
+     "ead": 288778113,
+     "ecl": 106947520.59,
+     "observed_default_rate": 0.48
+    },
+    {
+     "stage": 3,
+     "accounts": 463,
+     "ead": 23981190,
+     "ecl": 10791535.5,
+     "observed_default_rate": 0.72
+    }
+   ]
+  },
+  "downside": {
+   "weight": 0.3,
+   "pd_multiplier": 1.3,
+   "total_ecl": 214201103.73,
+   "total_ead": 1537381257.0,
+   "by_stage": [
+    {
+     "stage": 1,
+     "accounts": 22099,
+     "ead": 1224621954,
+     "ecl": 81988966.61,
+     "observed_default_rate": 0.12
+    },
+    {
+     "stage": 2,
+     "accounts": 7438,
+     "ead": 288778113,
+     "ecl": 121420601.62,
+     "observed_default_rate": 0.48
+    },
+    {
+     "stage": 3,
+     "accounts": 463,
+     "ead": 23981190,
+     "ecl": 10791535.5,
+     "observed_default_rate": 0.72
+    }
+   ]
+  }
+ },
+ "weighted_ecl": 192303983.68,
+ "basel_floor": {
+  "lgd_assumption": 0.45,
+  "ecl_at_lgd_assumption": 187548414.49,
+  "qrre_lgd_floor": 0.5,
+  "ecl_at_qrre_lgd_floor": 208387127.21,
+  "note": "Basel CRE32 foundation approach sets a 50 percent LGD floor for qualifying revolving retail exposures (QRRE). The lab's 45 percent LGD is a stated assumption below that floor; both figures come from the same staging code path."
+ }
+}
