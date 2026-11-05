@@ -74,3 +74,37 @@ Approval-rate gap within MARRIAGE: 4.6%.
 - Outcomes are a single month (default next month), not lifetime repayment. A 'creditworthy reject' repaid in that window; longer horizons would change some counts.
 - The cut-off is set on the same test set it is audited on. A production study would fix the appetite on a validation sample first; the lab states the rule and applies it once, openly.
 - AUC is reported per group only where both outcome classes have at least 5 accounts; smaller cells show n/a rather than a noisy number.
+
+<!-- SECOND-LOOK:START -->
+
+## 4. Findings: the Second-Look Recovery Policy
+
+Pre-registered as H1 in `HYPOTHESES.md`. A two-stage rule on top of the study's stage-1 cut-off:
+
+1. **Stage 1:** approve iff the champion PD is at or below 0.2293 (the cut-off from section 1).
+2. **Stage 2 (the second look):** a stage-1 reject is approved iff their thin-file behavioural PD is at or below the band threshold, defined as the median thin-file PD of stage-1 approved applicants: 0.1144. Their behavioural evidence must be at least as strong as the typical approved applicant's.
+
+| Measure | Value |
+| --- | --- |
+| Stage-1 rejected | 2,625 |
+| Creditworthy rejects at stage 1 | 1,399 |
+| Recovered on second look (total) | 21 |
+| Recovered creditworthy (did not default) | 17 |
+| Additional defaults admitted | 4 |
+| **Recovery rate of creditworthy rejects** | **1.2%** |
+| Approved book default rate, stage 1 only | 12.00% |
+| Approved book default rate, after second look | 12.02% |
+| **Cost (default-rate increase)** | **+0.02 percentage points** |
+
+The trade is explicit: every recovered creditworthy applicant is bought with a measured number of admitted defaults, and the price shows up in the approved book's default rate rather than hiding in an assumption. A lender adopting this shape of policy sets its own band; the lab's band is a stated rule, not a tuned optimum.
+
+Fairness read (share of each group's creditworthy rejects recovered):
+
+- SEX: Female 0.9% (of 817); Male 1.7% (of 582).
+- AGE_BAND: Under 30 0.6% (of 469); 30-44 1.5% (of 655); 45-59 1.6% (of 252); 60+ 0.0% (of 23).
+- EDUCATION: Graduate school 0.2% (of 428); High school 1.4% (of 287); Other 0.0% (of 5); University 1.8% (of 679).
+- MARRIAGE: Married 1.7% (of 646); Other 4.0% (of 25); Single 0.7% (of 728).
+
+Position against reject inference, the classic alternative, is in `RESEARCH.md`. Full per-group counts are in `results/second_look.json`; the bootstrap confidence interval for the recovery rate is in `results/rigor.json`.
+
+<!-- SECOND-LOOK:END -->

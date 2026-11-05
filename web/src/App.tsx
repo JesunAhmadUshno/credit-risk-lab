@@ -8,9 +8,10 @@ import Portfolio from './tabs/Portfolio'
 import Validation from './tabs/Validation'
 import Simulator from './tabs/Simulator'
 import Research from './tabs/Research'
+import Analysis from './tabs/Analysis'
 import { fmtPct } from './lib/format'
 
-const TABS = ['Overview', 'Models', 'Portfolio', 'Validation', 'Simulator', 'Research'] as const
+const TABS = ['Overview', 'Models', 'Portfolio', 'Validation', 'Simulator', 'Research', 'Analysis'] as const
 type Tab = (typeof TABS)[number]
 
 const champGrade = data.grades.models[data.champion]
@@ -96,6 +97,7 @@ export default function App() {
             {tab === 'Validation' && <Validation model={model} setModel={setModel} />}
             {tab === 'Simulator' && <Simulator />}
             {tab === 'Research' && <Research />}
+            {tab === 'Analysis' && <Analysis />}
           </motion.div>
         </AnimatePresence>
       </main>

@@ -77,4 +77,35 @@ numbers.
 
 ## Verdicts (appended after the runs)
 
-[To be filled in by the wave 3 runs, each with its measured number.]
+- **H1: REFUTED.** Recovery rate 1.2% (17 of 1,399 creditworthy
+  rejects; band threshold 0.1144, the median thin-file PD of approved
+  applicants), far below the 15% bound. The cost bound was met
+  easily: +0.02 percentage points (approved-book default rate 12.00%
+  to 12.02%; 4 additional defaults admitted on 21 recoveries), inside
+  the 1.00 point bound. Per the rule registered above, a result
+  outside one bound takes the verdict of the failed bound. The
+  finding is the refutation itself: a second look that demands
+  behavioural evidence as strong as the typical approved applicant's
+  is nearly empty among rejects, because thin-file and champion
+  scores are correlated; the policy's price is negligible precisely
+  because its volume is. A useful second look needs a looser band,
+  and pricing that band is future work, not a silent retune of this
+  experiment. Source: results/second_look.json, STUDY.md section 4.
+- **H2: CONFIRMED.** Thin-file AUC 0.7687 vs full-model AUC 0.7810:
+  gap -0.0123, inside the -0.03 bound. Source: results/study.json.
+- **H3: INCONCLUSIVE.** Across seeds 42, 7, 123, 2024, 31337: mean
+  AUC v1 0.7830 (std 0.0069), v2 0.7824 (std 0.0066), mean delta
+  -0.0006. That is inside the registered inconclusive band (v2 is not
+  at or above v1, and not below v1 by more than 0.002). Per-seed
+  deltas: +0.0008 (seed 42, the wave-2 split), -0.0007, -0.0014,
+  -0.0012, -0.0005: the single-seed edge does not survive reseeding,
+  and the honest summary is that the transition features make no
+  measurable difference on this dataset. Source: results/rigor.json.
+- **H4: CONFIRMED.** German Credit (different population and era):
+  gradient boosting AUC 0.7848 (95% CI 0.7203 to 0.8437), above the
+  0.65 bound; logistic regression AUC 0.8022 (95% CI 0.7391 to
+  0.8560), above the 0.60 bound; logistic is the German champion.
+  Transportability gap on the gradient boosting model trained both
+  places: -0.0038. The intervals are wide, as 300 test accounts
+  deserve. Source: results/external_validation.json,
+  results/rigor.json.

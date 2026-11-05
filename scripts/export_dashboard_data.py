@@ -203,6 +203,10 @@ def research_payload() -> dict:
             "creditworthyShareOfRejected":
                 a["creditworthy_share_of_rejected"],
             "thinFileAuc": b["auc"],
+            "thinFileCi95": (study.get("bootstrap_ci95") or {}).get(
+                "thin_file_auc"),
+            "creditworthyShareCi95": (study.get("bootstrap_ci95") or {}).get(
+                "creditworthy_reject_share"),
             "fullModelAuc": b["full_model_auc"],
             "thinFileFeatures": b["features"],
             "largestGap": {
@@ -213,6 +217,85 @@ def research_payload() -> dict:
             },
             "fairnessByVariable": study["fairness"]["by_variable"],
         },
+        **wave3_payload(),
+    }
+
+
+def _doc_summary(path: Path, max_chars: int = 420) -> str:
+    """First prose paragraph of a markdown doc, for the Analysis tab."""
+    para = []
+    for line in path.read_text().splitlines():
+        text = line.strip()
+        if not text or text.startswith("#") or text.startswith("*"):
+            if para:
+                break
+            continue
+        if text.startswith("|") or text.startswith("-"):
+            if para:
+                break
+            continue
+        para.append(text)
+    return " ".join(para)[:max_chars]
+
+
+def wave3_payload() -> dict:
+    """Wave-3 research data: external validation, reason codes, the
+    second-look policy, and the analysis document pack. All numbers
+    pass through from the results files; doc summaries are extracted
+    from the markdown, never retyped."""
+    ext = json.loads(
+        (ROOT / "results" / "external_validation.json").read_text())
+    rc = json.loads((ROOT / "results" / "reason_codes.json").read_text())
+    sl = json.loads((ROOT / "results" / "second_look.json").read_text())
+    gh = "https://github.com/JesunAhmadUshno/credit-risk-lab/blob/main/"
+    docs = []
+    for rel, title in (
+            ("docs/analysis/SWOT.md", "SWOT: the lab, two ways"),
+            ("docs/analysis/PESTEL.md", "PESTEL: Canadian credit risk"),
+            ("docs/analysis/GAP_ANALYSIS.md", "Gap register"),
+            ("docs/analysis/AUDIT.md", "Audit and reproducibility"),
+            ("docs/case-studies/01-the-newcomer-file.md",
+             "Case study: the newcomer file"),
+            ("docs/case-studies/02-downside-rehearsal.md",
+             "Case study: downside rehearsal"),
+            ("docs/case-studies/03-the-validation-meeting.md",
+             "Case study: the validation meeting")):
+        p = ROOT / rel
+        if p.exists():
+            docs.append({"title": title, "summary": _doc_summary(p),
+                         "href": gh + rel})
+    top_reasons = rc["reason_frequencies"][:5]
+    return {
+        "externalValidation": {
+            "dataset": ext["dataset"]["source"],
+            "populationNote": ext["dataset"]["population_note"],
+            "champion": ext["champion"],
+            "models": {
+                name: {"auc": m["auc"], "ks": m["ks"], "brier": m["brier"],
+                       "aucCi95": m.get("auc_ci95")}
+                for name, m in ext["models"].items()},
+            "transportability": {
+                "gap": ext["transportability"]["gap_like_for_like"],
+                "note": ext["transportability"]["reading"],
+            },
+        },
+        "reasonCodes": {
+            "basis": rc["label"],
+            "cutoffPd": rc["cutoff_pd"],
+            "rejected": rc["rejected_applicants"],
+            "totalAssignments": rc["total_reason_assignments"],
+            "topReasons": [{"reason": r["reason"], "count": r["count"]}
+                           for r in top_reasons],
+        },
+        "secondLook": {
+            "name": sl["policy"]["name"],
+            "bandRule": sl["policy"]["band_rule"],
+            "bandThreshold": sl["policy"]["band_threshold_thin_pd"],
+            "recoveryCi95": (sl.get("bootstrap_ci95") or {}).get(
+                "recovery_rate_of_creditworthy"),
+            **sl["headline"],
+        },
+        "analysis": docs,
     }
 
 

@@ -131,3 +131,60 @@ Every number in the study comes from a run. Assumptions are labelled.
 Unverifiable items in the source research (some Statistics Canada quarters
 rest on secondary reporting; one salary summary conflicted and was dropped)
 are flagged here rather than smoothed over.
+
+## Wave 3: the second-look policy, external validation, and intervals
+
+**Second look versus reject inference.** Classic reject inference attacks
+the selection problem inside a single model: it reweights the booked
+sample, augments it with rejected applicants whose labels are imputed
+(parceling, fuzzy augmentation), or re-labels the rejected region, so one
+scorecard can be trained as if the rejects had been observed. The risk is
+that the imputed labels are the model's own beliefs fed back to it. The
+Second-Look Recovery Policy (src/second_look.py, pre-registered as H1)
+takes a different route: it leaves the champion and its cut-off untouched,
+re-scores only the rejects with a second, independent model restricted to
+behavioural evidence (the thin-file model), and approves a reject when
+that behavioural score is at least as strong as the median approved
+applicant's (band threshold: thin-file PD 0.1144). Nothing is re-labelled;
+the policy's cost is measured on observed outcomes instead of assumed.
+Measured, the pre-registered version of the policy is nearly empty: it
+recovered 21 of 2,625 rejects - 17 creditworthy applicants, 1.2% of all
+creditworthy rejects - at the price of 4 admitted defaults, moving the
+approved book's default rate from 12.00% to 12.02% (+0.02 percentage
+points). H1 is therefore REFUTED on its recovery bound (15%), and the
+refutation is the finding: behavioural and champion scores are
+correlated, so almost no reject carries approved-median behavioural
+evidence. A second look that bites needs a band set by an explicit
+recovery-versus-cost appetite rather than by the approved median, and
+pricing candidate bands is the follow-up experiment this one defines.
+Reject inference asks "what would the model have said about everyone?";
+the second look asks "what does independent evidence say about the
+people the model refused, and what does acting on it cost?". Here the
+honest answer is: at the strictest defensible band, almost nothing, at
+almost no cost.
+
+**External validation.** The same approach (logistic regression plus
+gradient boosting, behavioural-style ratios where the schema allows) was
+run on UCI Statlog German Credit (1,000 accounts, German applicants,
+collected in the 1990s; results/external_validation.json). Logistic
+regression reached AUC 0.8022 (95% CI 0.7391 to 0.8560) and gradient
+boosting 0.7848 (0.7203 to 0.8437), against 0.7810 for the champion model
+applied at home: the method transports, and on 300 test accounts the
+intervals are wide enough to say how little a sample that size proves.
+German Credit is a different population and era from Taiwan 2005, and
+both are far from a Canadian portfolio; the claim is about the method,
+not about any real book.
+
+**Intervals on the headline numbers** (1,000 bootstrap resamples, fixed
+seed; results/rigor.json): champion AUC 0.7810, 95% CI 0.7693 to 0.7919;
+thin-file AUC 0.7687, CI 0.7567 to 0.7799; creditworthy-reject share
+53.3%, CI 48.2% to 77.6% - wide, because every resample re-runs the whole
+procedure including cut-off selection, and the selected cut-off is
+jumpier than the share it produces; the interval prices the procedure,
+not just the proportion. The second-look recovery rate of 1.2% carries
+CI 0.3% to 4.4%: small under every resample, which is what makes the H1
+refutation solid rather than a knife-edge call. Across five seeds (each
+with its own split), champion AUC averaged 0.7830 (std 0.0069) and
+behavioural v2 averaged 0.7824 (std 0.0066), mean delta -0.0006: H3 is
+INCONCLUSIVE under its registered rule, and the v2 transition features'
+single-seed edge is reported as exactly that - a single-seed edge.

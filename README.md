@@ -63,6 +63,30 @@ default-next-month target. Observed default rate: 22.12 percent.
 - The fair access study (`src/study.py`, written up in `STUDY.md`):
   creditworthy rejects at a stated risk appetite, a behavioural-only
   thin-file model, and a fairness audit by demographic group.
+- Wave 3 (see `HYPOTHESES.md`, pre-registered before the code ran):
+  - The **Second-Look Recovery Policy** (`src/second_look.py`): stage-1
+    rejects are re-scored with the independent thin-file behavioural
+    model and approved when their behavioural PD is at or below the
+    median approved applicant's. Recovery and cost are measured, not
+    assumed (findings: `STUDY.md` section 4).
+  - External validation (`src/external_validation.py`): the same
+    approach on UCI Statlog German Credit, a different population and
+    era, reported with bootstrap intervals.
+  - A database layer (`src/build_db.py`, `sql/queries.sql`): the full
+    portfolio, both models' scores, staging, and scenario staging in
+    SQLite (`data/credit.db`), with a test asserting the SQL staging
+    counts and total ECL match the published JSON.
+  - Adverse-action reason codes (`src/reason_codes.py`):
+    permutation-importance-ranked, plain-language top-3 reasons per
+    rejected applicant, labelled model-derived, not causal.
+  - Statistical rigor (`src/rigor.py`): bootstrap 95% confidence
+    intervals (1,000 resamples) on the headline numbers and a 5-seed
+    robustness check for v1 vs v2.
+  - `MONITORING.md` (generated): PSI/CSI state, retraining triggers as
+    rules, MRM cadence, with the Yurdakul and Naranjo caveat attached.
+  - The analysis pack (`docs/analysis/`): SWOT, PESTEL, a numbered gap
+    register, and an audit with a clean-checkout reproducibility
+    proof; three case studies in `docs/case-studies/`.
 
 ## Results (from results/results.json, run 2026-11-04)
 
@@ -99,6 +123,40 @@ behavioural-only thin-file model scores AUC 0.7687 against the full model's
 between Other (n=120) and High school (n=1,477); group sizes sit next to
 every rate in `STUDY.md`, and the dataset is Taiwan 2005, not Canada.
 
+Wave 3 headlines (`HYPOTHESES.md` verdicts H1 to H4: H1 REFUTED, H2
+and H4 CONFIRMED, H3 INCONCLUSIVE, each with its measured numbers
+recorded there):
+
+- **Intervals** (`results/rigor.json`, 1,000 bootstrap resamples):
+  champion AUC 0.7810, 95% CI 0.7693 to 0.7919; thin-file AUC 0.7687,
+  CI 0.7567 to 0.7799; creditworthy-reject share 53.3%, CI 48.2% to
+  77.6% (wide because each resample re-selects the cut-off; the
+  interval prices the whole procedure). Across 5 seeds, champion AUC
+  averages 0.7830 (std 0.0069) and behavioural v2 averages 0.7824
+  (std 0.0066), mean delta -0.0006: hypothesis H3 is INCONCLUSIVE
+  under its registered rule, and the v2 edge is reported as a
+  single-seed artefact.
+- **Second look**: at the pre-registered band (a reject's thin-file
+  behavioural PD at or below the approved median, 0.1144), the policy
+  recovered 17 of the 1,399 creditworthy rejects (1.2%) at the price
+  of 4 admitted defaults; the approved book's default rate moved from
+  12.00% to 12.02% (+0.02 points). Hypothesis H1 is REFUTED on its
+  recovery bound: the strict band is nearly empty because behavioural
+  and champion scores are correlated. The refutation, its fairness
+  read by group, and the follow-up it defines are in `STUDY.md`
+  section 4 and `HYPOTHESES.md`.
+- **External validation** (German Credit: 1,000 accounts, Germany,
+  1990s - a different population and era from Taiwan 2005): logistic
+  regression AUC 0.8022 (CI 0.7391 to 0.8560), gradient boosting AUC
+  0.7848 (CI 0.7203 to 0.8437). The method transports; the wide
+  intervals on 300 test accounts are part of the result.
+- **Reason codes**: across the 2,625 rejected test applicants (7,744
+  reason assignments), the most frequent principal reasons are a
+  payment delay in the most recent month (1,831 applicants), repeated
+  payment delays across six months (1,256), and severe past
+  delinquency (1,199). Model-derived explanations, not causal
+  findings.
+
 ## Model grades (results/model_grades.json, computed from the run)
 
 Scorecard of 1000: discrimination 500 (AUC 250, KS 150, Gini 100),
@@ -120,16 +178,19 @@ the dashboard.
 **Live (GitHub Pages): https://jesunahmadushno.github.io/credit-risk-lab/**
 
 The React dashboard (`web/`, deployed by `.github/workflows/pages.yml`)
-has six tabs: Overview (KPIs and the champion grade gauge), Models
+has seven tabs: Overview (KPIs and the champion grade gauge), Models
 (scorecard grades, group bars, named deductions, ROC curves for both
 models), Portfolio (clickable stage cards, accounts / ECL / default-rate
 charts), Validation (per-model calibration, gains and lift with a sortable
 decile table, score distribution, feature drift), Simulator (LGD, PD
 shift, and lifetime-horizon sliders that recompute ECL by stage live from
 the published aggregates; a sensitivity calculation, not a model re-run),
-and Research (the fair access thesis, scenario-weighted ECL against the
-baseline, the v1 vs v2 comparison, and the study headlines with the
-dataset limits stated).
+Research (the fair access thesis, scenario-weighted ECL against the
+baseline, the v1 vs v2 comparison, the study headlines, German external
+validation with intervals, the Second-Look Recovery Policy, adverse-action
+reason codes, and the dataset limits stated), and Analysis (the wave-3
+analysis pack: SWOT, PESTEL, gap register, audit, and the three case
+studies, with summaries extracted from the documents).
 Its data file is generated, never hand-typed:
 `.venv/bin/python scripts/export_dashboard_data.py` (see `web/README.md`).
 
@@ -163,28 +224,40 @@ Run parameters live in `config.json` at the repo root: LGD, lifetime years,
 staging thresholds, seed, test size, bin counts. Edit the file and rerun;
 the code holds no hardcoded copies.
 
+**The single reproduction command** rebuilds the entire lab end to end
+(pipeline, grading, dashboards, scenarios, behavioural v2, study, second
+look, reason codes, external validation, validation pack, monitoring,
+database, rigor, dashboard data export), then asserts the headline
+invariants (baseline AUCs, KS, staging counts, baseline and weighted ECL)
+and writes `results/run_manifest.json` with per-step durations, the git
+commit, dataset SHA256 checksums, and output hashes. It exits nonzero if
+any invariant breaks:
+
     python3 -m venv .venv
     .venv/bin/pip install -r requirements.txt
-    .venv/bin/python src/credit_risk_lab.py
-    .venv/bin/python src/grading.py
-    .venv/bin/python src/dashboard.py
-    .venv/bin/python src/scenarios.py
-    .venv/bin/python src/behavioural_v2.py
-    .venv/bin/python src/study.py
-    .venv/bin/python src/validation_pack.py
+    .venv/bin/python src/run_all.py
     .venv/bin/python -m pytest tests/ -q
 
-34 tests pass: pipeline checks (dataset shape, AUC floors, exact staging
+The individual steps remain runnable one by one (for example
+`src/credit_risk_lab.py`, `src/grading.py`, `src/study.py`,
+`src/run_all.py` lists the full order in code).
+
+40 tests pass: pipeline checks (dataset shape, AUC floors, exact staging
 partition, positive ECL with stage-ordered risk, calibration bins, data
 quality, feature drift, config applied, per-model validation), unit tests
 (staging policy on synthetic rows including the SICR rule, grading band
 boundaries, config loading and overrides, loader validation, dashboard
-smoke test), and wave-2 tests (scenario weights sum to one and the base
+smoke test), wave-2 tests (scenario weights sum to one and the base
 scenario reproduces the published ECL, Basel floor scaling, study counts
 partition the test set, the cut-off holds the Stage 1 risk appetite,
 thin-file AUC in range, fairness groups cover the test set, transition
-features on synthetic delinquency paths). CI runs the same suite on every
-push (`.github/workflows/tests.yml`).
+features on synthetic delinquency paths), and wave-3 tests (German
+champion AUC above its floor with intervals bracketing the estimates, the
+SQLite staging counts and total ECL matching the published JSON, reason
+codes drawn only from the documented mapping with at least one per
+rejected applicant, the second-look partition closing on the study
+counts, multi-seed results reported for all 5 seeds). CI runs the same
+suite on every push (`.github/workflows/tests.yml`).
 
 ## Limits, stated plainly
 

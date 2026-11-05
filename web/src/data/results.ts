@@ -420,6 +420,15 @@ export const data = {
    "SEX": 0.0,
    "EDUCATION": 0.0008,
    "MARRIAGE": 0.0001
+  },
+  "auc_ci95": {
+   "champion_gradient_boosting": {
+    "n_resamples": 1000,
+    "mean": 0.781,
+    "lo95": 0.7693,
+    "hi95": 0.7919,
+    "width": 0.0226
+   }
   }
  },
  "staging": {
@@ -2050,6 +2059,20 @@ export const data = {
    "creditworthyRejects": 1399,
    "creditworthyShareOfRejected": 0.533,
    "thinFileAuc": 0.7687,
+   "thinFileCi95": {
+    "n_resamples": 1000,
+    "mean": 0.7687,
+    "lo95": 0.7567,
+    "hi95": 0.7799,
+    "width": 0.0232
+   },
+   "creditworthyShareCi95": {
+    "n_resamples": 1000,
+    "mean": 0.5402,
+    "lo95": 0.4817,
+    "hi95": 0.7759,
+    "width": 0.2942
+   },
    "fullModelAuc": 0.781,
    "thinFileFeatures": [
     "utilization",
@@ -2211,7 +2234,131 @@ export const data = {
      "approval_rate_gap": 0.0461
     }
    }
-  }
+  },
+  "externalValidation": {
+   "dataset": "UCI Statlog German Credit, dataset 144 (Germany, 1990s vintage)",
+   "populationNote": "A different population and era from the Taiwan 2005 portfolio in results.json. These numbers describe German Credit only and must never be quoted as Taiwan results.",
+   "champion": "logistic_regression",
+   "models": {
+    "logistic_regression": {
+     "auc": 0.8022,
+     "ks": 0.4873,
+     "brier": 0.1578,
+     "aucCi95": {
+      "n_resamples": 1000,
+      "mean": 0.8009,
+      "lo95": 0.7391,
+      "hi95": 0.856,
+      "width": 0.1169
+     }
+    },
+    "gradient_boosting": {
+     "auc": 0.7848,
+     "ks": 0.4825,
+     "brier": 0.1689,
+     "aucCi95": {
+      "n_resamples": 1000,
+      "mean": 0.7852,
+      "lo95": 0.7203,
+      "hi95": 0.8437,
+      "width": 0.1234
+     }
+    }
+   },
+   "transportability": {
+    "gap": -0.0038,
+    "note": "The like-for-like gap compares gradient boosting on both datasets. On German Credit the logistic baseline edges out gradient boosting, the classic small-sample result: 1,000 accounts do not feed a boosting model the way 30,000 do, and German Credit has no payment-history panel, so its confidence intervals are wide; see results/rigor.json."
+   }
+  },
+  "reasonCodes": {
+   "basis": "Reason codes are model-derived explanations of the score, not causal findings, and not legal adverse-action notices.",
+   "cutoffPd": 0.2293,
+   "rejected": 2625,
+   "totalAssignments": 7744,
+   "topReasons": [
+    {
+     "reason": "Payment delay in the most recent month",
+     "count": 1831
+    },
+    {
+     "reason": "Repeated payment delays across the last six months",
+     "count": 1256
+    },
+    {
+     "reason": "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
+     "count": 1199
+    },
+    {
+     "reason": "Low most recent payment amount",
+     "count": 1166
+    },
+    {
+     "reason": "High utilisation: the statement balance is high relative to the credit limit",
+     "count": 675
+    }
+   ]
+  },
+  "secondLook": {
+   "name": "Second-Look Recovery Policy",
+   "bandRule": "Band threshold = median thin-file PD of the stage-1 approved applicants, computed on the test set.",
+   "bandThreshold": 0.114442,
+   "recoveryCi95": {
+    "n_resamples": 1000,
+    "mean": 0.0155,
+    "lo95": 0.0029,
+    "hi95": 0.0439,
+    "width": 0.0411
+   },
+   "test_accounts": 9000,
+   "stage1_approved": 6375,
+   "stage1_rejected": 2625,
+   "creditworthy_rejects_stage1": 1399,
+   "recovered_total": 21,
+   "recovered_creditworthy": 17,
+   "admitted_defaults": 4,
+   "recovery_rate_of_creditworthy": 0.0122,
+   "approved_book_default_rate_stage1": 0.12,
+   "approved_book_default_rate_after": 0.1202,
+   "cost_default_rate_pp": 0.023,
+   "approved_after": 6396
+  },
+  "analysis": [
+   {
+    "title": "SWOT: the lab, two ways",
+    "summary": "Every point is tied to evidence in this repo or in RESEARCH.md. Two lenses, as the lab is two things at once: a risk-modelling tool and a career artifact.",
+    "href": "https://github.com/JesunAhmadUshno/credit-risk-lab/blob/main/docs/analysis/SWOT.md"
+   },
+   {
+    "title": "PESTEL: Canadian credit risk",
+    "summary": "Sources are the figures and documents cited in RESEARCH.md (researched 2026-11-04); inline notes point at the section there. This analysis is context for a public-data lab, written to be read beside its limits.",
+    "href": "https://github.com/JesunAhmadUshno/credit-risk-lab/blob/main/docs/analysis/PESTEL.md"
+   },
+   {
+    "title": "Gap register",
+    "summary": "Numbered gaps found by audit (wave 3, 2026-11-04), each with a severity, the fix applied in this wave, or OPEN with the reason it stays open. Statuses were updated after the wave-3 runs; nothing here is marked closed on intention alone.",
+    "href": "https://github.com/JesunAhmadUshno/credit-risk-lab/blob/main/docs/analysis/GAP_ANALYSIS.md"
+   },
+   {
+    "title": "Audit and reproducibility",
+    "summary": "Scope: the full repository at the wave-3 build. Methods: pattern scans, a dependency pin review, a line-level read of the wave-3 modules, and a clean-checkout reproduction. Findings are stated with their evidence; nothing is marked clean on the basis of not looking.",
+    "href": "https://github.com/JesunAhmadUshno/credit-risk-lab/blob/main/docs/analysis/AUDIT.md"
+   },
+   {
+    "title": "Case study: the newcomer file",
+    "summary": "is from results/study.json and results/second_look.json; the applicant is a composite, the arithmetic is real.*",
+    "href": "https://github.com/JesunAhmadUshno/credit-risk-lab/blob/main/docs/case-studies/01-the-newcomer-file.md"
+   },
+   {
+    "title": "Case study: downside rehearsal",
+    "summary": "figures are from RESEARCH.md (researched 2026-11-04); portfolio figures are from results/scenarios.json. The portfolio is the lab's Taiwan 2005 book; the narrative is what the machinery is for.*",
+    "href": "https://github.com/JesunAhmadUshno/credit-risk-lab/blob/main/docs/case-studies/02-downside-rehearsal.md"
+   },
+   {
+    "title": "Case study: the validation meeting",
+    "summary": "The pack under review is VALIDATION.md; the figures are from results/results.json, results/model_grades.json and results/rigor.json.*",
+    "href": "https://github.com/JesunAhmadUshno/credit-risk-lab/blob/main/docs/case-studies/03-the-validation-meeting.md"
+   }
+  ]
  }
 } as const;
 

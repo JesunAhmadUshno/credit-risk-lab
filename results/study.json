@@ -190,5 +190,21 @@
     "auc": 0.7477
    }
   }
+ },
+ "bootstrap_ci95": {
+  "creditworthy_reject_share": {
+   "n_resamples": 1000,
+   "mean": 0.5402,
+   "lo95": 0.4817,
+   "hi95": 0.7759,
+   "width": 0.2942
+  },
+  "thin_file_auc": {
+   "n_resamples": 1000,
+   "mean": 0.7687,
+   "lo95": 0.7567,
+   "hi95": 0.7799,
+   "width": 0.0232
+  }
  }
 }

@@ -1,0 +1,77 @@
+{
+ "dataset": {
+  "source": "UCI Statlog German Credit, dataset 144 (Germany, 1990s vintage)",
+  "population_note": "A different population and era from the Taiwan 2005 portfolio in results.json. These numbers describe German Credit only and must never be quoted as Taiwan results.",
+  "rows": 1000,
+  "bad_rate": 0.3,
+  "train_rows": 700,
+  "test_rows": 300
+ },
+ "method": "Same approach as the main pipeline: logistic regression and gradient boosting, median imputation, scaling, one-hot encoding, stratified split, configured seed and test size. Behavioural-style engineered features: amount_per_month, instalment_burden, amount_per_credit (the German schema has no payment-history panel).",
+ "features": {
+  "numeric": [
+   "duration_months",
+   "credit_amount",
+   "installment_rate_pct",
+   "residence_since",
+   "age",
+   "existing_credits",
+   "liable_people",
+   "amount_per_month",
+   "instalment_burden",
+   "amount_per_credit"
+  ],
+  "categorical": [
+   "checking_status",
+   "credit_history",
+   "purpose",
+   "savings",
+   "employment_since",
+   "personal_status_sex",
+   "other_debtors",
+   "property",
+   "other_installment_plans",
+   "housing",
+   "job",
+   "telephone",
+   "foreign_worker"
+  ]
+ },
+ "models": {
+  "logistic_regression": {
+   "auc": 0.8022,
+   "ks": 0.4873,
+   "gini": 0.6043,
+   "brier": 0.1578,
+   "auc_ci95": {
+    "n_resamples": 1000,
+    "mean": 0.8009,
+    "lo95": 0.7391,
+    "hi95": 0.856,
+    "width": 0.1169
+   }
+  },
+  "gradient_boosting": {
+   "auc": 0.7848,
+   "ks": 0.4825,
+   "gini": 0.5695,
+   "brier": 0.1689,
+   "auc_ci95": {
+    "n_resamples": 1000,
+    "mean": 0.7852,
+    "lo95": 0.7203,
+    "hi95": 0.8437,
+    "width": 0.1234
+   }
+  }
+ },
+ "champion": "logistic_regression",
+ "transportability": {
+  "taiwan_champion_auc": 0.781,
+  "german_gradient_boosting_auc": 0.7848,
+  "german_champion": "logistic_regression",
+  "german_champion_auc": 0.8022,
+  "gap_like_for_like": -0.0038,
+  "reading": "The like-for-like gap compares gradient boosting on both datasets. On German Credit the logistic baseline edges out gradient boosting, the classic small-sample result: 1,000 accounts do not feed a boosting model the way 30,000 do, and German Credit has no payment-history panel, so its confidence intervals are wide; see results/rigor.json."
+ }
+}

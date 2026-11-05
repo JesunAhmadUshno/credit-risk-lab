@@ -1,5 +1,20 @@
-pandas
-numpy
-scikit-learn
-xlrd
-pytest
+# Pinned from the working venv (pip freeze), wave 3 audit, 2026-11-04.
+# Exact versions make a clean-checkout install reproduce the published run.
+cloudpickle==3.1.2
+et_xmlfile==2.0.0
+iniconfig==2.3.1
+joblib==1.6.0
+narwhals==2.28.0
+numpy==2.5.4
+openpyxl==3.1.5
+packaging==26.3
+pandas==3.1.1
+pluggy==1.7.0
+Pygments==2.21.0
+pytest==9.2.0
+python-dateutil==4.0.0
+scikit-learn==1.9.1
+scipy==1.18.1
+threadpoolctl==3.7.0
+tzdata==2026.6
+xlrd==2.0.2

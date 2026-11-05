@@ -97,14 +97,14 @@ export default function Research() {
           label="Creditworthy rejects"
           value={R.study.creditworthyShareOfRejected}
           format={(n) => fmtPct(n, 1)}
-          note={`${fmtInt(R.study.creditworthyRejects)} of ${fmtInt(R.study.rejected)} rejected test applicants did not default, at a cut-off holding the approved book at the Stage 1 default rate (${fmtPct(R.study.targetRate, 2)}).`}
+          note={`${fmtInt(R.study.creditworthyRejects)} of ${fmtInt(R.study.rejected)} rejected test applicants did not default, at a cut-off holding the approved book at the Stage 1 default rate (${fmtPct(R.study.targetRate, 2)}).${R.study.creditworthyShareCi95 ? ` Bootstrap 95% CI for the share: ${fmtPct(R.study.creditworthyShareCi95.lo95, 1)} to ${fmtPct(R.study.creditworthyShareCi95.hi95, 1)}.` : ''}`}
           delay={0}
         />
         <Headline
           label="Thin-file AUC"
           value={R.study.thinFileAuc}
           format={(n) => n.toFixed(4)}
-          note={`Behavioural features only, no bureau-style fields. Full model: ${R.study.fullModelAuc.toFixed(4)}. A thin file is not an empty file when payment behaviour is observable.`}
+          note={`Behavioural features only, no bureau-style fields. Full model: ${R.study.fullModelAuc.toFixed(4)}.${R.study.thinFileCi95 ? ` Bootstrap 95% CI: ${R.study.thinFileCi95.lo95.toFixed(4)} to ${R.study.thinFileCi95.hi95.toFixed(4)}.` : ''} A thin file is not an empty file when payment behaviour is observable.`}
           delay={0.05}
         />
         <Headline
@@ -200,6 +200,135 @@ export default function Research() {
           </div>
         </Reveal>
       </div>
+
+      <div style={{ height: 16 }} />
+
+      <div className="grid two">
+        <Reveal>
+          <div className="card">
+            <h3>External validation: German Credit (different population, different era)</h3>
+            <p className="sub">{R.externalValidation.populationNote}</p>
+            <table className="data">
+              <thead>
+                <tr>
+                  <th>Model</th>
+                  <th>AUC</th>
+                  <th>AUC 95% CI</th>
+                  <th>KS</th>
+                  <th>Brier</th>
+                </tr>
+              </thead>
+              <tbody>
+                {Object.entries(R.externalValidation.models).map(([name, m]) => (
+                  <tr key={name}>
+                    <td>
+                      {name.replaceAll('_', ' ')}
+                      {name === R.externalValidation.champion ? ' (champion here)' : ''}
+                    </td>
+                    <td className="mono">{m.auc.toFixed(4)}</td>
+                    <td className="mono">
+                      {m.aucCi95 ? `${m.aucCi95.lo95.toFixed(3)} to ${m.aucCi95.hi95.toFixed(3)}` : 'n/a'}
+                    </td>
+                    <td className="mono">{m.ks.toFixed(4)}</td>
+                    <td className="mono">{m.brier.toFixed(4)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <p className="sub" style={{ marginTop: 10 }}>
+              {R.externalValidation.transportability.note} On 300 German test accounts the
+              intervals are wide; that width is part of the result.
+            </p>
+          </div>
+        </Reveal>
+        <Reveal delay={0.08}>
+          <div className="card">
+            <h3>{R.secondLook.name}</h3>
+            <p className="sub">
+              Stage 1 rejects applicants above the study cut-off. Stage 2 re-scores the
+              rejects with the independent thin-file behavioural model: {R.secondLook.bandRule}{' '}
+              (band threshold: thin-file PD {R.secondLook.bandThreshold.toFixed(4)}).
+            </p>
+            <table className="data">
+              <tbody>
+                <tr>
+                  <td>Rejects given a second look</td>
+                  <td className="mono">{fmtInt(R.secondLook.stage1_rejected)}</td>
+                </tr>
+                <tr>
+                  <td>Recovered on second look</td>
+                  <td className="mono">{fmtInt(R.secondLook.recovered_total)}</td>
+                </tr>
+                <tr>
+                  <td>Creditworthy recovered</td>
+                  <td className="mono">
+                    {fmtInt(R.secondLook.recovered_creditworthy)} (
+                    {fmtPct(R.secondLook.recovery_rate_of_creditworthy, 1)} of creditworthy
+                    rejects
+                    {R.secondLook.recoveryCi95
+                      ? `, 95% CI ${fmtPct(R.secondLook.recoveryCi95.lo95, 1)} to ${fmtPct(R.secondLook.recoveryCi95.hi95, 1)}`
+                      : ''}
+                    )
+                  </td>
+                </tr>
+                <tr>
+                  <td>Additional defaults admitted</td>
+                  <td className="mono">{fmtInt(R.secondLook.admitted_defaults)}</td>
+                </tr>
+                <tr>
+                  <td>Approved-book default rate</td>
+                  <td className="mono">
+                    {fmtPct(R.secondLook.approved_book_default_rate_stage1, 2)} to{' '}
+                    {fmtPct(R.secondLook.approved_book_default_rate_after, 2)} (
+                    {R.secondLook.cost_default_rate_pp >= 0 ? '+' : ''}
+                    {R.secondLook.cost_default_rate_pp.toFixed(2)} pp)
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <p className="sub" style={{ marginTop: 10 }}>
+              The policy was pre-registered as hypothesis H1 in HYPOTHESES.md before the
+              experiment code ran. Full write-up: STUDY.md, section 4.
+            </p>
+          </div>
+        </Reveal>
+      </div>
+
+      <div style={{ height: 16 }} />
+
+      <Reveal>
+        <div className="card">
+          <h3>Why applicants are declined: adverse-action reason codes</h3>
+          <p className="sub">
+            For each of the {fmtInt(R.reasonCodes.rejected)} rejected test applicants, the
+            lab emits up to three principal reasons from a documented mapping of model
+            features to plain language ({fmtInt(R.reasonCodes.totalAssignments)} assignments
+            in total). The most frequent:
+          </p>
+          <table className="data">
+            <thead>
+              <tr>
+                <th>Reason</th>
+                <th>Applicants</th>
+                <th>Share of rejected</th>
+              </tr>
+            </thead>
+            <tbody>
+              {R.reasonCodes.topReasons.map((r) => (
+                <tr key={r.reason}>
+                  <td>{r.reason}</td>
+                  <td className="mono">{fmtInt(r.count)}</td>
+                  <td className="mono">{fmtPct(r.count / R.reasonCodes.rejected, 1)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p className="sub" style={{ marginTop: 10 }}>
+            {R.reasonCodes.basis} Reason codes explain the score; they are not causal
+            findings and not legal notices.
+          </p>
+        </div>
+      </Reveal>
 
       <div style={{ height: 16 }} />
 

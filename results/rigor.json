@@ -1,0 +1,102 @@
+{
+ "generated_from": "Bootstrap: 1000 resamples of each test set, seed 20261104; approval statistics recompute their full procedure per resample. Multi-seed: 5 seeds, each with its own split and model seed.",
+ "bootstrap_seed": 20261104,
+ "n_resamples": 1000,
+ "taiwan": {
+  "champion_auc": {
+   "n_resamples": 1000,
+   "mean": 0.781,
+   "lo95": 0.7693,
+   "hi95": 0.7919,
+   "width": 0.0226
+  },
+  "thin_file_auc": {
+   "n_resamples": 1000,
+   "mean": 0.7687,
+   "lo95": 0.7567,
+   "hi95": 0.7799,
+   "width": 0.0232
+  },
+  "creditworthy_reject_share": {
+   "n_resamples": 1000,
+   "mean": 0.5402,
+   "lo95": 0.4817,
+   "hi95": 0.7759,
+   "width": 0.2942
+  },
+  "second_look_recovery_rate": {
+   "n_resamples": 1000,
+   "mean": 0.0155,
+   "lo95": 0.0029,
+   "hi95": 0.0439,
+   "width": 0.0411
+  }
+ },
+ "german": {
+  "logistic_regression": {
+   "n_resamples": 1000,
+   "mean": 0.8009,
+   "lo95": 0.7391,
+   "hi95": 0.856,
+   "width": 0.1169
+  },
+  "gradient_boosting": {
+   "n_resamples": 1000,
+   "mean": 0.7852,
+   "lo95": 0.7203,
+   "hi95": 0.8437,
+   "width": 0.1234
+  }
+ },
+ "multi_seed": {
+  "seeds": [
+   42,
+   7,
+   123,
+   2024,
+   31337
+  ],
+  "per_seed": [
+   {
+    "seed": 42,
+    "v1_auc": 0.781,
+    "v2_auc": 0.7818,
+    "delta": 0.0008
+   },
+   {
+    "seed": 7,
+    "v1_auc": 0.79,
+    "v2_auc": 0.7893,
+    "delta": -0.0007
+   },
+   {
+    "seed": 123,
+    "v1_auc": 0.7895,
+    "v2_auc": 0.788,
+    "delta": -0.0014
+   },
+   {
+    "seed": 2024,
+    "v1_auc": 0.781,
+    "v2_auc": 0.7798,
+    "delta": -0.0012
+   },
+   {
+    "seed": 31337,
+    "v1_auc": 0.7734,
+    "v2_auc": 0.7729,
+    "delta": -0.0005
+   }
+  ],
+  "v1": {
+   "mean_auc": 0.783,
+   "std_auc": 0.0069
+  },
+  "v2": {
+   "mean_auc": 0.7824,
+   "std_auc": 0.0066
+  },
+  "mean_delta": -0.0006,
+  "h3_verdict_rule": "CONFIRMED if mean(v2) >= mean(v1); REFUTED if mean(v2) < mean(v1) - 0.002; otherwise INCONCLUSIVE (HYPOTHESES.md, H3)."
+ }
+}
