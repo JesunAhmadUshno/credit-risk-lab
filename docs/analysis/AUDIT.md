@@ -30,6 +30,15 @@ now a full freeze of the venv that produced the published results
 xlrd 2.0.2, openpyxl 3.1.5, pytest 9.2.0, plus transitive pins), with
 a header stating what it is. Gap G5, closed.
 
+Pinning exposed a latent CI defect on the first wave-3 push: the
+tests workflow set up Python 3.11, but the frozen environment
+requires Python 3.12 (numpy 2.5.4 and pandas 3.1.1 declare
+Requires-Python >= 3.12), so CI failed at install. Before pinning,
+CI had silently installed whichever older versions fit 3.11 - it was
+never testing the environment that produced the published numbers.
+The workflow now sets up Python 3.12, matching the freeze and the
+development venv.
+
 ## 3. Clean-checkout reproducibility proof
 
 Procedure: the repo was copied to /tmp/repro-check excluding .venv,
