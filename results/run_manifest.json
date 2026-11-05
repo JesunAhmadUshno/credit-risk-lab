@@ -1,0 +1,92 @@
+{
+ "built_at_utc": "2026-11-05T01:24:16.224631+00:00",
+ "finished_at_utc": "2026-11-05T01:31:53.714635+00:00",
+ "git_commit": "fee580d0beee43c76dc57c6c366c211533054956",
+ "complete": true,
+ "steps": [
+  {
+   "step": "pipeline",
+   "seconds": 18.26
+  },
+  {
+   "step": "grading",
+   "seconds": 0.0
+  },
+  {
+   "step": "static_dashboard",
+   "seconds": 0.0
+  },
+  {
+   "step": "scenarios",
+   "seconds": 6.9
+  },
+  {
+   "step": "behavioural_v2",
+   "seconds": 14.03
+  },
+  {
+   "step": "study",
+   "seconds": 7.04
+  },
+  {
+   "step": "second_look",
+   "seconds": 12.46
+  },
+  {
+   "step": "reason_codes",
+   "seconds": 274.09
+  },
+  {
+   "step": "external_validation",
+   "seconds": 2.46
+  },
+  {
+   "step": "validation_pack",
+   "seconds": 6.55
+  },
+  {
+   "step": "monitoring",
+   "seconds": 0.0
+  },
+  {
+   "step": "database",
+   "seconds": 12.89
+  },
+  {
+   "step": "rigor",
+   "seconds": 61.03
+  },
+  {
+   "step": "dashboard_export",
+   "seconds": 41.24
+  }
+ ],
+ "total_seconds": 456.95,
+ "dataset_sha256": {
+  "data/default of credit card clients.xls": "30c6be3abd8dcfd3e6096c828bad8c2f011238620f5369220bd60cfc82700933",
+  "data/german.data": "b21f3d81db8071257d5ff1deaeba1fd4303b62712e6fcc9715c7a86202cb5871"
+ },
+ "output_sha256": {
+  "behavioural_v2.json": "8e5423ad2ca1a22f60cb3bf76c0d32fc7c80f5099ed32175c1f7496d14e8428d",
+  "external_validation.json": "6181802034202c952948355954dff24276a0ead9412a3fcf6837d2e8a00b87e0",
+  "model_grades.json": "d7d19b86698887f3d7c9d2122617561a12f9d19a726ccf1ff925cabde178e1bd",
+  "reason_codes.json": "f93e3f3d086e018af349076fea985fcae4238fa2d549654bd48aed6619a24597",
+  "results.json": "bfcc45b3b88ed2ce28b0633fa5ff2e9676ef73322fe73218b488f1a60fd887bd",
+  "rigor.json": "73bcd4b28dab176023b67c19781c08d4dfa7b91c2cb6732c536d1247a6a1844e",
+  "scenarios.json": "6f494ae4782f4a7065d9e27207e792c2f2e470b4520c5bc26f8700b0906c985e",
+  "second_look.json": "97528c9a91d6dbf347ba522454289d5c4acebf16aafdbf7ae9e32723c9e48cff",
+  "study.json": "0705628aa3dbe0dac66daaa7f39d23669aa15c21115cd1339a6af08e8d68a69f"
+ },
+ "invariants_verified": {
+  "logistic_auc": 0.7518,
+  "champion_auc": 0.781,
+  "champion_ks": 0.4196,
+  "staging_counts": [
+   22099,
+   7438,
+   463
+  ],
+  "baseline_ecl": 187548414.49,
+  "weighted_ecl": 192303983.68
+ }
+}

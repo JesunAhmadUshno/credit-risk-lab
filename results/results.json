@@ -382,7 +382,50 @@
     "non_default": 0,
     "default": 0
    }
-  ]
+  ],
+  "hosmer_lemeshow": {
+   "logistic_regression": {
+    "statistic": 14.707,
+    "dof": 8,
+    "p_value": 0.0651,
+    "groups": 10
+   },
+   "gradient_boosting": {
+    "statistic": 22.54,
+    "dof": 8,
+    "p_value": 0.004,
+    "groups": 10
+   }
+  },
+  "csi_per_feature": {
+   "LIMIT_BAL": 0.0008,
+   "AGE": 0.0007,
+   "BILL_AMT1": 0.0007,
+   "PAY_AMT1": 0.0015,
+   "utilization": 0.0007,
+   "pay_ratio": 0.0009,
+   "delinq_mean": 0.0002,
+   "delinq_max": 0.0003,
+   "bill_trend": 0.0009,
+   "PAY_0": 0.0003,
+   "PAY_2": 0.0,
+   "PAY_3": 0.0001,
+   "PAY_4": 0.0002,
+   "PAY_5": 0.0002,
+   "PAY_6": 0.0003,
+   "SEX": 0.0,
+   "EDUCATION": 0.0008,
+   "MARRIAGE": 0.0001
+  },
+  "auc_ci95": {
+   "champion_gradient_boosting": {
+    "n_resamples": 1000,
+    "mean": 0.781,
+    "lo95": 0.7693,
+    "hi95": 0.7919,
+    "width": 0.0226
+   }
+  }
  },
  "staging": {
   "policy": "Stage 3: PAY_0 >= 3 (90+ DPD proxy). Stage 2: PAY_0 >= 1 (30+ DPD) or PD >= 2.0x median PD and > 0.1. Stage 1: rest.",
