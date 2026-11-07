@@ -1,5 +1,8 @@
 name: Deploy dashboard to GitHub Pages
 
+# Publishes two builds in one Pages artifact:
+#   /credit-risk-lab/      the React app in web/ (unchanged)
+#   /credit-risk-lab/lab/  the Lab OS dashboard in site/, built from results/*.json
 on:
   push:
     branches: [main]
@@ -26,12 +29,23 @@ jobs:
         with:
           node-version: 24
           cache: npm
-          cache-dependency-path: web/package-lock.json
-      - name: Install and build
+          cache-dependency-path: |
+            web/package-lock.json
+            site/package-lock.json
+      - name: Install and build web/ (root app)
         working-directory: web
         run: |
           npm ci
           npm run build
+      - name: Install and build site/ (Lab OS dashboard, runs the known-answer check first)
+        working-directory: site
+        run: |
+          npm ci
+          npm run build
+      - name: Place site/ under /lab/
+        run: |
+          test ! -e web/dist/lab
+          cp -r site/dist web/dist/lab
       - uses: actions/upload-pages-artifact@v3
         with:
           path: web/dist
