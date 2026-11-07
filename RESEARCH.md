@@ -145,12 +145,12 @@ takes a different route: it leaves the champion and its cut-off untouched,
 re-scores only the rejects with a second, independent model restricted to
 behavioural evidence (the thin-file model), and approves a reject when
 that behavioural score is at least as strong as the median approved
-applicant's (band threshold: thin-file PD 0.1144). Nothing is re-labelled;
+applicant's (band threshold: thin-file PD 0.1170). Nothing is re-labelled;
 the policy's cost is measured on observed outcomes instead of assumed.
 Measured, the pre-registered version of the policy is nearly empty: it
-recovered 21 of 2,625 rejects - 17 creditworthy applicants, 1.2% of all
-creditworthy rejects - at the price of 4 admitted defaults, moving the
-approved book's default rate from 12.00% to 12.02% (+0.02 percentage
+recovered 13 of 2,386 rejects - 10 creditworthy applicants, 0.8% of all
+creditworthy rejects - at the price of 3 admitted defaults, moving the
+approved book's default rate from 12.44% to 12.46% (+0.02 percentage
 points). H1 is therefore REFUTED on its recovery bound (15%), and the
 refutation is the finding: behavioural and champion scores are
 correlated, so almost no reject carries approved-median behavioural
@@ -178,11 +178,10 @@ not about any real book.
 **Intervals on the headline numbers** (1,000 bootstrap resamples, fixed
 seed; results/rigor.json): champion AUC 0.7810, 95% CI 0.7693 to 0.7919;
 thin-file AUC 0.7687, CI 0.7567 to 0.7799; creditworthy-reject share
-53.3%, CI 48.2% to 77.6% - wide, because every resample re-runs the whole
-procedure including cut-off selection, and the selected cut-off is
-jumpier than the share it produces; the interval prices the procedure,
-not just the proportion. The second-look recovery rate of 1.2% carries
-CI 0.3% to 4.4%: small under every resample, which is what makes the H1
+51.0%, CI 45.9% to 55.4% - every resample re-runs the whole procedure
+including cut-off selection, so the interval prices the procedure, not
+just the proportion. The second-look recovery rate of 0.8% carries
+CI 0.0% to 1.8%: small under every resample, which is what makes the H1
 refutation solid rather than a knife-edge call. Across five seeds (each
 with its own split), champion AUC averaged 0.7830 (std 0.0069) and
 behavioural v2 averaged 0.7824 (std 0.0066), mean delta -0.0006: H3 is

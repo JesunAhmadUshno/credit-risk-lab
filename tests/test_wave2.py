@@ -69,6 +69,21 @@ def test_study_cutoff_holds_stage1_risk_appetite():
     assert abs(a["achieved_approved_default_rate"] - target) < 0.01
 
 
+def test_study_target_is_the_observed_stage1_rate_not_a_rounded_one():
+    # The risk appetite is "the Stage 1 observed default rate". Recompute
+    # it from the champion's staging and check the study used it, not a
+    # 2-dp rounding (0.12 instead of 0.1244 moves the cut-off).
+    cfg = pipe.load_config()
+    df = pipe.add_features(pipe.load())
+    X, y = df[pipe.FEATURES + pipe.CATS], df["default"]
+    champ = pipe.make_pipe(study._gbm(int(cfg["seed"]))).fit(X, y)
+    staged = pipe.staging(df, champ.predict_proba(X)[:, 1], cfg=cfg)
+    observed = float(staged.loc[staged["stage"] == 1, "default"].mean())
+    target = STUDY["creditworthy_rejects"]["risk_appetite"][
+        "target_approved_default_rate"]
+    assert abs(target - observed) < 1e-6, (target, observed)
+
+
 def test_thin_file_auc_in_range():
     b = STUDY["thin_file"]
     assert 0.5 < b["auc"] <= b["full_model_auc"] + 0.05

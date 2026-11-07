@@ -1,8 +1,8 @@
 {
  "generated_from": "Champion model, same split and seed as the published run. Permutation importance on the test set (AUC drop, 5 repeats); per-applicant factors under the two-tier rule documented in src/reason_codes.py.",
  "label": "Reason codes are model-derived explanations of the score, not causal findings, and not legal adverse-action notices.",
- "cutoff_pd": 0.2293,
- "rejected_applicants": 2625,
+ "cutoff_pd": 0.247824,
+ "rejected_applicants": 2386,
  "reasons_per_applicant": 3,
  "reason_map": {
   "utilization": "High utilisation: the statement balance is high relative to the credit limit",
@@ -57,68 +57,68 @@
   {
    "feature": "dpd_months",
    "reason": "Payment delay in the most recent month",
-   "count": 1831,
-   "share_of_rejected": 0.6975,
+   "count": 1770,
+   "share_of_rejected": 0.7418,
    "permutation_importance": 0.037
   },
   {
    "feature": "delinq_max",
    "reason": "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "count": 1468,
-   "share_of_rejected": 0.5592,
+   "count": 1325,
+   "share_of_rejected": 0.5553,
    "permutation_importance": 0.0098
   },
   {
    "feature": "delinq_mean",
    "reason": "Repeated payment delays across the last six months",
-   "count": 1280,
-   "share_of_rejected": 0.4876,
+   "count": 1232,
+   "share_of_rejected": 0.5163,
    "permutation_importance": 0.019
   },
   {
    "feature": "PAY_AMT1",
    "reason": "Low most recent payment amount",
-   "count": 1172,
-   "share_of_rejected": 0.4465,
+   "count": 1021,
+   "share_of_rejected": 0.4279,
    "permutation_importance": 0.0132
   },
   {
    "feature": "utilization",
    "reason": "High utilisation: the statement balance is high relative to the credit limit",
-   "count": 675,
-   "share_of_rejected": 0.2571,
+   "count": 631,
+   "share_of_rejected": 0.2645,
    "permutation_importance": 0.0134
-  },
-  {
-   "feature": "LIMIT_BAL",
-   "reason": "Low credit limit relative to approved applicants",
-   "count": 582,
-   "share_of_rejected": 0.2217,
-   "permutation_importance": 0.0069
   },
   {
    "feature": "BILL_AMT1",
    "reason": "High current statement balance",
-   "count": 489,
-   "share_of_rejected": 0.1863,
+   "count": 474,
+   "share_of_rejected": 0.1987,
    "permutation_importance": 0.0207
+  },
+  {
+   "feature": "LIMIT_BAL",
+   "reason": "Low credit limit relative to approved applicants",
+   "count": 468,
+   "share_of_rejected": 0.1961,
+   "permutation_importance": 0.0069
   },
   {
    "feature": "pay_ratio",
    "reason": "Low repayment ratio: recent payments cover a small share of the statement balance",
-   "count": 154,
-   "share_of_rejected": 0.0587,
+   "count": 130,
+   "share_of_rejected": 0.0545,
    "permutation_importance": 0.0012
   },
   {
    "feature": "bill_trend",
    "reason": "Rising balance trend over the last six months",
-   "count": 34,
-   "share_of_rejected": 0.013,
+   "count": 24,
+   "share_of_rejected": 0.0101,
    "permutation_importance": 0.0029
   }
  ],
- "total_reason_assignments": 7685,
+ "total_reason_assignments": 7075,
  "per_applicant": {
   "17619": [
    "Low most recent payment amount",
@@ -133,9 +133,6 @@
   "23469": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
-   "Low most recent payment amount"
-  ],
-  "4907": [
    "Low most recent payment amount"
   ],
   "29235": [
@@ -223,11 +220,6 @@
    "Low credit limit relative to approved applicants",
    "Repeated payment delays across the last six months"
   ],
-  "27940": [
-   "Payment delay in the most recent month",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Repeated payment delays across the last six months"
-  ],
   "2752": [
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -288,11 +280,6 @@
    "Repeated payment delays across the last six months",
    "High utilisation: the statement balance is high relative to the credit limit"
   ],
-  "20564": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
-  ],
   "16595": [
    "Repeated payment delays across the last six months",
    "Low most recent payment amount",
@@ -313,19 +300,10 @@
    "High current statement balance",
    "Repeated payment delays across the last six months"
   ],
-  "23464": [
-   "Low credit limit relative to approved applicants",
-   "Low most recent payment amount"
-  ],
   "11667": [
    "Payment delay in the most recent month",
    "High current statement balance",
    "High utilisation: the statement balance is high relative to the credit limit"
-  ],
-  "7421": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "14523": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -461,15 +439,6 @@
    "Repeated payment delays across the last six months",
    "High utilisation: the statement balance is high relative to the credit limit"
   ],
-  "28458": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
-  ],
-  "16546": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
-  ],
   "5350": [
    "Payment delay in the most recent month",
    "High current statement balance",
@@ -535,11 +504,6 @@
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
-  "8784": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants",
-   "Rising balance trend over the last six months"
-  ],
   "25364": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
@@ -559,11 +523,6 @@
    "Payment delay in the most recent month",
    "High current statement balance",
    "Repeated payment delays across the last six months"
-  ],
-  "18691": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "11150": [
    "Payment delay in the most recent month",
@@ -594,11 +553,6 @@
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "24750": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
   ],
   "66": [
    "High current statement balance",
@@ -658,11 +612,6 @@
    "Payment delay in the most recent month",
    "High current statement balance",
    "High utilisation: the statement balance is high relative to the credit limit"
-  ],
-  "19991": [
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
   ],
   "3868": [
    "Payment delay in the most recent month",
@@ -762,11 +711,6 @@
    "High current statement balance",
    "Repeated payment delays across the last six months",
    "High utilisation: the statement balance is high relative to the credit limit"
-  ],
-  "20658": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
   ],
   "22727": [
    "Payment delay in the most recent month",
@@ -873,15 +817,6 @@
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
-  "20913": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
-  ],
-  "2573": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Repeated payment delays across the last six months",
-   "Low most recent payment amount"
-  ],
   "24759": [
    "Payment delay in the most recent month",
    "High current statement balance",
@@ -922,11 +857,6 @@
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
-  "4983": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
   "13873": [
    "Payment delay in the most recent month",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -946,11 +876,6 @@
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Repeated payment delays across the last six months"
-  ],
-  "13850": [
-   "High current statement balance",
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "15209": [
    "High current statement balance",
@@ -981,16 +906,6 @@
    "Repeated payment delays across the last six months",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low credit limit relative to approved applicants"
-  ],
-  "14791": [
-   "Low credit limit relative to approved applicants",
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
-  ],
-  "921": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "6745": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -1051,9 +966,6 @@
    "Repeated payment delays across the last six months",
    "High utilisation: the statement balance is high relative to the credit limit"
   ],
-  "26496": [
-   "Low most recent payment amount"
-  ],
   "24989": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
@@ -1068,11 +980,6 @@
    "Repeated payment delays across the last six months",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low repayment ratio: recent payments cover a small share of the statement balance"
-  ],
-  "10020": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
   ],
   "8144": [
    "Low most recent payment amount",
@@ -1112,11 +1019,6 @@
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
    "Low most recent payment amount"
-  ],
-  "14365": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Repeated payment delays across the last six months",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
   ],
   "28164": [
    "Payment delay in the most recent month",
@@ -1312,11 +1214,6 @@
    "Low most recent payment amount",
    "Low credit limit relative to approved applicants"
   ],
-  "7207": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Repeated payment delays across the last six months",
-   "Low most recent payment amount"
-  ],
   "20473": [
    "Payment delay in the most recent month",
    "High current statement balance",
@@ -1456,11 +1353,6 @@
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
-  "12387": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
   "20573": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low credit limit relative to approved applicants",
@@ -1546,10 +1438,6 @@
    "High current statement balance",
    "High utilisation: the statement balance is high relative to the credit limit"
   ],
-  "16070": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
-  ],
   "15811": [
    "Payment delay in the most recent month",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -1573,11 +1461,6 @@
    "Payment delay in the most recent month",
    "High current statement balance",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "2643": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants",
-   "Repeated payment delays across the last six months"
   ],
   "10900": [
    "Payment delay in the most recent month",
@@ -1613,14 +1496,6 @@
    "Payment delay in the most recent month",
    "High current statement balance",
    "High utilisation: the statement balance is high relative to the credit limit"
-  ],
-  "7061": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Repeated payment delays across the last six months",
-   "Low credit limit relative to approved applicants"
-  ],
-  "18296": [
-   "Low most recent payment amount"
   ],
   "17295": [
    "Payment delay in the most recent month",
@@ -1701,11 +1576,6 @@
    "Repeated payment delays across the last six months",
    "Low most recent payment amount"
   ],
-  "26210": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
   "4915": [
    "Payment delay in the most recent month",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -1761,15 +1631,6 @@
    "Low credit limit relative to approved applicants",
    "Repeated payment delays across the last six months"
   ],
-  "28248": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
-  ],
-  "23010": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
-  ],
   "19285": [
    "Payment delay in the most recent month",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -1784,9 +1645,6 @@
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low repayment ratio: recent payments cover a small share of the statement balance"
-  ],
-  "5671": [
-   "Low most recent payment amount"
   ],
   "25178": [
    "Payment delay in the most recent month",
@@ -1828,11 +1686,6 @@
    "Repeated payment delays across the last six months",
    "Low most recent payment amount"
   ],
-  "16884": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
   "19249": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
@@ -1856,11 +1709,6 @@
   "23754": [
    "Low most recent payment amount",
    "Low credit limit relative to approved applicants"
-  ],
-  "5544": [
-   "Payment delay in the most recent month",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Repeated payment delays across the last six months"
   ],
   "6396": [
    "Low most recent payment amount",
@@ -1907,14 +1755,6 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low credit limit relative to approved applicants"
   ],
-  "6805": [
-   "Low most recent payment amount"
-  ],
-  "1480": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
   "11697": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Repeated payment delays across the last six months",
@@ -1934,10 +1774,6 @@
    "Payment delay in the most recent month",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Repeated payment delays across the last six months"
-  ],
-  "8389": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
   ],
   "21241": [
    "Payment delay in the most recent month",
@@ -2024,18 +1860,10 @@
    "Repeated payment delays across the last six months",
    "High utilisation: the statement balance is high relative to the credit limit"
   ],
-  "26472": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
-  ],
   "17731": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "13413": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
   ],
   "3333": [
    "Low most recent payment amount"
@@ -2082,11 +1910,6 @@
   "21287": [
    "Low most recent payment amount",
    "Low credit limit relative to approved applicants"
-  ],
-  "24861": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Repeated payment delays across the last six months",
-   "Low most recent payment amount"
   ],
   "26707": [
    "Payment delay in the most recent month",
@@ -2192,10 +2015,6 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Repeated payment delays across the last six months"
   ],
-  "22867": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
-  ],
   "17924": [
    "Payment delay in the most recent month",
    "High utilisation: the statement balance is high relative to the credit limit",
@@ -2269,11 +2088,6 @@
    "High current statement balance",
    "Repeated payment delays across the last six months"
   ],
-  "1861": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
-  ],
   "8399": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
@@ -2299,20 +2113,10 @@
    "Repeated payment delays across the last six months",
    "High utilisation: the statement balance is high relative to the credit limit"
   ],
-  "17243": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Repeated payment delays across the last six months",
-   "Low credit limit relative to approved applicants"
-  ],
   "4437": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "27116": [
-   "Payment delay in the most recent month",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Repeated payment delays across the last six months"
   ],
   "29317": [
    "Payment delay in the most recent month",
@@ -2449,11 +2253,6 @@
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
-  "27605": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
-  ],
   "5787": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
@@ -2579,11 +2378,6 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low credit limit relative to approved applicants"
   ],
-  "25813": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
-  ],
   "3469": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
@@ -2627,10 +2421,6 @@
    "High current statement balance",
    "Repeated payment delays across the last six months"
   ],
-  "4055": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
-  ],
   "9857": [
    "Payment delay in the most recent month",
    "High utilisation: the statement balance is high relative to the credit limit",
@@ -2640,11 +2430,6 @@
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
    "Low most recent payment amount"
-  ],
-  "15312": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "25421": [
    "Payment delay in the most recent month",
@@ -2665,11 +2450,6 @@
    "Payment delay in the most recent month",
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "12882": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Repeated payment delays across the last six months",
-   "Low credit limit relative to approved applicants"
   ],
   "29085": [
    "Low most recent payment amount"
@@ -2709,10 +2489,6 @@
    "Repeated payment delays across the last six months",
    "Low most recent payment amount"
   ],
-  "15713": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
-  ],
   "16527": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
@@ -2727,11 +2503,6 @@
    "Repeated payment delays across the last six months",
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "7603": [
-   "Low credit limit relative to approved applicants",
-   "Rising balance trend over the last six months",
-   "Low most recent payment amount"
   ],
   "4895": [
    "Payment delay in the most recent month",
@@ -2861,11 +2632,6 @@
    "Payment delay in the most recent month",
    "High current statement balance",
    "Repeated payment delays across the last six months"
-  ],
-  "26662": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
   ],
   "5171": [
    "Payment delay in the most recent month",
@@ -3091,11 +2857,6 @@
    "Repeated payment delays across the last six months",
    "High utilisation: the statement balance is high relative to the credit limit"
   ],
-  "25968": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
   "2426": [
    "Repeated payment delays across the last six months",
    "High utilisation: the statement balance is high relative to the credit limit",
@@ -3116,11 +2877,6 @@
    "Repeated payment delays across the last six months",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
-  "1035": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
   "20386": [
    "Payment delay in the most recent month",
    "High utilisation: the statement balance is high relative to the credit limit",
@@ -3135,11 +2891,6 @@
    "Payment delay in the most recent month",
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "17628": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
   ],
   "24193": [
    "Payment delay in the most recent month",
@@ -3171,17 +2922,7 @@
    "Repeated payment delays across the last six months",
    "Low most recent payment amount"
   ],
-  "27324": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
-  ],
   "23261": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "2395": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
@@ -3214,9 +2955,6 @@
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
    "High utilisation: the statement balance is high relative to the credit limit"
-  ],
-  "11195": [
-   "Low most recent payment amount"
   ],
   "11453": [
    "Payment delay in the most recent month",
@@ -3348,9 +3086,6 @@
    "Repeated payment delays across the last six months",
    "Low most recent payment amount"
   ],
-  "23774": [
-   "Low most recent payment amount"
-  ],
   "17626": [
    "Payment delay in the most recent month",
    "High current statement balance",
@@ -3370,11 +3105,6 @@
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low repayment ratio: recent payments cover a small share of the statement balance"
-  ],
-  "17376": [
-   "Payment delay in the most recent month",
-   "High current statement balance",
-   "Low most recent payment amount"
   ],
   "27676": [
    "Payment delay in the most recent month",
@@ -3425,10 +3155,6 @@
    "Payment delay in the most recent month",
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "5844": [
-   "Low credit limit relative to approved applicants",
-   "Low most recent payment amount"
   ],
   "10134": [
    "Payment delay in the most recent month",
@@ -3610,11 +3336,6 @@
    "High current statement balance",
    "Repeated payment delays across the last six months"
   ],
-  "8065": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants",
-   "Rising balance trend over the last six months"
-  ],
   "10871": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
@@ -3674,11 +3395,6 @@
    "Payment delay in the most recent month",
    "Low most recent payment amount",
    "Low credit limit relative to approved applicants"
-  ],
-  "6003": [
-   "High current statement balance",
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "2156": [
    "Payment delay in the most recent month",
@@ -3769,11 +3485,6 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low repayment ratio: recent payments cover a small share of the statement balance"
   ],
-  "10624": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants",
-   "Repeated payment delays across the last six months"
-  ],
   "23823": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Repeated payment delays across the last six months",
@@ -3788,11 +3499,6 @@
    "Payment delay in the most recent month",
    "High current statement balance",
    "Low most recent payment amount"
-  ],
-  "14627": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
   ],
   "2495": [
    "Payment delay in the most recent month",
@@ -3828,11 +3534,6 @@
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "20482": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
   ],
   "1814": [
    "Payment delay in the most recent month",
@@ -3894,11 +3595,6 @@
    "Repeated payment delays across the last six months",
    "Low most recent payment amount"
   ],
-  "4706": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
   "1358": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
@@ -3942,11 +3638,6 @@
   "4573": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "17507": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "5585": [
@@ -4107,11 +3798,6 @@
    "Repeated payment delays across the last six months",
    "High utilisation: the statement balance is high relative to the credit limit"
   ],
-  "24218": [
-   "Payment delay in the most recent month",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Repeated payment delays across the last six months"
-  ],
   "14862": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
@@ -4120,11 +3806,6 @@
   "9316": [
    "High current statement balance",
    "Repeated payment delays across the last six months",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "17121": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "15546": [
@@ -4236,9 +3917,6 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low repayment ratio: recent payments cover a small share of the statement balance"
   ],
-  "19417": [
-   "Low most recent payment amount"
-  ],
   "6456": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
@@ -4253,11 +3931,6 @@
    "Payment delay in the most recent month",
    "High utilisation: the statement balance is high relative to the credit limit",
    "Low most recent payment amount"
-  ],
-  "12513": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "24768": [
    "Payment delay in the most recent month",
@@ -4368,16 +4041,6 @@
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low repayment ratio: recent payments cover a small share of the statement balance"
-  ],
-  "18089": [
-   "High current statement balance",
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "21897": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "16946": [
    "Payment delay in the most recent month",
@@ -4509,9 +4172,6 @@
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
-  "28188": [
-   "Low most recent payment amount"
-  ],
   "2894": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
@@ -4521,11 +4181,6 @@
    "Payment delay in the most recent month",
    "High current statement balance",
    "High utilisation: the statement balance is high relative to the credit limit"
-  ],
-  "27972": [
-   "Repeated payment delays across the last six months",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
   ],
   "14741": [
    "Payment delay in the most recent month",
@@ -4681,11 +4336,6 @@
    "High current statement balance",
    "Repeated payment delays across the last six months"
   ],
-  "16273": [
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
-  ],
   "13390": [
    "Repeated payment delays across the last six months",
    "Low most recent payment amount",
@@ -4756,11 +4406,6 @@
    "Low credit limit relative to approved applicants",
    "Repeated payment delays across the last six months"
   ],
-  "25731": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
-  ],
   "15017": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
@@ -4781,11 +4426,6 @@
    "High current statement balance",
    "High utilisation: the statement balance is high relative to the credit limit"
   ],
-  "4612": [
-   "Repeated payment delays across the last six months",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
-  ],
   "8118": [
    "Payment delay in the most recent month",
    "High current statement balance",
@@ -4795,9 +4435,6 @@
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "26857": [
-   "Low most recent payment amount"
   ],
   "22898": [
    "Payment delay in the most recent month",
@@ -4854,10 +4491,6 @@
    "Repeated payment delays across the last six months",
    "High utilisation: the statement balance is high relative to the credit limit"
   ],
-  "17808": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
-  ],
   "11888": [
    "Payment delay in the most recent month",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -4878,11 +4511,6 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low credit limit relative to approved applicants"
   ],
-  "14186": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
   "17847": [
    "Payment delay in the most recent month",
    "High current statement balance",
@@ -4898,16 +4526,6 @@
    "Low credit limit relative to approved applicants",
    "Low repayment ratio: recent payments cover a small share of the statement balance"
   ],
-  "712": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Low credit limit relative to approved applicants",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
-  ],
-  "6565": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
-  ],
   "13498": [
    "Low most recent payment amount",
    "Low credit limit relative to approved applicants"
@@ -4916,9 +4534,6 @@
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "2635": [
-   "Low most recent payment amount"
   ],
   "5714": [
    "Payment delay in the most recent month",
@@ -4979,11 +4594,6 @@
    "Payment delay in the most recent month",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low repayment ratio: recent payments cover a small share of the statement balance"
-  ],
-  "8357": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "5737": [
    "Payment delay in the most recent month",
@@ -5068,11 +4678,6 @@
    "High utilisation: the statement balance is high relative to the credit limit",
    "Low most recent payment amount"
   ],
-  "20127": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants",
-   "Repeated payment delays across the last six months"
-  ],
   "26527": [
    "High utilisation: the statement balance is high relative to the credit limit",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -5123,9 +4728,6 @@
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
-  "15337": [
-   "Low most recent payment amount"
-  ],
   "27794": [
    "Payment delay in the most recent month",
    "High current statement balance",
@@ -5135,10 +4737,6 @@
    "Payment delay in the most recent month",
    "High utilisation: the statement balance is high relative to the credit limit",
    "Low most recent payment amount"
-  ],
-  "2053": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
   ],
   "8426": [
    "Payment delay in the most recent month",
@@ -5158,11 +4756,6 @@
   "15152": [
    "Payment delay in the most recent month",
    "High current statement balance",
-   "Repeated payment delays across the last six months"
-  ],
-  "13404": [
-   "Payment delay in the most recent month",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Repeated payment delays across the last six months"
   ],
   "4008": [
@@ -5225,11 +4818,6 @@
    "High current statement balance",
    "Repeated payment delays across the last six months"
   ],
-  "9557": [
-   "High current statement balance",
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
   "28033": [
    "Payment delay in the most recent month",
    "High utilisation: the statement balance is high relative to the credit limit",
@@ -5274,10 +4862,6 @@
    "High current statement balance",
    "Repeated payment delays across the last six months"
   ],
-  "20843": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
-  ],
   "17394": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
@@ -5292,11 +4876,6 @@
    "Payment delay in the most recent month",
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "11757": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
   ],
   "1470": [
    "Payment delay in the most recent month",
@@ -5327,11 +4906,6 @@
    "Repeated payment delays across the last six months",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
-  "10120": [
-   "High current statement balance",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
-  ],
   "21226": [
    "Payment delay in the most recent month",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -5346,16 +4920,6 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low credit limit relative to approved applicants",
    "Repeated payment delays across the last six months"
-  ],
-  "26008": [
-   "High current statement balance",
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "5016": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "11334": [
    "Payment delay in the most recent month",
@@ -5391,9 +4955,6 @@
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low repayment ratio: recent payments cover a small share of the statement balance"
-  ],
-  "19298": [
-   "Low most recent payment amount"
   ],
   "14692": [
    "Payment delay in the most recent month",
@@ -5474,10 +5035,6 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Repeated payment delays across the last six months"
   ],
-  "28505": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
-  ],
   "13201": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
@@ -5512,11 +5069,6 @@
    "Payment delay in the most recent month",
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "10790": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Rising balance trend over the last six months"
   ],
   "15951": [
    "Payment delay in the most recent month",
@@ -5732,10 +5284,6 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low repayment ratio: recent payments cover a small share of the statement balance"
   ],
-  "4597": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
-  ],
   "5254": [
    "Low most recent payment amount"
   ],
@@ -5818,18 +5366,10 @@
    "Low most recent payment amount",
    "Low credit limit relative to approved applicants"
   ],
-  "6244": [
-   "High current statement balance",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
-  ],
   "20738": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
    "High utilisation: the statement balance is high relative to the credit limit"
-  ],
-  "18114": [
-   "Low most recent payment amount"
   ],
   "3590": [
    "Payment delay in the most recent month",
@@ -5840,11 +5380,6 @@
    "Payment delay in the most recent month",
    "High current statement balance",
    "High utilisation: the statement balance is high relative to the credit limit"
-  ],
-  "14154": [
-   "Low credit limit relative to approved applicants",
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
   ],
   "20991": [
    "Payment delay in the most recent month",
@@ -5883,11 +5418,6 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low repayment ratio: recent payments cover a small share of the statement balance",
    "Repeated payment delays across the last six months"
-  ],
-  "26660": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
   ],
   "19271": [
    "Payment delay in the most recent month",
@@ -5929,11 +5459,6 @@
    "Low credit limit relative to approved applicants",
    "Repeated payment delays across the last six months"
   ],
-  "15310": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
   "15025": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
@@ -5953,16 +5478,6 @@
    "High current statement balance",
    "Repeated payment delays across the last six months",
    "Low most recent payment amount"
-  ],
-  "16758": [
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Rising balance trend over the last six months"
-  ],
-  "3358": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants",
-   "Rising balance trend over the last six months"
   ],
   "22064": [
    "High current statement balance",
@@ -6042,18 +5557,6 @@
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "14271": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
-  ],
-  "636": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
-  ],
-  "24369": [
-   "Low most recent payment amount"
   ],
   "6951": [
    "Repeated payment delays across the last six months",
@@ -6157,11 +5660,6 @@
    "High current statement balance",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
-  "4921": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
-  ],
   "20978": [
    "Payment delay in the most recent month",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -6181,16 +5679,6 @@
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
    "High utilisation: the statement balance is high relative to the credit limit"
-  ],
-  "17739": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
-  ],
-  "24993": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "3720": [
    "Low most recent payment amount",
@@ -6247,11 +5735,6 @@
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
-  "2924": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Repeated payment delays across the last six months",
-   "Low credit limit relative to approved applicants"
-  ],
   "9074": [
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -6271,11 +5754,6 @@
    "Repeated payment delays across the last six months",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low credit limit relative to approved applicants"
-  ],
-  "22706": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "21973": [
    "Payment delay in the most recent month",
@@ -6311,11 +5789,6 @@
    "Repeated payment delays across the last six months",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low credit limit relative to approved applicants"
-  ],
-  "20988": [
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
   ],
   "27350": [
    "Low most recent payment amount",
@@ -6387,11 +5860,6 @@
    "High current statement balance",
    "High utilisation: the statement balance is high relative to the credit limit"
   ],
-  "6547": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
-  ],
   "14500": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
@@ -6411,9 +5879,6 @@
    "Payment delay in the most recent month",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low credit limit relative to approved applicants"
-  ],
-  "27461": [
-   "Low most recent payment amount"
   ],
   "29710": [
    "Low most recent payment amount",
@@ -6475,10 +5940,6 @@
    "Repeated payment delays across the last six months",
    "High utilisation: the statement balance is high relative to the credit limit"
   ],
-  "9727": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
-  ],
   "16447": [
    "Repeated payment delays across the last six months",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -6524,19 +5985,10 @@
    "Repeated payment delays across the last six months",
    "High utilisation: the statement balance is high relative to the credit limit"
   ],
-  "9942": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
-  ],
   "28021": [
    "Payment delay in the most recent month",
    "High current statement balance",
    "High utilisation: the statement balance is high relative to the credit limit"
-  ],
-  "17283": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
   ],
   "23356": [
    "Payment delay in the most recent month",
@@ -6577,11 +6029,6 @@
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
    "Low most recent payment amount"
-  ],
-  "2657": [
-   "Repeated payment delays across the last six months",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
   ],
   "29941": [
    "Payment delay in the most recent month",
@@ -6665,11 +6112,6 @@
   ],
   "29088": [
    "Repeated payment delays across the last six months",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
-  ],
-  "23913": [
-   "High utilisation: the statement balance is high relative to the credit limit",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low credit limit relative to approved applicants"
   ],
@@ -6903,11 +6345,6 @@
    "Repeated payment delays across the last six months",
    "Low most recent payment amount"
   ],
-  "15954": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
   "2836": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
@@ -6918,25 +6355,10 @@
    "Repeated payment delays across the last six months",
    "Low most recent payment amount"
   ],
-  "16013": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
   "6077": [
    "Payment delay in the most recent month",
    "High current statement balance",
    "High utilisation: the statement balance is high relative to the credit limit"
-  ],
-  "17427": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
-  ],
-  "8372": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "15652": [
    "Payment delay in the most recent month",
@@ -6947,11 +6369,6 @@
    "Payment delay in the most recent month",
    "High current statement balance",
    "Repeated payment delays across the last six months"
-  ],
-  "11989": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "21992": [
    "Low most recent payment amount",
@@ -7048,11 +6465,6 @@
    "High current statement balance",
    "High utilisation: the statement balance is high relative to the credit limit"
   ],
-  "19059": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
-  ],
   "22403": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
@@ -7093,9 +6505,6 @@
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
-  "2608": [
-   "Low most recent payment amount"
-  ],
   "1497": [
    "Payment delay in the most recent month",
    "High current statement balance",
@@ -7115,10 +6524,6 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low credit limit relative to approved applicants",
    "Repeated payment delays across the last six months"
-  ],
-  "16328": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
   ],
   "20291": [
    "Payment delay in the most recent month",
@@ -7328,11 +6733,6 @@
    "High current statement balance",
    "Repeated payment delays across the last six months"
   ],
-  "25143": [
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Repeated payment delays across the last six months"
-  ],
   "17232": [
    "High current statement balance",
    "High utilisation: the statement balance is high relative to the credit limit",
@@ -7483,11 +6883,6 @@
    "High current statement balance",
    "High utilisation: the statement balance is high relative to the credit limit"
   ],
-  "28124": [
-   "High current statement balance",
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
   "2102": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
@@ -7497,10 +6892,6 @@
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
    "Low most recent payment amount"
-  ],
-  "26319": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
   ],
   "25388": [
    "Payment delay in the most recent month",
@@ -7597,11 +6988,6 @@
    "High utilisation: the statement balance is high relative to the credit limit",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
-  "23914": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
-  ],
   "5122": [
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -7622,11 +7008,6 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low credit limit relative to approved applicants"
   ],
-  "27190": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
   "18017": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low credit limit relative to approved applicants",
@@ -7645,10 +7026,6 @@
   "16525": [
    "Repeated payment delays across the last six months",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
-  ],
-  "6347": [
-   "Low most recent payment amount",
    "Low credit limit relative to approved applicants"
   ],
   "17461": [
@@ -7725,11 +7102,6 @@
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "7044": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
   ],
   "12820": [
    "Payment delay in the most recent month",
@@ -7911,11 +7283,6 @@
    "High current statement balance",
    "Low most recent payment amount"
   ],
-  "1198": [
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Rising balance trend over the last six months"
-  ],
   "2433": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
@@ -7941,11 +7308,6 @@
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
-  "478": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Rising balance trend over the last six months"
-  ],
   "749": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
@@ -7955,10 +7317,6 @@
    "Payment delay in the most recent month",
    "High utilisation: the statement balance is high relative to the credit limit",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "17622": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
   ],
   "15425": [
    "Payment delay in the most recent month",
@@ -8064,9 +7422,6 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low repayment ratio: recent payments cover a small share of the statement balance"
   ],
-  "6822": [
-   "Low most recent payment amount"
-  ],
   "4190": [
    "Repeated payment delays across the last six months",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -8139,11 +7494,6 @@
    "Payment delay in the most recent month",
    "High current statement balance",
    "High utilisation: the statement balance is high relative to the credit limit"
-  ],
-  "5146": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "502": [
    "Payment delay in the most recent month",
@@ -8237,20 +7587,10 @@
    "Low most recent payment amount",
    "Low credit limit relative to approved applicants"
   ],
-  "10389": [
-   "Low credit limit relative to approved applicants",
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Low most recent payment amount"
-  ],
   "9090": [
    "Payment delay in the most recent month",
    "High current statement balance",
    "Repeated payment delays across the last six months"
-  ],
-  "12979": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Repeated payment delays across the last six months",
-   "Low credit limit relative to approved applicants"
   ],
   "6947": [
    "Payment delay in the most recent month",
@@ -8285,11 +7625,6 @@
   "27588": [
    "Low most recent payment amount",
    "Low credit limit relative to approved applicants"
-  ],
-  "10611": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants",
-   "Repeated payment delays across the last six months"
   ],
   "1707": [
    "Payment delay in the most recent month",
@@ -8351,11 +7686,6 @@
    "Repeated payment delays across the last six months",
    "High utilisation: the statement balance is high relative to the credit limit"
   ],
-  "28267": [
-   "Payment delay in the most recent month",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Repeated payment delays across the last six months"
-  ],
   "12044": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low credit limit relative to approved applicants",
@@ -8414,11 +7744,6 @@
    "Low most recent payment amount",
    "Rising balance trend over the last six months"
   ],
-  "11976": [
-   "Repeated payment delays across the last six months",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Rising balance trend over the last six months"
-  ],
   "2422": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
@@ -8444,11 +7769,6 @@
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
-  "7567": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants",
-   "Repeated payment delays across the last six months"
-  ],
   "782": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low credit limit relative to approved applicants",
@@ -8467,11 +7787,6 @@
   "6387": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "28734": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "13251": [
@@ -8579,11 +7894,6 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low credit limit relative to approved applicants"
   ],
-  "7276": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Repeated payment delays across the last six months",
-   "Low credit limit relative to approved applicants"
-  ],
   "21635": [
    "Payment delay in the most recent month",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -8649,11 +7959,6 @@
    "Repeated payment delays across the last six months",
    "High utilisation: the statement balance is high relative to the credit limit"
   ],
-  "11363": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
   "8199": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Repeated payment delays across the last six months",
@@ -8703,9 +8008,6 @@
    "Repeated payment delays across the last six months",
    "High utilisation: the statement balance is high relative to the credit limit"
   ],
-  "18135": [
-   "Low most recent payment amount"
-  ],
   "10644": [
    "Payment delay in the most recent month",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -8725,9 +8027,6 @@
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "13126": [
-   "Low most recent payment amount"
   ],
   "7923": [
    "Repeated payment delays across the last six months",
@@ -8763,11 +8062,6 @@
    "Payment delay in the most recent month",
    "High current statement balance",
    "High utilisation: the statement balance is high relative to the credit limit"
-  ],
-  "1447": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "7956": [
    "Payment delay in the most recent month",
@@ -8829,10 +8123,6 @@
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
-  "13582": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
-  ],
   "11972": [
    "Payment delay in the most recent month",
    "High utilisation: the statement balance is high relative to the credit limit",
@@ -8842,10 +8132,6 @@
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
    "High utilisation: the statement balance is high relative to the credit limit"
-  ],
-  "29243": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
   ],
   "28748": [
    "Payment delay in the most recent month",
@@ -8901,10 +8187,6 @@
    "Payment delay in the most recent month",
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "12528": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
   ],
   "19671": [
    "Payment delay in the most recent month",
@@ -9106,10 +8388,6 @@
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
-  "13878": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
-  ],
   "29414": [
    "Payment delay in the most recent month",
    "High current statement balance",
@@ -9135,16 +8413,6 @@
    "Repeated payment delays across the last six months",
    "High utilisation: the statement balance is high relative to the credit limit"
   ],
-  "7935": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "26446": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
   "2140": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
@@ -9163,11 +8431,6 @@
   "11938": [
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
-  ],
-  "17355": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants",
    "Low repayment ratio: recent payments cover a small share of the statement balance"
   ],
   "13719": [
@@ -9209,9 +8472,6 @@
    "Low most recent payment amount",
    "Low credit limit relative to approved applicants"
   ],
-  "26221": [
-   "Low most recent payment amount"
-  ],
   "5069": [
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -9232,11 +8492,6 @@
    "Repeated payment delays across the last six months",
    "High utilisation: the statement balance is high relative to the credit limit"
   ],
-  "11520": [
-   "Low credit limit relative to approved applicants",
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Low most recent payment amount"
-  ],
   "16516": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
@@ -9256,11 +8511,6 @@
    "Payment delay in the most recent month",
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "2702": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants",
-   "Repeated payment delays across the last six months"
   ],
   "16303": [
    "Payment delay in the most recent month",
@@ -9320,10 +8570,6 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low credit limit relative to approved applicants"
   ],
-  "23189": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Repeated payment delays across the last six months"
-  ],
   "15920": [
    "Payment delay in the most recent month",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -9357,11 +8603,6 @@
   "21341": [
    "High utilisation: the statement balance is high relative to the credit limit",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
-  ],
-  "5602": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Repeated payment delays across the last six months",
    "Low credit limit relative to approved applicants"
   ],
   "26651": [
@@ -9478,9 +8719,6 @@
    "High current statement balance",
    "Repeated payment delays across the last six months"
   ],
-  "26486": [
-   "Low most recent payment amount"
-  ],
   "28358": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Repeated payment delays across the last six months",
@@ -9520,9 +8758,6 @@
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low credit limit relative to approved applicants"
-  ],
-  "29816": [
-   "Low most recent payment amount"
   ],
   "15268": [
    "Payment delay in the most recent month",
@@ -9583,10 +8818,6 @@
    "Payment delay in the most recent month",
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "26206": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
   ],
   "23031": [
    "Payment delay in the most recent month",
@@ -9812,9 +9043,6 @@
    "Repeated payment delays across the last six months",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
-  "24535": [
-   "Low most recent payment amount"
-  ],
   "2363": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
@@ -9850,9 +9078,6 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Repeated payment delays across the last six months"
   ],
-  "29912": [
-   "Low most recent payment amount"
-  ],
   "17112": [
    "Payment delay in the most recent month",
    "High utilisation: the statement balance is high relative to the credit limit",
@@ -9867,11 +9092,6 @@
    "Payment delay in the most recent month",
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "991": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
   ],
   "27663": [
    "Low most recent payment amount",
@@ -9917,18 +9137,10 @@
    "Repeated payment delays across the last six months",
    "Low most recent payment amount"
   ],
-  "22662": [
-   "Low most recent payment amount"
-  ],
   "16657": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "18428": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
   ],
   "4030": [
    "Low most recent payment amount"
@@ -9968,11 +9180,6 @@
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
-  "23109": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
-   "Repeated payment delays across the last six months"
-  ],
   "25248": [
    "Payment delay in the most recent month",
    "High utilisation: the statement balance is high relative to the credit limit",
@@ -9993,11 +9200,6 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low credit limit relative to approved applicants"
   ],
-  "5325": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
-  ],
   "29652": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
@@ -10012,11 +9214,6 @@
    "High utilisation: the statement balance is high relative to the credit limit",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low credit limit relative to approved applicants"
-  ],
-  "7499": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "25570": [
    "Payment delay in the most recent month",
@@ -10034,11 +9231,6 @@
    "High utilisation: the statement balance is high relative to the credit limit"
   ],
   "26376": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "21105": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
@@ -10122,17 +9314,10 @@
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
-  "8618": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
-  ],
   "14802": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
    "Low credit limit relative to approved applicants"
-  ],
-  "16428": [
-   "Low most recent payment amount"
   ],
   "15010": [
    "Payment delay in the most recent month",
@@ -10158,11 +9343,6 @@
    "Payment delay in the most recent month",
    "High utilisation: the statement balance is high relative to the credit limit",
    "Low most recent payment amount"
-  ],
-  "997": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
-   "Repeated payment delays across the last six months"
   ],
   "14789": [
    "Payment delay in the most recent month",
@@ -10193,11 +9373,6 @@
    "High current statement balance",
    "Repeated payment delays across the last six months"
   ],
-  "16430": [
-   "High current statement balance",
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Low most recent payment amount"
-  ],
   "7529": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
@@ -10227,9 +9402,6 @@
    "Payment delay in the most recent month",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Repeated payment delays across the last six months"
-  ],
-  "26999": [
-   "Low most recent payment amount"
   ],
   "534": [
    "Payment delay in the most recent month",
@@ -10296,11 +9468,6 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low credit limit relative to approved applicants"
   ],
-  "4575": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Repeated payment delays across the last six months",
-   "Low most recent payment amount"
-  ],
   "20440": [
    "Payment delay in the most recent month",
    "High current statement balance",
@@ -10311,20 +9478,10 @@
    "Repeated payment delays across the last six months",
    "High utilisation: the statement balance is high relative to the credit limit"
   ],
-  "645": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
-  ],
   "15353": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "7430": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
-   "Low credit limit relative to approved applicants"
   ],
   "12775": [
    "Payment delay in the most recent month",
@@ -10340,11 +9497,6 @@
    "Payment delay in the most recent month",
    "High utilisation: the statement balance is high relative to the credit limit",
    "Low most recent payment amount"
-  ],
-  "174": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
   ],
   "12664": [
    "Payment delay in the most recent month",
@@ -10421,11 +9573,6 @@
    "High current statement balance",
    "High utilisation: the statement balance is high relative to the credit limit"
   ],
-  "29130": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants",
-   "Repeated payment delays across the last six months"
-  ],
   "18540": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
@@ -10479,11 +9626,6 @@
    "Repeated payment delays across the last six months",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
-  "14883": [
-   "Payment delay in the most recent month",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Repeated payment delays across the last six months"
-  ],
   "27911": [
    "Payment delay in the most recent month",
    "High current statement balance",
@@ -10513,11 +9655,6 @@
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "1278": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants",
-   "Repeated payment delays across the last six months"
   ],
   "6991": [
    "Payment delay in the most recent month",
@@ -10549,11 +9686,6 @@
    "Repeated payment delays across the last six months",
    "Low most recent payment amount"
   ],
-  "28453": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
-  ],
   "18257": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
@@ -10572,11 +9704,6 @@
   "2080": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "25215": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "28801": [
@@ -10763,11 +9890,6 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low repayment ratio: recent payments cover a small share of the statement balance"
   ],
-  "22090": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Repeated payment delays across the last six months",
-   "Low credit limit relative to approved applicants"
-  ],
   "16834": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
@@ -10779,11 +9901,6 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "3693": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "2808": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
@@ -10842,9 +9959,6 @@
    "Payment delay in the most recent month",
    "High utilisation: the statement balance is high relative to the credit limit",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "16156": [
-   "Low most recent payment amount"
   ],
   "5023": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -10931,10 +10045,6 @@
    "Repeated payment delays across the last six months",
    "High utilisation: the statement balance is high relative to the credit limit"
   ],
-  "1276": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
-  ],
   "10282": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
@@ -10949,11 +10059,6 @@
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
    "Low most recent payment amount"
-  ],
-  "15890": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Repeated payment delays across the last six months",
-   "Low credit limit relative to approved applicants"
   ],
   "18758": [
    "Payment delay in the most recent month",
@@ -11010,19 +10115,10 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Rising balance trend over the last six months"
   ],
-  "24864": [
-   "Low credit limit relative to approved applicants",
-   "Low most recent payment amount"
-  ],
   "17134": [
    "Payment delay in the most recent month",
    "High utilisation: the statement balance is high relative to the credit limit",
    "Low most recent payment amount"
-  ],
-  "14141": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "15201": [
    "Payment delay in the most recent month",
@@ -11063,11 +10159,6 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low credit limit relative to approved applicants",
    "Repeated payment delays across the last six months"
-  ],
-  "7543": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "2418": [
    "Payment delay in the most recent month",
@@ -11148,11 +10239,6 @@
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
-  "21676": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Repeated payment delays across the last six months",
-   "Low credit limit relative to approved applicants"
-  ],
   "8633": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
@@ -11163,19 +10249,9 @@
    "Repeated payment delays across the last six months",
    "Low most recent payment amount"
   ],
-  "13620": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Repeated payment delays across the last six months",
-   "Low credit limit relative to approved applicants"
-  ],
   "19546": [
    "Payment delay in the most recent month",
    "High current statement balance",
-   "Repeated payment delays across the last six months"
-  ],
-  "28907": [
-   "Payment delay in the most recent month",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Repeated payment delays across the last six months"
   ],
   "23070": [
@@ -11253,11 +10329,6 @@
    "High current statement balance",
    "Low most recent payment amount"
   ],
-  "19962": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Repeated payment delays across the last six months",
-   "Low credit limit relative to approved applicants"
-  ],
   "673": [
    "Payment delay in the most recent month",
    "High current statement balance",
@@ -11290,10 +10361,6 @@
    "Payment delay in the most recent month",
    "High current statement balance",
    "High utilisation: the statement balance is high relative to the credit limit"
-  ],
-  "13975": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
   ],
   "1350": [
    "Payment delay in the most recent month",
@@ -11394,19 +10461,10 @@
    "Low most recent payment amount",
    "Low credit limit relative to approved applicants"
   ],
-  "7946": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
-  ],
   "4591": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "24727": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
   ],
   "27454": [
    "Payment delay in the most recent month",
@@ -11518,11 +10576,6 @@
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
-  "27994": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants",
-   "Repeated payment delays across the last six months"
-  ],
   "3436": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
@@ -11542,10 +10595,6 @@
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
    "Low most recent payment amount"
-  ],
-  "1243": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
   ],
   "368": [
    "Repeated payment delays across the last six months",
@@ -11597,9 +10646,6 @@
    "Repeated payment delays across the last six months",
    "Low credit limit relative to approved applicants"
   ],
-  "15469": [
-   "Low most recent payment amount"
-  ],
   "11708": [
    "Payment delay in the most recent month",
    "High current statement balance",
@@ -11614,11 +10660,6 @@
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low repayment ratio: recent payments cover a small share of the statement balance"
-  ],
-  "14031": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
   ],
   "6792": [
    "Payment delay in the most recent month",
@@ -11664,27 +10705,14 @@
    "Repeated payment delays across the last six months",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
-  "29471": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
   "20217": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Repeated payment delays across the last six months",
    "Low most recent payment amount"
   ],
-  "21083": [
-   "High current statement balance",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
-  ],
   "14882": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
-   "Low most recent payment amount"
-  ],
-  "7948": [
    "Low most recent payment amount"
   ],
   "2707": [
@@ -11747,11 +10775,6 @@
    "Repeated payment delays across the last six months",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
-  "4901": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
   "7417": [
    "Payment delay in the most recent month",
    "High current statement balance",
@@ -11806,9 +10829,6 @@
    "Repeated payment delays across the last six months",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
-  "9555": [
-   "Low most recent payment amount"
-  ],
   "17807": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
@@ -11818,11 +10838,6 @@
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
    "High utilisation: the statement balance is high relative to the credit limit"
-  ],
-  "8700": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Low credit limit relative to approved applicants",
-   "Rising balance trend over the last six months"
   ],
   "6073": [
    "Repeated payment delays across the last six months",
@@ -11919,11 +10934,6 @@
    "High current statement balance",
    "Repeated payment delays across the last six months"
   ],
-  "9883": [
-   "Payment delay in the most recent month",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Repeated payment delays across the last six months"
-  ],
   "14674": [
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -11999,11 +11009,6 @@
    "High current statement balance",
    "High utilisation: the statement balance is high relative to the credit limit"
   ],
-  "5532": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
   "4503": [
    "Payment delay in the most recent month",
    "High current statement balance",
@@ -12013,11 +11018,6 @@
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
    "Low most recent payment amount"
-  ],
-  "20845": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
   ],
   "4339": [
    "Payment delay in the most recent month",
@@ -12107,11 +11107,6 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low credit limit relative to approved applicants"
   ],
-  "9767": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
   "28269": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
@@ -12167,11 +11162,6 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low credit limit relative to approved applicants"
   ],
-  "24728": [
-   "Payment delay in the most recent month",
-   "High current statement balance",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
   "8574": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
@@ -12186,10 +11176,6 @@
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
    "High utilisation: the statement balance is high relative to the credit limit"
-  ],
-  "20614": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
   ],
   "18229": [
    "Payment delay in the most recent month",
@@ -12246,11 +11232,6 @@
    "Repeated payment delays across the last six months",
    "High utilisation: the statement balance is high relative to the credit limit"
   ],
-  "14606": [
-   "Low credit limit relative to approved applicants",
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Low most recent payment amount"
-  ],
   "16122": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
@@ -12286,15 +11267,6 @@
    "Repeated payment delays across the last six months",
    "Low credit limit relative to approved applicants"
   ],
-  "28951": [
-   "High current statement balance",
-   "Repeated payment delays across the last six months",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "11851": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
-  ],
   "14563": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
@@ -12325,9 +11297,6 @@
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
-  "14812": [
-   "Low most recent payment amount"
-  ],
   "24733": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
@@ -12352,11 +11321,6 @@
    "Payment delay in the most recent month",
    "High utilisation: the statement balance is high relative to the credit limit",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "13424": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
   ],
   "2077": [
    "Low most recent payment amount",
@@ -12432,18 +11396,10 @@
    "Repeated payment delays across the last six months",
    "Low most recent payment amount"
   ],
-  "9714": [
-   "Payment delay in the most recent month",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Repeated payment delays across the last six months"
-  ],
   "12661": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "23093": [
-   "Low most recent payment amount"
   ],
   "28401": [
    "Payment delay in the most recent month",
@@ -12474,20 +11430,6 @@
    "Low credit limit relative to approved applicants",
    "Repeated payment delays across the last six months"
   ],
-  "6015": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants",
-   "Repeated payment delays across the last six months"
-  ],
-  "2387": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
-  ],
-  "13345": [
-   "Low most recent payment amount",
-   "Low credit limit relative to approved applicants"
-  ],
   "22760": [
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
@@ -12497,11 +11439,6 @@
    "Payment delay in the most recent month",
    "Repeated payment delays across the last six months",
    "High utilisation: the statement balance is high relative to the credit limit"
-  ],
-  "27": [
-   "Payment delay in the most recent month",
-   "Low most recent payment amount",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "799": [
    "Payment delay in the most recent month",
@@ -12616,11 +11553,6 @@
    "Repeated payment delays across the last six months",
    "Low most recent payment amount"
   ],
-  "16499": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
-  ],
   "1247": [
    "Payment delay in the most recent month",
    "High current statement balance",
@@ -12646,11 +11578,6 @@
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
-  "18463": [
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low credit limit relative to approved applicants"
-  ],
   "23790": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
@@ -12670,11 +11597,6 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low credit limit relative to approved applicants",
    "Repeated payment delays across the last six months"
-  ],
-  "19574": [
-   "High current statement balance",
-   "High utilisation: the statement balance is high relative to the credit limit",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "5066": [
    "Payment delay in the most recent month",
@@ -12870,11 +11792,6 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
    "Low repayment ratio: recent payments cover a small share of the statement balance"
   ],
-  "26571": [
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Repeated payment delays across the last six months",
-   "Low most recent payment amount"
-  ],
   "17740": [
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -12884,11 +11801,6 @@
    "Payment delay in the most recent month",
    "High utilisation: the statement balance is high relative to the credit limit",
    "Low most recent payment amount"
-  ],
-  "12321": [
-   "High current statement balance",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Repeated payment delays across the last six months"
   ],
   "23749": [
    "High utilisation: the statement balance is high relative to the credit limit",

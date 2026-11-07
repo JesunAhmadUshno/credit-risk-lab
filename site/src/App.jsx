@@ -9,7 +9,7 @@ import rigor from '../../results/rigor.json';
 import external from '../../results/external_validation.json';
 import manifest from '../../results/run_manifest.json';
 import behav from '../../results/behavioural_v2.json';
-// Named imports let the bundler drop reason_codes.json's 2,625 per-applicant rows.
+// Named imports let the bundler drop reason_codes.json's per-applicant rows.
 import { label as reasonLabel, reason_frequencies as reasonFreq, rejected_applicants as reasonRejected, cutoff_pd as reasonCutoff } from '../../results/reason_codes.json';
 import hypMd from '../../HYPOTHESES.md?raw';
 import gapMd from '../../docs/analysis/GAP_ANALYSIS.md?raw';
@@ -305,7 +305,7 @@ function Appetite() {
         {[0, 0.2, 0.4, 0.6, 0.8, 1].map((t) => <text key={t} x={sx(t)} y={H - 10} textAnchor="middle">{t}</text>)}
       </svg>
       <div className="legend"><span><i style={{ background: 'var(--good)' }} />Did not default</span><span><i style={{ background: 'var(--bad)' }} />Defaulted</span><span>Faded bars are rejected.</span></div>
-      <p className="note info" style={{ marginTop: 14 }}>Recorded study point: cut-off {cr.cutoff_pd} approves {fmt(cr.approved)} ({pct(cr.approval_rate)}) at an approved-book default rate of {pct(cr.achieved_approved_default_rate)}, matching the Stage 1 rate, and rejects {fmt(cr.rejected)}, of whom {fmt(cr.creditworthy_rejects)} ({pct(cr.creditworthy_share_of_rejected)}) never default. Bootstrap 95% CI for that share: {pct(rigor.taiwan.creditworthy_reject_share.lo95)} to {pct(rigor.taiwan.creditworthy_reject_share.hi95)}. The interval is wide and sits mostly above the point estimate because each resample re-selects its own cut-off.</p>
+      <p className="note info" style={{ marginTop: 14 }}>Recorded study point: cut-off {cr.cutoff_pd} approves {fmt(cr.approved)} ({pct(cr.approval_rate)}) at an approved-book default rate of {pct(cr.achieved_approved_default_rate)}, matching the Stage 1 rate, and rejects {fmt(cr.rejected)}, of whom {fmt(cr.creditworthy_rejects)} ({pct(cr.creditworthy_share_of_rejected)}) never default. Bootstrap 95% CI for that share: {pct(rigor.taiwan.creditworthy_reject_share.lo95)} to {pct(rigor.taiwan.creditworthy_reject_share.hi95)}. Each resample re-selects its own cut-off, so the interval prices the whole procedure.</p>
     </section>
   );
 }

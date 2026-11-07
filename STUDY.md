@@ -6,10 +6,10 @@ Three questions from [RESEARCH.md](RESEARCH.md), answered with measured work on 
 
 Risk appetite, stated as a rule: Approve every account with PD at or below the threshold where the approved book's observed default rate matches the Stage 1 observed default rate (the lab's performing-book rate) from results/results.json.
 
-- Target approved-book default rate (Stage 1 observed): 12.00%
-- Cut-off PD chosen on the test set: 0.2293 (achieved approved-book default rate 12.00%)
-- Approved: 6,375 (70.8%); rejected: 2,625
-- **Creditworthy rejects: 1,399 of the 2,625 rejected applicants did not default** (53.3% of all rejects; 15.5% of the test set).
+- Target approved-book default rate (Stage 1 observed): 12.44%
+- Cut-off PD chosen on the test set: 0.2478 (achieved approved-book default rate 12.44%)
+- Approved: 6,614 (73.5%); rejected: 2,386
+- **Creditworthy rejects: 1,218 of the 2,386 rejected applicants did not default** (51.0% of all rejects; 13.5% of the test set).
 
 These are observed outcomes, not estimates: at this risk appetite the cut-off turns away that many people who, in the event, repaid.
 
@@ -29,44 +29,44 @@ Approval is at the same cut-off as section 1. Group sizes are printed next to ev
 
 | Group | n | Approval rate | Default rate | AUC |
 | --- | --- | --- | --- | --- |
-| Female | 5,437 | 72.2% | 21.0% | 0.7861 |
-| Male | 3,563 | 68.7% | 23.9% | 0.7719 |
+| Female | 5,437 | 75.0% | 21.0% | 0.7861 |
+| Male | 3,563 | 71.2% | 23.9% | 0.7719 |
 
-Approval-rate gap within SEX: 3.6%.
+Approval-rate gap within SEX: 3.8%.
 
 ### AGE_BAND
 
 | Group | n | Approval rate | Default rate | AUC |
 | --- | --- | --- | --- | --- |
-| Under 30 | 2,882 | 69.4% | 22.4% | 0.7845 |
-| 30-44 | 4,483 | 73.3% | 20.6% | 0.7770 |
-| 45-59 | 1,518 | 67.2% | 25.2% | 0.7888 |
-| 60+ | 117 | 60.7% | 32.5% | 0.7152 |
+| Under 30 | 2,882 | 72.0% | 22.4% | 0.7845 |
+| 30-44 | 4,483 | 76.0% | 20.6% | 0.7770 |
+| 45-59 | 1,518 | 69.8% | 25.2% | 0.7888 |
+| 60+ | 117 | 62.4% | 32.5% | 0.7152 |
 
-Approval-rate gap within AGE_BAND: 12.6%.
+Approval-rate gap within AGE_BAND: 13.6%.
 
 ### EDUCATION
 
 | Group | n | Approval rate | Default rate | AUC |
 | --- | --- | --- | --- | --- |
-| Graduate school | 3,206 | 75.6% | 18.7% | 0.7851 |
-| High school | 1,477 | 65.0% | 25.3% | 0.7477 |
+| Graduate school | 3,206 | 78.2% | 18.7% | 0.7851 |
+| High school | 1,477 | 67.8% | 25.3% | 0.7477 |
 | Other | 120 | 94.2% | 6.7% | 0.6172 |
-| University | 4,197 | 68.5% | 24.1% | 0.7824 |
+| University | 4,197 | 71.3% | 24.1% | 0.7824 |
 
-Approval-rate gap within EDUCATION: 29.2%.
+Approval-rate gap within EDUCATION: 26.3%.
 
 ### MARRIAGE
 
 | Group | n | Approval rate | Default rate | AUC |
 | --- | --- | --- | --- | --- |
-| Married | 4,133 | 69.4% | 23.9% | 0.7823 |
-| Other | 111 | 67.6% | 18.0% | 0.7038 |
-| Single | 4,756 | 72.2% | 20.7% | 0.7807 |
+| Married | 4,133 | 72.3% | 23.9% | 0.7823 |
+| Other | 111 | 73.0% | 18.0% | 0.7038 |
+| Single | 4,756 | 74.5% | 20.7% | 0.7807 |
 
-Approval-rate gap within MARRIAGE: 4.6%.
+Approval-rate gap within MARRIAGE: 2.2%.
 
-**Largest gap: EDUCATION, 29.2%** between Other (94.2% approved, n=120) and High school (65.0% approved, n=1,477).
+**Largest gap: EDUCATION, 26.3%** between Other (94.2% approved, n=120) and High school (67.8% approved, n=1,477).
 
 ## Limits, on the same page
 
@@ -81,29 +81,29 @@ Approval-rate gap within MARRIAGE: 4.6%.
 
 Pre-registered as H1 in `HYPOTHESES.md`. A two-stage rule on top of the study's stage-1 cut-off:
 
-1. **Stage 1:** approve iff the champion PD is at or below 0.2293 (the cut-off from section 1).
-2. **Stage 2 (the second look):** a stage-1 reject is approved iff their thin-file behavioural PD is at or below the band threshold, defined as the median thin-file PD of stage-1 approved applicants: 0.1144. Their behavioural evidence must be at least as strong as the typical approved applicant's.
+1. **Stage 1:** approve iff the champion PD is at or below 0.2478 (the cut-off from section 1).
+2. **Stage 2 (the second look):** a stage-1 reject is approved iff their thin-file behavioural PD is at or below the band threshold, defined as the median thin-file PD of stage-1 approved applicants: 0.1170. Their behavioural evidence must be at least as strong as the typical approved applicant's.
 
 | Measure | Value |
 | --- | --- |
-| Stage-1 rejected | 2,625 |
-| Creditworthy rejects at stage 1 | 1,399 |
-| Recovered on second look (total) | 21 |
-| Recovered creditworthy (did not default) | 17 |
-| Additional defaults admitted | 4 |
-| **Recovery rate of creditworthy rejects** | **1.2%** |
-| Approved book default rate, stage 1 only | 12.00% |
-| Approved book default rate, after second look | 12.02% |
+| Stage-1 rejected | 2,386 |
+| Creditworthy rejects at stage 1 | 1,218 |
+| Recovered on second look (total) | 13 |
+| Recovered creditworthy (did not default) | 10 |
+| Additional defaults admitted | 3 |
+| **Recovery rate of creditworthy rejects** | **0.8%** |
+| Approved book default rate, stage 1 only | 12.44% |
+| Approved book default rate, after second look | 12.46% |
 | **Cost (default-rate increase)** | **+0.02 percentage points** |
 
 The trade is explicit: every recovered creditworthy applicant is bought with a measured number of admitted defaults, and the price shows up in the approved book's default rate rather than hiding in an assumption. A lender adopting this shape of policy sets its own band; the lab's band is a stated rule, not a tuned optimum.
 
 Fairness read (share of each group's creditworthy rejects recovered):
 
-- SEX: Female 0.9% (of 817); Male 1.7% (of 582).
-- AGE_BAND: Under 30 0.6% (of 469); 30-44 1.5% (of 655); 45-59 1.6% (of 252); 60+ 0.0% (of 23).
-- EDUCATION: Graduate school 0.2% (of 428); High school 1.4% (of 287); Other 0.0% (of 5); University 1.8% (of 679).
-- MARRIAGE: Married 1.7% (of 646); Other 4.0% (of 25); Single 0.7% (of 728).
+- SEX: Female 0.3% (of 698); Male 1.5% (of 520).
+- AGE_BAND: Under 30 0.7% (of 414); 30-44 0.7% (of 561); 45-59 1.4% (of 222); 60+ 0.0% (of 21).
+- EDUCATION: Graduate school 0.5% (of 370); High school 0.8% (of 255); Other 0.0% (of 5); University 1.0% (of 588).
+- MARRIAGE: Married 0.9% (of 555); Other 0.0% (of 20); Single 0.8% (of 643).
 
 Position against reject inference, the classic alternative, is in `RESEARCH.md`. Full per-group counts are in `results/second_look.json`; the bootstrap confidence interval for the recovery rate is in `results/rigor.json`.
 

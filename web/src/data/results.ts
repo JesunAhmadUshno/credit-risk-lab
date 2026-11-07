@@ -441,21 +441,21 @@ export const data = {
     "accounts": 22099,
     "ead": 1224621954,
     "ecl": 63068435.85,
-    "observed_default_rate": 0.12
+    "observed_default_rate": 0.12444
    },
    {
     "stage": 2,
     "accounts": 7438,
     "ead": 288778113,
     "ecl": 113688443.14,
-    "observed_default_rate": 0.48
+    "observed_default_rate": 0.477682
    },
    {
     "stage": 3,
     "accounts": 463,
     "ead": 23981190,
     "ecl": 10791535.5,
-    "observed_default_rate": 0.72
+    "observed_default_rate": 0.719222
    }
   ],
   "total_ecl": 187548414.49,
@@ -2049,15 +2049,15 @@ export const data = {
    ]
   },
   "study": {
-   "cutoffPd": 0.2293,
-   "targetRate": 0.12,
-   "achievedRate": 0.12,
+   "cutoffPd": 0.247824,
+   "targetRate": 0.12444,
+   "achievedRate": 0.1244,
    "testAccounts": 9000,
-   "approved": 6375,
-   "rejected": 2625,
-   "approvalRate": 0.7083,
-   "creditworthyRejects": 1399,
-   "creditworthyShareOfRejected": 0.533,
+   "approved": 6614,
+   "rejected": 2386,
+   "approvalRate": 0.7349,
+   "creditworthyRejects": 1218,
+   "creditworthyShareOfRejected": 0.5105,
    "thinFileAuc": 0.7687,
    "thinFileCi95": {
     "n_resamples": 1000,
@@ -2068,10 +2068,10 @@ export const data = {
    },
    "creditworthyShareCi95": {
     "n_resamples": 1000,
-    "mean": 0.5402,
-    "lo95": 0.4817,
-    "hi95": 0.7759,
-    "width": 0.2942
+    "mean": 0.5075,
+    "lo95": 0.4589,
+    "hi95": 0.5542,
+    "width": 0.0953
    },
    "fullModelAuc": 0.781,
    "thinFileFeatures": [
@@ -2090,7 +2090,7 @@ export const data = {
    ],
    "largestGap": {
     "variable": "EDUCATION",
-    "gap": 0.2917,
+    "gap": 0.2633,
     "higherGroup": {
      "group": "Other",
      "n": 120,
@@ -2102,8 +2102,8 @@ export const data = {
     "lowerGroup": {
      "group": "High school",
      "n": 1477,
-     "approved": 960,
-     "approval_rate": 0.65,
+     "approved": 1002,
+     "approval_rate": 0.6784,
      "default_rate": 0.2532,
      "auc": 0.7477
     }
@@ -2114,74 +2114,74 @@ export const data = {
       {
        "group": "Female",
        "n": 5437,
-       "approved": 3928,
-       "approval_rate": 0.7225,
+       "approved": 4077,
+       "approval_rate": 0.7499,
        "default_rate": 0.2099,
        "auc": 0.7861
       },
       {
        "group": "Male",
        "n": 3563,
-       "approved": 2447,
-       "approval_rate": 0.6868,
+       "approved": 2537,
+       "approval_rate": 0.712,
        "default_rate": 0.2386,
        "auc": 0.7719
       }
      ],
-     "approval_rate_gap": 0.0357
+     "approval_rate_gap": 0.0379
     },
     "AGE_BAND": {
      "groups": [
       {
        "group": "Under 30",
        "n": 2882,
-       "approved": 1999,
-       "approval_rate": 0.6936,
+       "approved": 2075,
+       "approval_rate": 0.72,
        "default_rate": 0.2245,
        "auc": 0.7845
       },
       {
        "group": "30-44",
        "n": 4483,
-       "approved": 3285,
-       "approval_rate": 0.7328,
+       "approved": 3406,
+       "approval_rate": 0.7598,
        "default_rate": 0.2061,
        "auc": 0.777
       },
       {
        "group": "45-59",
        "n": 1518,
-       "approved": 1020,
-       "approval_rate": 0.6719,
+       "approved": 1060,
+       "approval_rate": 0.6983,
        "default_rate": 0.2516,
        "auc": 0.7888
       },
       {
        "group": "60+",
        "n": 117,
-       "approved": 71,
-       "approval_rate": 0.6068,
+       "approved": 73,
+       "approval_rate": 0.6239,
        "default_rate": 0.3248,
        "auc": 0.7152
       }
      ],
-     "approval_rate_gap": 0.126
+     "approval_rate_gap": 0.1359
     },
     "EDUCATION": {
      "groups": [
       {
        "group": "Graduate school",
        "n": 3206,
-       "approved": 2425,
-       "approval_rate": 0.7564,
+       "approved": 2506,
+       "approval_rate": 0.7817,
        "default_rate": 0.1868,
        "auc": 0.7851
       },
       {
        "group": "High school",
        "n": 1477,
-       "approved": 960,
-       "approval_rate": 0.65,
+       "approved": 1002,
+       "approval_rate": 0.6784,
        "default_rate": 0.2532,
        "auc": 0.7477
       },
@@ -2196,42 +2196,42 @@ export const data = {
       {
        "group": "University",
        "n": 4197,
-       "approved": 2877,
-       "approval_rate": 0.6855,
+       "approved": 2993,
+       "approval_rate": 0.7131,
        "default_rate": 0.2406,
        "auc": 0.7824
       }
      ],
-     "approval_rate_gap": 0.2917
+     "approval_rate_gap": 0.2633
     },
     "MARRIAGE": {
      "groups": [
       {
        "group": "Married",
        "n": 4133,
-       "approved": 2867,
-       "approval_rate": 0.6937,
+       "approved": 2990,
+       "approval_rate": 0.7234,
        "default_rate": 0.2391,
        "auc": 0.7823
       },
       {
        "group": "Other",
        "n": 111,
-       "approved": 75,
-       "approval_rate": 0.6757,
+       "approved": 81,
+       "approval_rate": 0.7297,
        "default_rate": 0.1802,
        "auc": 0.7038
       },
       {
        "group": "Single",
        "n": 4756,
-       "approved": 3433,
-       "approval_rate": 0.7218,
+       "approved": 3543,
+       "approval_rate": 0.745,
        "default_rate": 0.2067,
        "auc": 0.7807
       }
      ],
-     "approval_rate_gap": 0.0461
+     "approval_rate_gap": 0.0216
     }
    }
   },
@@ -2272,55 +2272,55 @@ export const data = {
   },
   "reasonCodes": {
    "basis": "Reason codes are model-derived explanations of the score, not causal findings, and not legal adverse-action notices.",
-   "cutoffPd": 0.2293,
-   "rejected": 2625,
-   "totalAssignments": 7685,
+   "cutoffPd": 0.247824,
+   "rejected": 2386,
+   "totalAssignments": 7075,
    "topReasons": [
     {
      "reason": "Payment delay in the most recent month",
-     "count": 1831
+     "count": 1770
     },
     {
      "reason": "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-     "count": 1468
+     "count": 1325
     },
     {
      "reason": "Repeated payment delays across the last six months",
-     "count": 1280
+     "count": 1232
     },
     {
      "reason": "Low most recent payment amount",
-     "count": 1172
+     "count": 1021
     },
     {
      "reason": "High utilisation: the statement balance is high relative to the credit limit",
-     "count": 675
+     "count": 631
     }
    ]
   },
   "secondLook": {
    "name": "Second-Look Recovery Policy",
    "bandRule": "Band threshold = median thin-file PD of the stage-1 approved applicants, computed on the test set.",
-   "bandThreshold": 0.114442,
+   "bandThreshold": 0.116971,
    "recoveryCi95": {
     "n_resamples": 1000,
-    "mean": 0.0155,
-    "lo95": 0.0029,
-    "hi95": 0.0439,
-    "width": 0.0411
+    "mean": 0.0076,
+    "lo95": 0.0,
+    "hi95": 0.0178,
+    "width": 0.0178
    },
    "test_accounts": 9000,
-   "stage1_approved": 6375,
-   "stage1_rejected": 2625,
-   "creditworthy_rejects_stage1": 1399,
-   "recovered_total": 21,
-   "recovered_creditworthy": 17,
-   "admitted_defaults": 4,
-   "recovery_rate_of_creditworthy": 0.0122,
-   "approved_book_default_rate_stage1": 0.12,
-   "approved_book_default_rate_after": 0.1202,
-   "cost_default_rate_pp": 0.023,
-   "approved_after": 6396
+   "stage1_approved": 6614,
+   "stage1_rejected": 2386,
+   "creditworthy_rejects_stage1": 1218,
+   "recovered_total": 13,
+   "recovered_creditworthy": 10,
+   "admitted_defaults": 3,
+   "recovery_rate_of_creditworthy": 0.0082,
+   "approved_book_default_rate_stage1": 0.1244,
+   "approved_book_default_rate_after": 0.1246,
+   "cost_default_rate_pp": 0.021,
+   "approved_after": 6627
   },
   "analysis": [
    {

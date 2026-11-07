@@ -41,7 +41,7 @@ assert.equal(cr.approved + cr.rejected, results.dataset.test_rows);
 const lo = cutoff(bins, 0.2), hi = cutoff(bins, 0.25);
 assert.ok(lo.approved <= cr.approved && cr.approved <= hi.approved, 'study approvals bracketed by the 0.20/0.25 bin edges');
 assert.ok(hi.creditworthyRejects <= cr.creditworthy_rejects && cr.creditworthy_rejects <= lo.creditworthyRejects, 'creditworthy rejects bracketed');
-assert.equal(Math.round(cr.creditworthy_rejects / cr.rejected * 1000) / 1000, cr.creditworthy_share_of_rejected);
+assert.equal(Math.round(cr.creditworthy_rejects / cr.rejected * 10000) / 10000, cr.creditworthy_share_of_rejected);
 assert.equal(secondLook.headline.creditworthy_rejects_stage1, cr.creditworthy_rejects);
 
 // 4. Registered decision rules applied to the results give the verdicts recorded in HYPOTHESES.md.

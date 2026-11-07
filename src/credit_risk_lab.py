@@ -301,7 +301,8 @@ def main(cfg: dict = None, out: Path = OUT) -> dict:
     stage_rows = (staged.groupby("stage")
                   .agg(accounts=("default", "size"), ead=("ead", "sum"),
                        ecl=("ecl", "sum"), observed_default_rate=("default", "mean"))
-                  .round(2).reset_index())
+                  .round({"ead": 2, "ecl": 2, "observed_default_rate": 6})
+                  .reset_index())
     st = cfg["staging"]
     results["staging"] = {
         "policy": (f"Stage 3: PAY_0 >= {st['stage3_dpd_months']} (90+ DPD proxy). "

@@ -126,10 +126,10 @@ features do not already carry.
 
 Fair access study headlines (`results/study.json`, `STUDY.md`, test set of
 9,000): at the cut-off that holds the approved book at the Stage 1 default
-rate (cut-off PD 0.2293; 6,375 approved), **1,399 of 2,625 rejected
-applicants (53.3%) did not default**: the creditworthy rejects. The
+rate (cut-off PD 0.2478; 6,614 approved), **1,218 of 2,386 rejected
+applicants (51.0%) did not default**: the creditworthy rejects. The
 behavioural-only thin-file model scores AUC 0.7687 against the full model's
-0.7810. The largest approval-rate gap is within EDUCATION, 29.2 points
+0.7810. The largest approval-rate gap is within EDUCATION, 26.3 points
 between Other (n=120) and High school (n=1,477); group sizes sit next to
 every rate in `STUDY.md`, and the dataset is Taiwan 2005, not Canada.
 
@@ -139,18 +139,18 @@ recorded there):
 
 - **Intervals** (`results/rigor.json`, 1,000 bootstrap resamples):
   champion AUC 0.7810, 95% CI 0.7693 to 0.7919; thin-file AUC 0.7687,
-  CI 0.7567 to 0.7799; creditworthy-reject share 53.3%, CI 48.2% to
-  77.6% (wide because each resample re-selects the cut-off; the
-  interval prices the whole procedure). Across 5 seeds, champion AUC
+  CI 0.7567 to 0.7799; creditworthy-reject share 51.0%, CI 45.9% to
+  55.4% (each resample re-selects the cut-off, so the interval prices
+  the whole procedure). Across 5 seeds, champion AUC
   averages 0.7830 (std 0.0069) and behavioural v2 averages 0.7824
   (std 0.0066), mean delta -0.0006: hypothesis H3 is INCONCLUSIVE
   under its registered rule, and the v2 edge is reported as a
   single-seed artefact.
 - **Second look**: at the pre-registered band (a reject's thin-file
-  behavioural PD at or below the approved median, 0.1144), the policy
-  recovered 17 of the 1,399 creditworthy rejects (1.2%) at the price
-  of 4 admitted defaults; the approved book's default rate moved from
-  12.00% to 12.02% (+0.02 points). Hypothesis H1 is REFUTED on its
+  behavioural PD at or below the approved median, 0.1170), the policy
+  recovered 10 of the 1,218 creditworthy rejects (0.8%) at the price
+  of 3 admitted defaults; the approved book's default rate moved from
+  12.44% to 12.46% (+0.02 points). Hypothesis H1 is REFUTED on its
   recovery bound: the strict band is nearly empty because behavioural
   and champion scores are correlated. The refutation, its fairness
   read by group, and the follow-up it defines are in `STUDY.md`
@@ -160,11 +160,11 @@ recorded there):
   regression AUC 0.8022 (CI 0.7391 to 0.8560), gradient boosting AUC
   0.7848 (CI 0.7203 to 0.8437). The method transports; the wide
   intervals on 300 test accounts are part of the result.
-- **Reason codes**: across the 2,625 rejected test applicants (7,685
+- **Reason codes**: across the 2,386 rejected test applicants (7,075
   reason assignments), the most frequent principal reasons are a
-  payment delay in the most recent month (1,831 applicants), severe
-  past delinquency (1,468), and repeated payment delays across six
-  months (1,280). The low-repayment-ratio reason is given only to
+  payment delay in the most recent month (1,770 applicants), severe
+  past delinquency (1,325), and repeated payment delays across six
+  months (1,232). The low-repayment-ratio reason is given only to
   applicants with a positive statement balance. Model-derived explanations, not causal
   findings.
 

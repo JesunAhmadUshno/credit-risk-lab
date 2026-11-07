@@ -8,7 +8,7 @@ measured numbers, and never edited retroactively.
 All Taiwan-dataset experiments use the published pipeline: the champion
 gradient boosting model, the study cut-off rule (approve at every PD up
 to the threshold where the approved book's observed default rate matches
-the Stage 1 observed rate, 12.00%), the stratified 70/30 split, seed 42,
+the Stage 1 observed rate, 12.44%), the stratified 70/30 split, seed 42,
 unless a hypothesis says otherwise.
 
 ## H1: the Second-Look Recovery Policy recovers creditworthy rejects at a bounded cost
@@ -77,11 +77,11 @@ numbers.
 
 ## Verdicts (appended after the runs)
 
-- **H1: REFUTED.** Recovery rate 1.2% (17 of 1,399 creditworthy
-  rejects; band threshold 0.1144, the median thin-file PD of approved
+- **H1: REFUTED.** Recovery rate 0.8% (10 of 1,218 creditworthy
+  rejects; band threshold 0.1170, the median thin-file PD of approved
   applicants), far below the 15% bound. The cost bound was met
-  easily: +0.02 percentage points (approved-book default rate 12.00%
-  to 12.02%; 4 additional defaults admitted on 21 recoveries), inside
+  easily: +0.02 percentage points (approved-book default rate 12.44%
+  to 12.46%; 3 additional defaults admitted on 13 recoveries), inside
   the 1.00 point bound. Per the rule registered above, a result
   outside one bound takes the verdict of the failed bound. The
   finding is the refutation itself: a second look that demands

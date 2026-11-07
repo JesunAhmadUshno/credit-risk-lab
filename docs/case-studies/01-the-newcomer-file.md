@@ -35,9 +35,9 @@ fourteen months of observable payment behaviour is not a blank file;
 she is a file written in a different column.
 
 The same study priced the standard cut-off. Set to hold the approved
-book at the Stage 1 default rate (12.00%), the cut-off approved 6,375
-of 9,000 test applicants and rejected 2,625. Of the rejected, **1,399
-(53.3%) did not default**: the creditworthy rejects. Any applicant pool
+book at the Stage 1 default rate (12.44%), the cut-off approved 6,614
+of 9,000 test applicants and rejected 2,386. Of the rejected, **1,218
+(51.0%) did not default**: the creditworthy rejects. Any applicant pool
 with newcomers in it concentrates exactly there, because thin files
 score cautiously even when the person pays.
 
@@ -46,14 +46,14 @@ score cautiously even when the person pays.
 The Second-Look Recovery Policy (pre-registered as H1) gives the
 rejected a second score instead of a final answer: if a reject's
 thin-file behavioural PD is at or below the median behavioural PD of
-approved applicants (band: 0.1144), the behavioural evidence is at
+approved applicants (band: 0.1170), the behavioural evidence is at
 least as strong as the typical approved applicant's, and the
 application is approved on second look.
 
 Measured on the test set, that strict band is nearly empty: it
-recovered **21 of the 2,625 rejects - 17 creditworthy applicants
-(1.2% of all creditworthy rejects) and 4 defaults** - moving the
-approved book's default rate from 12.00% to 12.02% (+0.02 percentage
+recovered **13 of the 2,386 rejects - 10 creditworthy applicants
+(0.8% of all creditworthy rejects) and 3 defaults** - moving the
+approved book's default rate from 12.44% to 12.46% (+0.02 percentage
 points). H1 was REFUTED on its recovery bound, and the refutation is
 the useful part: behavioural scores and champion scores move
 together, so almost nobody the champion refuses carries

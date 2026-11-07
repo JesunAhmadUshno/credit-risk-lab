@@ -437,21 +437,21 @@
     "accounts": 22099,
     "ead": 1224621954,
     "ecl": 63068435.85,
-    "observed_default_rate": 0.12
+    "observed_default_rate": 0.12444
    },
    {
     "stage": 2,
     "accounts": 7438,
     "ead": 288778113,
     "ecl": 113688443.14,
-    "observed_default_rate": 0.48
+    "observed_default_rate": 0.477682
    },
    {
     "stage": 3,
     "accounts": 463,
     "ead": 23981190,
     "ecl": 10791535.5,
-    "observed_default_rate": 0.72
+    "observed_default_rate": 0.719222
    }
   ],
   "total_ecl": 187548414.49,

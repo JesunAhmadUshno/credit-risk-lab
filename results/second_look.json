@@ -5,76 +5,76 @@
   "stage1": "Approve iff champion PD <= the study cut-off (approved book matches the Stage 1 observed default rate).",
   "stage2": "A stage-1 reject is approved on second look iff their thin-file behavioural PD is at or below the band threshold.",
   "band_rule": "Band threshold = median thin-file PD of the stage-1 approved applicants, computed on the test set.",
-  "band_threshold_thin_pd": 0.114442,
-  "cutoff_pd": 0.2293
+  "band_threshold_thin_pd": 0.116971,
+  "cutoff_pd": 0.247824
  },
  "headline": {
   "test_accounts": 9000,
-  "stage1_approved": 6375,
-  "stage1_rejected": 2625,
-  "creditworthy_rejects_stage1": 1399,
-  "recovered_total": 21,
-  "recovered_creditworthy": 17,
-  "admitted_defaults": 4,
-  "recovery_rate_of_creditworthy": 0.0122,
-  "approved_book_default_rate_stage1": 0.12,
-  "approved_book_default_rate_after": 0.1202,
-  "cost_default_rate_pp": 0.023,
-  "approved_after": 6396
+  "stage1_approved": 6614,
+  "stage1_rejected": 2386,
+  "creditworthy_rejects_stage1": 1218,
+  "recovered_total": 13,
+  "recovered_creditworthy": 10,
+  "admitted_defaults": 3,
+  "recovery_rate_of_creditworthy": 0.0082,
+  "approved_book_default_rate_stage1": 0.1244,
+  "approved_book_default_rate_after": 0.1246,
+  "cost_default_rate_pp": 0.021,
+  "approved_after": 6627
  },
  "fairness": {
   "SEX": [
    {
     "group": "Female",
-    "rejected": 1509,
-    "creditworthy_rejects": 817,
-    "recovered": 8,
-    "recovered_creditworthy": 7,
-    "recovery_rate_of_rejects": 0.0053,
-    "recovery_rate_of_creditworthy": 0.0086
+    "rejected": 1360,
+    "creditworthy_rejects": 698,
+    "recovered": 2,
+    "recovered_creditworthy": 2,
+    "recovery_rate_of_rejects": 0.0015,
+    "recovery_rate_of_creditworthy": 0.0029
    },
    {
     "group": "Male",
-    "rejected": 1116,
-    "creditworthy_rejects": 582,
-    "recovered": 13,
-    "recovered_creditworthy": 10,
-    "recovery_rate_of_rejects": 0.0116,
-    "recovery_rate_of_creditworthy": 0.0172
+    "rejected": 1026,
+    "creditworthy_rejects": 520,
+    "recovered": 11,
+    "recovered_creditworthy": 8,
+    "recovery_rate_of_rejects": 0.0107,
+    "recovery_rate_of_creditworthy": 0.0154
    }
   ],
   "AGE_BAND": [
    {
     "group": "Under 30",
-    "rejected": 883,
-    "creditworthy_rejects": 469,
+    "rejected": 807,
+    "creditworthy_rejects": 414,
     "recovered": 4,
     "recovered_creditworthy": 3,
-    "recovery_rate_of_rejects": 0.0045,
-    "recovery_rate_of_creditworthy": 0.0064
+    "recovery_rate_of_rejects": 0.005,
+    "recovery_rate_of_creditworthy": 0.0072
    },
    {
     "group": "30-44",
-    "rejected": 1198,
-    "creditworthy_rejects": 655,
-    "recovered": 11,
-    "recovered_creditworthy": 10,
-    "recovery_rate_of_rejects": 0.0092,
-    "recovery_rate_of_creditworthy": 0.0153
+    "rejected": 1077,
+    "creditworthy_rejects": 561,
+    "recovered": 5,
+    "recovered_creditworthy": 4,
+    "recovery_rate_of_rejects": 0.0046,
+    "recovery_rate_of_creditworthy": 0.0071
    },
    {
     "group": "45-59",
-    "rejected": 498,
-    "creditworthy_rejects": 252,
-    "recovered": 6,
-    "recovered_creditworthy": 4,
-    "recovery_rate_of_rejects": 0.012,
-    "recovery_rate_of_creditworthy": 0.0159
+    "rejected": 458,
+    "creditworthy_rejects": 222,
+    "recovered": 4,
+    "recovered_creditworthy": 3,
+    "recovery_rate_of_rejects": 0.0087,
+    "recovery_rate_of_creditworthy": 0.0135
    },
    {
     "group": "60+",
-    "rejected": 46,
-    "creditworthy_rejects": 23,
+    "rejected": 44,
+    "creditworthy_rejects": 21,
     "recovered": 0,
     "recovered_creditworthy": 0,
     "recovery_rate_of_rejects": 0.0,
@@ -84,21 +84,21 @@
   "EDUCATION": [
    {
     "group": "Graduate school",
-    "rejected": 781,
-    "creditworthy_rejects": 428,
-    "recovered": 2,
-    "recovered_creditworthy": 1,
-    "recovery_rate_of_rejects": 0.0026,
-    "recovery_rate_of_creditworthy": 0.0023
+    "rejected": 700,
+    "creditworthy_rejects": 370,
+    "recovered": 3,
+    "recovered_creditworthy": 2,
+    "recovery_rate_of_rejects": 0.0043,
+    "recovery_rate_of_creditworthy": 0.0054
    },
    {
     "group": "High school",
-    "rejected": 517,
-    "creditworthy_rejects": 287,
-    "recovered": 7,
-    "recovered_creditworthy": 4,
-    "recovery_rate_of_rejects": 0.0135,
-    "recovery_rate_of_creditworthy": 0.0139
+    "rejected": 475,
+    "creditworthy_rejects": 255,
+    "recovered": 4,
+    "recovered_creditworthy": 2,
+    "recovery_rate_of_rejects": 0.0084,
+    "recovery_rate_of_creditworthy": 0.0078
    },
    {
     "group": "Other",
@@ -111,51 +111,51 @@
    },
    {
     "group": "University",
-    "rejected": 1320,
-    "creditworthy_rejects": 679,
-    "recovered": 12,
-    "recovered_creditworthy": 12,
-    "recovery_rate_of_rejects": 0.0091,
-    "recovery_rate_of_creditworthy": 0.0177
+    "rejected": 1204,
+    "creditworthy_rejects": 588,
+    "recovered": 6,
+    "recovered_creditworthy": 6,
+    "recovery_rate_of_rejects": 0.005,
+    "recovery_rate_of_creditworthy": 0.0102
    }
   ],
   "MARRIAGE": [
    {
     "group": "Married",
-    "rejected": 1266,
-    "creditworthy_rejects": 646,
-    "recovered": 15,
-    "recovered_creditworthy": 11,
-    "recovery_rate_of_rejects": 0.0118,
-    "recovery_rate_of_creditworthy": 0.017
+    "rejected": 1143,
+    "creditworthy_rejects": 555,
+    "recovered": 8,
+    "recovered_creditworthy": 5,
+    "recovery_rate_of_rejects": 0.007,
+    "recovery_rate_of_creditworthy": 0.009
    },
    {
     "group": "Other",
-    "rejected": 36,
-    "creditworthy_rejects": 25,
-    "recovered": 1,
-    "recovered_creditworthy": 1,
-    "recovery_rate_of_rejects": 0.0278,
-    "recovery_rate_of_creditworthy": 0.04
+    "rejected": 30,
+    "creditworthy_rejects": 20,
+    "recovered": 0,
+    "recovered_creditworthy": 0,
+    "recovery_rate_of_rejects": 0.0,
+    "recovery_rate_of_creditworthy": 0.0
    },
    {
     "group": "Single",
-    "rejected": 1323,
-    "creditworthy_rejects": 728,
+    "rejected": 1213,
+    "creditworthy_rejects": 643,
     "recovered": 5,
     "recovered_creditworthy": 5,
-    "recovery_rate_of_rejects": 0.0038,
-    "recovery_rate_of_creditworthy": 0.0069
+    "recovery_rate_of_rejects": 0.0041,
+    "recovery_rate_of_creditworthy": 0.0078
    }
   ]
  },
  "bootstrap_ci95": {
   "recovery_rate_of_creditworthy": {
    "n_resamples": 1000,
-   "mean": 0.0155,
-   "lo95": 0.0029,
-   "hi95": 0.0439,
-   "width": 0.0411
+   "mean": 0.0076,
+   "lo95": 0.0,
+   "hi95": 0.0178,
+   "width": 0.0178
   }
  }
 }
