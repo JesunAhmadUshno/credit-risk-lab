@@ -4,7 +4,8 @@
 Reads results/results.json and results/model_grades.json (both produced by
 the Python pipeline) plus the wave-2 research outputs (results/scenarios.json,
 results/behavioural_v2.json, results/study.json, RESEARCH.md) and writes
-web/src/data/results.ts. On top of that
+web/src/data/results.ts (and the derived chart series alone to
+results/dashboard_data.json). On top of that
 pass-through it computes the chart series the dashboard needs (ROC curves
 for both models, the champion decile gains/lift table, per-stage simulator
 aggregates) by importing the pipeline's own functions with the same config,
@@ -28,6 +29,9 @@ from sklearn.model_selection import train_test_split
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "web" / "src" / "data" / "results.ts"
+# Chart series that exist nowhere else in results/, as plain JSON for the
+# Lab OS dashboard in site/ (which imports only results/*.json).
+OUT_JSON = ROOT / "results" / "dashboard_data.json"
 sys.path.insert(0, str(ROOT / "src"))
 
 import credit_risk_lab as pipe  # noqa: E402
@@ -337,6 +341,8 @@ def main() -> None:
         "\nexport type DashboardData = typeof data;\n"
     )
     print(f"wrote {OUT} ({len(body)} bytes of measured data)")
+    OUT_JSON.write_text(json.dumps(derived, indent=1) + "\n")
+    print(f"wrote {OUT_JSON}")
 
 
 if __name__ == "__main__":
