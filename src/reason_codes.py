@@ -135,6 +135,12 @@ def compute(cfg: dict = None) -> dict:
         q = test[feat].quantile(0.75 if direction > 0 else 0.25)
         quartile[feat] = float(q)
 
+    def applies(feat, row) -> bool:
+        # pay_ratio is PAY_AMT1 / BILL_AMT1, set to 0 for a zero balance and
+        # negative for a credit balance: "payments cover a small share of
+        # the balance" only means something when there is a balance owed.
+        return feat != "pay_ratio" or float(row["BILL_AMT1"]) > 0
+
     def tier1_present(feat, value) -> bool:
         direction = REASON_MAP[feat][1]
         if feat in TIER1_ABSOLUTE:
@@ -149,11 +155,13 @@ def compute(cfg: dict = None) -> dict:
     per_applicant = {}
     freq = {f: 0 for f in REASON_MAP}
     for idx, row in rejected.iterrows():
-        present = [f for f in REASON_MAP if tier1_present(f, float(row[f]))]
+        present = [f for f in REASON_MAP
+                   if applies(f, row) and tier1_present(f, float(row[f]))]
         present.sort(key=lambda f: -importance[f])
         chosen = present[:TOP_K]
         if len(chosen) < TOP_K:
-            rest = [f for f in mapped_ranking if f not in chosen]
+            rest = [f for f in mapped_ranking
+                    if f not in chosen and applies(f, row)]
             def adverse_z(f, row=row):
                 return (REASON_MAP[f][1] *
                         (float(row[f]) - approved_mean[f]) / approved_std[f])

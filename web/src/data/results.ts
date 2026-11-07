@@ -2274,23 +2274,23 @@ export const data = {
    "basis": "Reason codes are model-derived explanations of the score, not causal findings, and not legal adverse-action notices.",
    "cutoffPd": 0.2293,
    "rejected": 2625,
-   "totalAssignments": 7744,
+   "totalAssignments": 7685,
    "topReasons": [
     {
      "reason": "Payment delay in the most recent month",
      "count": 1831
     },
     {
-     "reason": "Repeated payment delays across the last six months",
-     "count": 1256
+     "reason": "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
+     "count": 1468
     },
     {
-     "reason": "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-     "count": 1199
+     "reason": "Repeated payment delays across the last six months",
+     "count": 1280
     },
     {
      "reason": "Low most recent payment amount",
-     "count": 1166
+     "count": 1172
     },
     {
      "reason": "High utilisation: the statement balance is high relative to the credit limit",

@@ -62,24 +62,24 @@
    "permutation_importance": 0.037
   },
   {
-   "feature": "delinq_mean",
-   "reason": "Repeated payment delays across the last six months",
-   "count": 1256,
-   "share_of_rejected": 0.4785,
-   "permutation_importance": 0.019
-  },
-  {
    "feature": "delinq_max",
    "reason": "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "count": 1199,
-   "share_of_rejected": 0.4568,
+   "count": 1468,
+   "share_of_rejected": 0.5592,
    "permutation_importance": 0.0098
+  },
+  {
+   "feature": "delinq_mean",
+   "reason": "Repeated payment delays across the last six months",
+   "count": 1280,
+   "share_of_rejected": 0.4876,
+   "permutation_importance": 0.019
   },
   {
    "feature": "PAY_AMT1",
    "reason": "Low most recent payment amount",
-   "count": 1166,
-   "share_of_rejected": 0.4442,
+   "count": 1172,
+   "share_of_rejected": 0.4465,
    "permutation_importance": 0.0132
   },
   {
@@ -97,18 +97,18 @@
    "permutation_importance": 0.0069
   },
   {
-   "feature": "pay_ratio",
-   "reason": "Low repayment ratio: recent payments cover a small share of the statement balance",
-   "count": 512,
-   "share_of_rejected": 0.195,
-   "permutation_importance": 0.0012
-  },
-  {
    "feature": "BILL_AMT1",
    "reason": "High current statement balance",
    "count": 489,
    "share_of_rejected": 0.1863,
    "permutation_importance": 0.0207
+  },
+  {
+   "feature": "pay_ratio",
+   "reason": "Low repayment ratio: recent payments cover a small share of the statement balance",
+   "count": 154,
+   "share_of_rejected": 0.0587,
+   "permutation_importance": 0.0012
   },
   {
    "feature": "bill_trend",
@@ -118,7 +118,7 @@
    "permutation_importance": 0.0029
   }
  ],
- "total_reason_assignments": 7744,
+ "total_reason_assignments": 7685,
  "per_applicant": {
   "17619": [
    "Low most recent payment amount",
@@ -136,8 +136,7 @@
    "Low most recent payment amount"
   ],
   "4907": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "29235": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -172,7 +171,7 @@
   "19454": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "17520": [
    "Repeated payment delays across the last six months",
@@ -226,8 +225,8 @@
   ],
   "27940": [
    "Payment delay in the most recent month",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
+   "Repeated payment delays across the last six months"
   ],
   "2752": [
    "Low most recent payment amount",
@@ -242,7 +241,7 @@
   "22593": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "16793": [
    "Payment delay in the most recent month",
@@ -257,7 +256,7 @@
   "15489": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "2375": [
    "Payment delay in the most recent month",
@@ -326,7 +325,7 @@
   "7421": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "14523": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -455,8 +454,7 @@
   ],
   "29365": [
    "Low most recent payment amount",
-   "Low credit limit relative to approved applicants",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low credit limit relative to approved applicants"
   ],
   "9651": [
    "Payment delay in the most recent month",
@@ -505,7 +503,7 @@
   "28488": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "15775": [
    "Payment delay in the most recent month",
@@ -535,7 +533,7 @@
   "12901": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "8784": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -565,7 +563,7 @@
   "18691": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "11150": [
    "Payment delay in the most recent month",
@@ -615,7 +613,7 @@
   "2750": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "13084": [
    "Payment delay in the most recent month",
@@ -684,7 +682,7 @@
   "13196": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "21917": [
    "Payment delay in the most recent month",
@@ -773,7 +771,7 @@
   "22727": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "18410": [
    "Payment delay in the most recent month",
@@ -803,17 +801,17 @@
   "369": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "23541": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
-   "Repeated payment delays across the last six months"
+   "Repeated payment delays across the last six months",
+   "Low most recent payment amount"
   ],
   "295": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "10450": [
    "Payment delay in the most recent month",
@@ -857,8 +855,8 @@
   ],
   "12170": [
    "Payment delay in the most recent month",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
+   "Repeated payment delays across the last six months"
   ],
   "9062": [
    "Payment delay in the most recent month",
@@ -877,13 +875,12 @@
   ],
   "20913": [
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
    "Low credit limit relative to approved applicants"
   ],
   "2573": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
-   "Repeated payment delays across the last six months"
+   "Repeated payment delays across the last six months",
+   "Low most recent payment amount"
   ],
   "24759": [
    "Payment delay in the most recent month",
@@ -923,12 +920,12 @@
   "2488": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "4983": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "13873": [
    "Payment delay in the most recent month",
@@ -993,7 +990,7 @@
   "921": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "6745": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -1012,12 +1009,12 @@
   "3819": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "23273": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "9038": [
    "Payment delay in the most recent month",
@@ -1134,7 +1131,7 @@
   "13904": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "24014": [
    "Payment delay in the most recent month",
@@ -1214,12 +1211,12 @@
   "15213": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "1094": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "2046": [
    "Payment delay in the most recent month",
@@ -1294,7 +1291,7 @@
   "5314": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "18358": [
    "Repeated payment delays across the last six months",
@@ -1309,7 +1306,7 @@
   "9044": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "1079": [
    "Low most recent payment amount",
@@ -1457,7 +1454,7 @@
   "12328": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "12387": [
    "Payment delay in the most recent month",
@@ -1477,7 +1474,7 @@
   "19516": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "10816": [
    "Payment delay in the most recent month",
@@ -1517,7 +1514,7 @@
   "5988": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "23170": [
    "Payment delay in the most recent month",
@@ -1623,8 +1620,7 @@
    "Low credit limit relative to approved applicants"
   ],
   "18296": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "17295": [
    "Payment delay in the most recent month",
@@ -1643,8 +1639,7 @@
   ],
   "15770": [
    "Low most recent payment amount",
-   "Low credit limit relative to approved applicants",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low credit limit relative to approved applicants"
   ],
   "19179": [
    "Payment delay in the most recent month",
@@ -1709,7 +1704,7 @@
   "26210": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "4915": [
    "Payment delay in the most recent month",
@@ -1773,7 +1768,6 @@
   ],
   "23010": [
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
    "Low credit limit relative to approved applicants"
   ],
   "19285": [
@@ -1792,8 +1786,7 @@
    "Low repayment ratio: recent payments cover a small share of the statement balance"
   ],
   "5671": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "25178": [
    "Payment delay in the most recent month",
@@ -1828,7 +1821,7 @@
   "7777": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "17863": [
    "Payment delay in the most recent month",
@@ -1838,7 +1831,7 @@
   "16884": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "19249": [
    "Payment delay in the most recent month",
@@ -1862,13 +1855,12 @@
   ],
   "23754": [
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
    "Low credit limit relative to approved applicants"
   ],
   "5544": [
    "Payment delay in the most recent month",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
+   "Repeated payment delays across the last six months"
   ],
   "6396": [
    "Low most recent payment amount",
@@ -1916,13 +1908,12 @@
    "Low credit limit relative to approved applicants"
   ],
   "6805": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "1480": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "11697": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -1937,7 +1928,7 @@
   "23783": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "23166": [
    "Payment delay in the most recent month",
@@ -1955,8 +1946,8 @@
   ],
   "28041": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
-   "Repeated payment delays across the last six months"
+   "Repeated payment delays across the last six months",
+   "Low most recent payment amount"
   ],
   "9288": [
    "Payment delay in the most recent month",
@@ -1996,7 +1987,7 @@
   "6415": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "29432": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -2026,7 +2017,7 @@
   "9307": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "13718": [
    "Payment delay in the most recent month",
@@ -2040,15 +2031,14 @@
   "17731": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "13413": [
    "Low most recent payment amount",
    "Low credit limit relative to approved applicants"
   ],
   "3333": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "355": [
    "Payment delay in the most recent month",
@@ -2116,7 +2106,7 @@
   "3258": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "28554": [
    "Payment delay in the most recent month",
@@ -2267,8 +2257,7 @@
    "Low most recent payment amount"
   ],
   "21394": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "2582": [
    "Payment delay in the most recent month",
@@ -2288,7 +2277,7 @@
   "8399": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "23302": [
    "Payment delay in the most recent month",
@@ -2318,17 +2307,17 @@
   "4437": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "27116": [
    "Payment delay in the most recent month",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
+   "Repeated payment delays across the last six months"
   ],
   "29317": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "21502": [
    "Payment delay in the most recent month",
@@ -2373,7 +2362,7 @@
   "24215": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "8804": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -2428,7 +2417,7 @@
   "353": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "24220": [
    "Low most recent payment amount",
@@ -2508,7 +2497,7 @@
   "4457": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "22905": [
    "Payment delay in the most recent month",
@@ -2598,7 +2587,7 @@
   "3469": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "13898": [
    "Payment delay in the most recent month",
@@ -2621,8 +2610,7 @@
    "Low most recent payment amount"
   ],
   "25146": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "19078": [
    "Payment delay in the most recent month",
@@ -2656,7 +2644,7 @@
   "15312": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "25421": [
    "Payment delay in the most recent month",
@@ -2676,7 +2664,7 @@
   "15488": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "12882": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -2684,8 +2672,7 @@
    "Low credit limit relative to approved applicants"
   ],
   "29085": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "11167": [
    "Payment delay in the most recent month",
@@ -2700,7 +2687,7 @@
   "18645": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "13283": [
    "Payment delay in the most recent month",
@@ -2724,7 +2711,6 @@
   ],
   "15713": [
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
    "Low credit limit relative to approved applicants"
   ],
   "16527": [
@@ -2750,7 +2736,7 @@
   "4895": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "14282": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -2860,7 +2846,7 @@
   "25779": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "7601": [
    "Payment delay in the most recent month",
@@ -2884,7 +2870,7 @@
   "5171": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "23657": [
    "Payment delay in the most recent month",
@@ -2904,7 +2890,7 @@
   "17880": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "5149": [
    "Payment delay in the most recent month",
@@ -2924,7 +2910,7 @@
   "18699": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "16402": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -2934,7 +2920,7 @@
   "4771": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "25154": [
    "Payment delay in the most recent month",
@@ -2974,7 +2960,7 @@
   "16323": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "13050": [
    "Payment delay in the most recent month",
@@ -3029,7 +3015,7 @@
   "25754": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "15178": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -3053,8 +3039,7 @@
   ],
   "20087": [
    "Low most recent payment amount",
-   "Low credit limit relative to approved applicants",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low credit limit relative to approved applicants"
   ],
   "14923": [
    "Payment delay in the most recent month",
@@ -3094,7 +3079,7 @@
   "7440": [
    "Payment delay in the most recent month",
    "Low credit limit relative to approved applicants",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "2419": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -3109,7 +3094,7 @@
   "25968": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "2426": [
    "Repeated payment delays across the last six months",
@@ -3134,7 +3119,7 @@
   "1035": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "20386": [
    "Payment delay in the most recent month",
@@ -3199,7 +3184,7 @@
   "2395": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "5989": [
    "Payment delay in the most recent month",
@@ -3231,8 +3216,7 @@
    "High utilisation: the statement balance is high relative to the credit limit"
   ],
   "11195": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "11453": [
    "Payment delay in the most recent month",
@@ -3257,7 +3241,7 @@
   "9476": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "15180": [
    "Payment delay in the most recent month",
@@ -3292,12 +3276,12 @@
   "21063": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "11829": [
    "Payment delay in the most recent month",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Repeated payment delays across the last six months"
   ],
   "18099": [
    "Repeated payment delays across the last six months",
@@ -3327,7 +3311,7 @@
   "16363": [
    "Payment delay in the most recent month",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Repeated payment delays across the last six months"
   ],
   "27028": [
    "Payment delay in the most recent month",
@@ -3337,7 +3321,7 @@
   "10741": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "9080": [
    "Payment delay in the most recent month",
@@ -3365,8 +3349,7 @@
    "Low most recent payment amount"
   ],
   "23774": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "17626": [
    "Payment delay in the most recent month",
@@ -3381,7 +3364,7 @@
   "29755": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "20963": [
    "Low most recent payment amount",
@@ -3431,17 +3414,17 @@
   "6161": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "6016": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "24867": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "5844": [
    "Low credit limit relative to approved applicants",
@@ -3460,7 +3443,7 @@
   "15259": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "21512": [
    "Payment delay in the most recent month",
@@ -3764,7 +3747,6 @@
   ],
   "17406": [
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
    "Low credit limit relative to approved applicants"
   ],
   "5131": [
@@ -3780,7 +3762,7 @@
   "20084": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "1493": [
    "Payment delay in the most recent month",
@@ -3825,7 +3807,7 @@
   "6762": [
    "Low most recent payment amount",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Repeated payment delays across the last six months"
   ],
   "12372": [
    "Payment delay in the most recent month",
@@ -3885,7 +3867,7 @@
   "21148": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "21972": [
    "High current statement balance",
@@ -3915,7 +3897,7 @@
   "4706": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "1358": [
    "Payment delay in the most recent month",
@@ -3935,7 +3917,7 @@
   "7320": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "19355": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -3945,7 +3927,7 @@
   "23237": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "16027": [
    "Payment delay in the most recent month",
@@ -3955,7 +3937,7 @@
   "21033": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "4573": [
    "Payment delay in the most recent month",
@@ -3965,12 +3947,12 @@
   "17507": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "5585": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "4528": [
    "Payment delay in the most recent month",
@@ -4060,7 +4042,7 @@
   "14953": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "19344": [
    "Payment delay in the most recent month",
@@ -4098,7 +4080,7 @@
   "19343": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "7150": [
    "Low most recent payment amount",
@@ -4113,7 +4095,7 @@
   "451": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "6487": [
    "Payment delay in the most recent month",
@@ -4143,7 +4125,7 @@
   "17121": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "15546": [
    "Payment delay in the most recent month",
@@ -4188,7 +4170,7 @@
   "12735": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "7163": [
    "Payment delay in the most recent month",
@@ -4242,7 +4224,7 @@
   "598": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "9918": [
    "Payment delay in the most recent month",
@@ -4255,8 +4237,7 @@
    "Low repayment ratio: recent payments cover a small share of the statement balance"
   ],
   "19417": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "6456": [
    "Payment delay in the most recent month",
@@ -4276,7 +4257,7 @@
   "12513": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "24768": [
    "Payment delay in the most recent month",
@@ -4311,7 +4292,7 @@
   "12569": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "5698": [
    "Payment delay in the most recent month",
@@ -4396,7 +4377,7 @@
   "21897": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "16946": [
    "Payment delay in the most recent month",
@@ -4406,7 +4387,7 @@
   "29974": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "26720": [
    "Payment delay in the most recent month",
@@ -4421,7 +4402,7 @@
   "9222": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "12706": [
    "Payment delay in the most recent month",
@@ -4481,7 +4462,7 @@
   "11758": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "7249": [
    "Payment delay in the most recent month",
@@ -4526,7 +4507,7 @@
   "22544": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "28188": [
    "Low most recent payment amount"
@@ -4549,7 +4530,7 @@
   "14741": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "16995": [
    "Payment delay in the most recent month",
@@ -4608,7 +4589,7 @@
   "11826": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "6109": [
    "Payment delay in the most recent month",
@@ -4628,12 +4609,12 @@
   "11040": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "17721": [
    "Payment delay in the most recent month",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
+   "Repeated payment delays across the last six months"
   ],
   "3968": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -4663,7 +4644,7 @@
   "29086": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "5085": [
    "Payment delay in the most recent month",
@@ -4713,7 +4694,7 @@
   "11084": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "11246": [
    "Payment delay in the most recent month",
@@ -4816,8 +4797,7 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "26857": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "22898": [
    "Payment delay in the most recent month",
@@ -4832,7 +4812,7 @@
   "9906": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "4388": [
    "Payment delay in the most recent month",
@@ -4881,7 +4861,7 @@
   "11888": [
    "Payment delay in the most recent month",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Repeated payment delays across the last six months"
   ],
   "12885": [
    "Payment delay in the most recent month",
@@ -4901,7 +4881,7 @@
   "14186": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "17847": [
    "Payment delay in the most recent month",
@@ -4938,8 +4918,7 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "2635": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "5714": [
    "Payment delay in the most recent month",
@@ -5004,7 +4983,7 @@
   "8357": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "5737": [
    "Payment delay in the most recent month",
@@ -5019,7 +4998,7 @@
   "13746": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "2902": [
    "Repeated payment delays across the last six months",
@@ -5032,18 +5011,17 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "988": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "14887": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "28364": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "1679": [
    "Payment delay in the most recent month",
@@ -5053,7 +5031,7 @@
   "10828": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "15862": [
    "Payment delay in the most recent month",
@@ -5073,7 +5051,7 @@
   "2086": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "17796": [
    "Payment delay in the most recent month",
@@ -5123,7 +5101,7 @@
   "8172": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "18519": [
    "Payment delay in the most recent month",
@@ -5143,7 +5121,7 @@
   "3521": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "15337": [
    "Low most recent payment amount"
@@ -5184,13 +5162,13 @@
   ],
   "13404": [
    "Payment delay in the most recent month",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
+   "Repeated payment delays across the last six months"
   ],
   "4008": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "2466": [
    "Payment delay in the most recent month",
@@ -5225,7 +5203,7 @@
   "9480": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "28044": [
    "Payment delay in the most recent month",
@@ -5298,7 +5276,6 @@
   ],
   "20843": [
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
    "Low credit limit relative to approved applicants"
   ],
   "17394": [
@@ -5309,12 +5286,12 @@
   "5554": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "17511": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "11757": [
    "Low most recent payment amount",
@@ -5324,7 +5301,7 @@
   "1470": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "23110": [
    "Payment delay in the most recent month",
@@ -5378,7 +5355,7 @@
   "5016": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "11334": [
    "Payment delay in the most recent month",
@@ -5416,8 +5393,7 @@
    "Low repayment ratio: recent payments cover a small share of the statement balance"
   ],
   "19298": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "14692": [
    "Payment delay in the most recent month",
@@ -5437,7 +5413,7 @@
   "4557": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "21117": [
    "Low most recent payment amount",
@@ -5456,8 +5432,7 @@
   ],
   "11890": [
    "Low most recent payment amount",
-   "Low credit limit relative to approved applicants",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low credit limit relative to approved applicants"
   ],
   "18455": [
    "Payment delay in the most recent month",
@@ -5506,7 +5481,7 @@
   "13201": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "4295": [
    "Payment delay in the most recent month",
@@ -5536,7 +5511,7 @@
   "9051": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "10790": [
    "High utilisation: the statement balance is high relative to the credit limit",
@@ -5566,7 +5541,7 @@
   "16840": [
    "Payment delay in the most recent month",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Repeated payment delays across the last six months"
   ],
   "16084": [
    "Payment delay in the most recent month",
@@ -5576,7 +5551,7 @@
   "1088": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "14440": [
    "Payment delay in the most recent month",
@@ -5596,7 +5571,7 @@
   "28229": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "27001": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -5675,13 +5650,12 @@
   ],
   "12670": [
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
    "Low credit limit relative to approved applicants"
   ],
   "19605": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "13505": [
    "Low most recent payment amount",
@@ -5691,7 +5665,7 @@
   "18269": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "14081": [
    "Payment delay in the most recent month",
@@ -5706,7 +5680,7 @@
   "26436": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "17320": [
    "Payment delay in the most recent month",
@@ -5731,7 +5705,7 @@
   "16135": [
    "Payment delay in the most recent month",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Repeated payment delays across the last six months"
   ],
   "26315": [
    "Repeated payment delays across the last six months",
@@ -5741,7 +5715,7 @@
   "10045": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "16022": [
    "Low most recent payment amount",
@@ -5768,12 +5742,12 @@
   "6174": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "19488": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "6130": [
    "Payment delay in the most recent month",
@@ -5798,7 +5772,7 @@
   "10288": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "17241": [
    "Payment delay in the most recent month",
@@ -5837,8 +5811,7 @@
   ],
   "5680": [
    "Low most recent payment amount",
-   "Low credit limit relative to approved applicants",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low credit limit relative to approved applicants"
   ],
   "18019": [
    "Payment delay in the most recent month",
@@ -5856,8 +5829,7 @@
    "High utilisation: the statement balance is high relative to the credit limit"
   ],
   "18114": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "3590": [
    "Payment delay in the most recent month",
@@ -5950,7 +5922,7 @@
   "15458": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "28270": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -5960,7 +5932,7 @@
   "15310": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "15025": [
    "Payment delay in the most recent month",
@@ -6014,7 +5986,7 @@
   "10145": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "3774": [
    "Payment delay in the most recent month",
@@ -6064,7 +6036,7 @@
   "5103": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "10664": [
    "Payment delay in the most recent month",
@@ -6081,8 +6053,7 @@
    "Low repayment ratio: recent payments cover a small share of the statement balance"
   ],
   "24369": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "6951": [
    "Repeated payment delays across the last six months",
@@ -6101,7 +6072,6 @@
   ],
   "22433": [
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
    "Low credit limit relative to approved applicants"
   ],
   "29776": [
@@ -6220,7 +6190,7 @@
   "24993": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "3720": [
    "Low most recent payment amount",
@@ -6255,7 +6225,7 @@
   "13400": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "2747": [
    "Payment delay in the most recent month",
@@ -6275,7 +6245,7 @@
   "28407": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "2924": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -6305,7 +6275,7 @@
   "22706": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "21973": [
    "Payment delay in the most recent month",
@@ -6365,7 +6335,7 @@
   "3690": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "10715": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -6390,7 +6360,7 @@
   "10524": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "27814": [
    "Payment delay in the most recent month",
@@ -6443,8 +6413,7 @@
    "Low credit limit relative to approved applicants"
   ],
   "27461": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "29710": [
    "Low most recent payment amount",
@@ -6479,7 +6448,7 @@
   "27021": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "24891": [
    "High current statement balance",
@@ -6533,7 +6502,7 @@
   "11805": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "26850": [
    "Payment delay in the most recent month",
@@ -6567,7 +6536,6 @@
   ],
   "17283": [
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
    "Low credit limit relative to approved applicants"
   ],
   "23356": [
@@ -6707,8 +6675,8 @@
   ],
   "23820": [
    "Payment delay in the most recent month",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
+   "Repeated payment delays across the last six months"
   ],
   "23792": [
    "Payment delay in the most recent month",
@@ -6723,7 +6691,7 @@
   "19434": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "4166": [
    "Repeated payment delays across the last six months",
@@ -6748,7 +6716,7 @@
   "2726": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "20177": [
    "Payment delay in the most recent month",
@@ -6808,7 +6776,7 @@
   "17948": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "12751": [
    "Payment delay in the most recent month",
@@ -6848,7 +6816,7 @@
   "28921": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "11287": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -6873,12 +6841,12 @@
   "13273": [
    "Payment delay in the most recent month",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Repeated payment delays across the last six months"
   ],
   "9023": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "19221": [
    "Payment delay in the most recent month",
@@ -6918,7 +6886,7 @@
   "5001": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "27920": [
    "Repeated payment delays across the last six months",
@@ -6938,7 +6906,7 @@
   "15954": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "2836": [
    "Payment delay in the most recent month",
@@ -6953,7 +6921,7 @@
   "16013": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "6077": [
    "Payment delay in the most recent month",
@@ -6968,7 +6936,7 @@
   "8372": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "15652": [
    "Payment delay in the most recent month",
@@ -6983,7 +6951,7 @@
   "11989": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "21992": [
    "Low most recent payment amount",
@@ -6998,12 +6966,12 @@
   "26819": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "391": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "14794": [
    "Payment delay in the most recent month",
@@ -7063,7 +7031,7 @@
   "8321": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "1376": [
    "Low most recent payment amount",
@@ -7088,7 +7056,7 @@
   "22403": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "20585": [
    "Payment delay in the most recent month",
@@ -7108,7 +7076,7 @@
   "10827": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "12949": [
    "Payment delay in the most recent month",
@@ -7123,7 +7091,7 @@
   "7398": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "2608": [
    "Low most recent payment amount"
@@ -7150,7 +7118,6 @@
   ],
   "16328": [
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
    "Low credit limit relative to approved applicants"
   ],
   "20291": [
@@ -7164,8 +7131,7 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "29115": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "8974": [
    "Payment delay in the most recent month",
@@ -7190,17 +7156,17 @@
   "2672": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "4019": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "26222": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "5763": [
    "High utilisation: the statement balance is high relative to the credit limit",
@@ -7210,7 +7176,7 @@
   "23680": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "16633": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -7235,7 +7201,7 @@
   "12977": [
    "Payment delay in the most recent month",
    "Low credit limit relative to approved applicants",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "761": [
    "Payment delay in the most recent month",
@@ -7350,7 +7316,7 @@
   "318": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "2334": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -7420,17 +7386,17 @@
   "8476": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "28771": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "24595": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "12347": [
    "Payment delay in the most recent month",
@@ -7465,7 +7431,7 @@
   "10111": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "192": [
    "Payment delay in the most recent month",
@@ -7475,7 +7441,7 @@
   "18220": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "4993": [
    "Payment delay in the most recent month",
@@ -7495,7 +7461,7 @@
   "11347": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "669": [
    "Payment delay in the most recent month",
@@ -7534,7 +7500,6 @@
   ],
   "26319": [
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
    "Low credit limit relative to approved applicants"
   ],
   "25388": [
@@ -7615,7 +7580,7 @@
   "11877": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "3695": [
    "Payment delay in the most recent month",
@@ -7660,7 +7625,7 @@
   "27190": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "18017": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -7899,7 +7864,7 @@
   "7858": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "17932": [
    "Payment delay in the most recent month",
@@ -8003,7 +7968,7 @@
   "13879": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "23951": [
    "Payment delay in the most recent month",
@@ -8028,7 +7993,7 @@
   "19500": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "27581": [
    "Payment delay in the most recent month",
@@ -8115,12 +8080,12 @@
   "18085": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "10834": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "13391": [
    "Payment delay in the most recent month",
@@ -8178,7 +8143,7 @@
   "5146": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "502": [
    "Payment delay in the most recent month",
@@ -8188,12 +8153,12 @@
   "11419": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "8277": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "25943": [
    "Payment delay in the most recent month",
@@ -8213,7 +8178,7 @@
   "25867": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "12827": [
    "Payment delay in the most recent month",
@@ -8228,7 +8193,7 @@
   "10440": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "19596": [
    "Payment delay in the most recent month",
@@ -8242,8 +8207,7 @@
   ],
   "1886": [
    "Low most recent payment amount",
-   "Low credit limit relative to approved applicants",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low credit limit relative to approved applicants"
   ],
   "27669": [
    "Payment delay in the most recent month",
@@ -8375,7 +8339,7 @@
   "25138": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "7083": [
    "Payment delay in the most recent month",
@@ -8389,8 +8353,8 @@
   ],
   "28267": [
    "Payment delay in the most recent month",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
+   "Repeated payment delays across the last six months"
   ],
   "12044": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -8478,7 +8442,7 @@
   "11539": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "7567": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -8508,7 +8472,7 @@
   "28734": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "13251": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -8523,7 +8487,7 @@
   "11231": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "14974": [
    "Payment delay in the most recent month",
@@ -8568,7 +8532,7 @@
   "16408": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "245": [
    "Repeated payment delays across the last six months",
@@ -8653,7 +8617,7 @@
   "10508": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "10136": [
    "Low most recent payment amount",
@@ -8688,7 +8652,7 @@
   "11363": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "8199": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -8722,8 +8686,7 @@
   ],
   "21315": [
    "Low most recent payment amount",
-   "Low credit limit relative to approved applicants",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low credit limit relative to approved applicants"
   ],
   "9550": [
    "Payment delay in the most recent month",
@@ -8733,7 +8696,7 @@
   "26442": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "15960": [
    "Payment delay in the most recent month",
@@ -8741,8 +8704,7 @@
    "High utilisation: the statement balance is high relative to the credit limit"
   ],
   "18135": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "10644": [
    "Payment delay in the most recent month",
@@ -8765,8 +8727,7 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "13126": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "7923": [
    "Repeated payment delays across the last six months",
@@ -8796,7 +8757,7 @@
   "6739": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "29151": [
    "Payment delay in the most recent month",
@@ -8806,7 +8767,7 @@
   "1447": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "7956": [
    "Payment delay in the most recent month",
@@ -8909,7 +8870,7 @@
   "8756": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "3641": [
    "Payment delay in the most recent month",
@@ -8924,7 +8885,7 @@
   "5324": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "9287": [
    "Payment delay in the most recent month",
@@ -8939,11 +8900,10 @@
   "26074": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "12528": [
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
    "Low credit limit relative to approved applicants"
   ],
   "19671": [
@@ -9014,7 +8974,7 @@
   "22887": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "2391": [
    "Payment delay in the most recent month",
@@ -9023,8 +8983,8 @@
   ],
   "9358": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
-   "Repeated payment delays across the last six months"
+   "Repeated payment delays across the last six months",
+   "Low most recent payment amount"
   ],
   "314": [
    "Repeated payment delays across the last six months",
@@ -9138,13 +9098,13 @@
   ],
   "26540": [
    "Payment delay in the most recent month",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
+   "Repeated payment delays across the last six months"
   ],
   "6107": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "13878": [
    "Low most recent payment amount",
@@ -9183,12 +9143,12 @@
   "26446": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "2140": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "17090": [
    "Payment delay in the most recent month",
@@ -9198,7 +9158,7 @@
   "11263": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "11938": [
    "Low most recent payment amount",
@@ -9213,7 +9173,7 @@
   "13719": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "16769": [
    "Payment delay in the most recent month",
@@ -9243,7 +9203,7 @@
   "22262": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "7233": [
    "Low most recent payment amount",
@@ -9319,8 +9279,7 @@
   ],
   "18672": [
    "Low most recent payment amount",
-   "Low credit limit relative to approved applicants",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low credit limit relative to approved applicants"
   ],
   "28797": [
    "Low most recent payment amount",
@@ -9422,8 +9381,8 @@
   ],
   "3055": [
    "Payment delay in the most recent month",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
+   "Repeated payment delays across the last six months"
   ],
   "28243": [
    "Payment delay in the most recent month",
@@ -9520,8 +9479,7 @@
    "Repeated payment delays across the last six months"
   ],
   "26486": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "28358": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -9546,7 +9504,7 @@
   "7007": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "17315": [
    "Payment delay in the most recent month",
@@ -9589,7 +9547,7 @@
   "3721": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "18243": [
    "High current statement balance",
@@ -9609,7 +9567,7 @@
   "24566": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "3129": [
    "Payment delay in the most recent month",
@@ -9624,7 +9582,7 @@
   "18622": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "26206": [
    "Low most recent payment amount",
@@ -9668,7 +9626,7 @@
   "9590": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "3320": [
    "Low most recent payment amount",
@@ -9737,7 +9695,7 @@
   "24419": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "13648": [
    "Low most recent payment amount",
@@ -9855,8 +9813,7 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "24535": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "2363": [
    "Payment delay in the most recent month",
@@ -9943,7 +9900,6 @@
   ],
   "7180": [
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
    "Low credit limit relative to approved applicants"
   ],
   "16980": [
@@ -9962,13 +9918,12 @@
    "Low most recent payment amount"
   ],
   "22662": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "16657": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "18428": [
    "High utilisation: the statement balance is high relative to the credit limit",
@@ -9981,7 +9936,7 @@
   "24847": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "20465": [
    "Payment delay in the most recent month",
@@ -9996,7 +9951,7 @@
   "6356": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "16093": [
    "Payment delay in the most recent month",
@@ -10011,7 +9966,7 @@
   "3912": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "23109": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -10061,7 +10016,7 @@
   "7499": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "25570": [
    "Payment delay in the most recent month",
@@ -10081,22 +10036,22 @@
   "26376": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "21105": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "784": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "27590": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "17138": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -10120,8 +10075,8 @@
   ],
   "2226": [
    "Payment delay in the most recent month",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
+   "Repeated payment delays across the last six months"
   ],
   "29383": [
    "Payment delay in the most recent month",
@@ -10150,8 +10105,7 @@
   ],
   "15926": [
    "Low most recent payment amount",
-   "Low credit limit relative to approved applicants",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low credit limit relative to approved applicants"
   ],
   "26359": [
    "Payment delay in the most recent month",
@@ -10166,7 +10120,7 @@
   "7747": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "8618": [
    "Low most recent payment amount",
@@ -10178,8 +10132,7 @@
    "Low credit limit relative to approved applicants"
   ],
   "16428": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "15010": [
    "Payment delay in the most recent month",
@@ -10189,7 +10142,7 @@
   "29512": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "29968": [
    "High utilisation: the statement balance is high relative to the credit limit",
@@ -10248,7 +10201,7 @@
   "7529": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "2542": [
    "Payment delay in the most recent month",
@@ -10301,7 +10254,7 @@
   "6970": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "22901": [
    "Payment delay in the most recent month",
@@ -10366,7 +10319,7 @@
   "15353": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "7430": [
    "Low most recent payment amount",
@@ -10411,7 +10364,7 @@
   "74": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "17559": [
    "Payment delay in the most recent month",
@@ -10431,7 +10384,7 @@
   "13097": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "2645": [
    "Payment delay in the most recent month",
@@ -10446,12 +10399,12 @@
   "10713": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "4852": [
    "Payment delay in the most recent month",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Repeated payment delays across the last six months"
   ],
   "24063": [
    "Payment delay in the most recent month",
@@ -10496,7 +10449,7 @@
   "12666": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "14486": [
    "Payment delay in the most recent month",
@@ -10528,8 +10481,8 @@
   ],
   "14883": [
    "Payment delay in the most recent month",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
+   "Repeated payment delays across the last six months"
   ],
   "27911": [
    "Payment delay in the most recent month",
@@ -10584,7 +10537,7 @@
   "4536": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "20803": [
    "Payment delay in the most recent month",
@@ -10624,7 +10577,7 @@
   "25215": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "28801": [
    "Payment delay in the most recent month",
@@ -10644,7 +10597,7 @@
   "8866": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "6066": [
    "Payment delay in the most recent month",
@@ -10733,7 +10686,7 @@
   "11755": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "17051": [
    "Payment delay in the most recent month",
@@ -10743,7 +10696,7 @@
   "21230": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "1774": [
    "Payment delay in the most recent month",
@@ -10823,17 +10776,17 @@
   "9996": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "3693": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "2808": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "14454": [
    "Payment delay in the most recent month",
@@ -10853,7 +10806,7 @@
   "18583": [
    "Payment delay in the most recent month",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Repeated payment delays across the last six months"
   ],
   "12375": [
    "Payment delay in the most recent month",
@@ -10891,13 +10844,12 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "16156": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "5023": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
-   "Repeated payment delays across the last six months"
+   "Repeated payment delays across the last six months",
+   "Low most recent payment amount"
   ],
   "6989": [
    "Payment delay in the most recent month",
@@ -10957,12 +10909,12 @@
   "22043": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "16892": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "11445": [
    "Repeated payment delays across the last six months",
@@ -10991,7 +10943,7 @@
   "16855": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "14708": [
    "Payment delay in the most recent month",
@@ -11115,7 +11067,7 @@
   "7543": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "2418": [
    "Payment delay in the most recent month",
@@ -11159,8 +11111,7 @@
   ],
   "11115": [
    "Low most recent payment amount",
-   "Low credit limit relative to approved applicants",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low credit limit relative to approved applicants"
   ],
   "9231": [
    "Payment delay in the most recent month",
@@ -11190,12 +11141,12 @@
   "23697": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "2622": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "21676": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -11224,8 +11175,8 @@
   ],
   "28907": [
    "Payment delay in the most recent month",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
+   "Repeated payment delays across the last six months"
   ],
   "23070": [
    "Repeated payment delays across the last six months",
@@ -11318,8 +11269,7 @@
    "High utilisation: the statement balance is high relative to the credit limit"
   ],
   "16973": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "2485": [
    "Payment delay in the most recent month",
@@ -11343,7 +11293,6 @@
   ],
   "13975": [
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
    "Low credit limit relative to approved applicants"
   ],
   "1350": [
@@ -11453,11 +11402,10 @@
   "4591": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "24727": [
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
    "Low credit limit relative to approved applicants"
   ],
   "27454": [
@@ -11478,7 +11426,7 @@
   "14865": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "3664": [
    "Payment delay in the most recent month",
@@ -11553,7 +11501,7 @@
   "110": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "24890": [
    "High current statement balance",
@@ -11568,7 +11516,7 @@
   "27282": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "27994": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -11578,12 +11526,12 @@
   "3436": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "2897": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "20855": [
    "Payment delay in the most recent month",
@@ -11597,7 +11545,6 @@
   ],
   "1243": [
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
    "Low credit limit relative to approved applicants"
   ],
   "368": [
@@ -11651,8 +11598,7 @@
    "Low credit limit relative to approved applicants"
   ],
   "15469": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "11708": [
    "Payment delay in the most recent month",
@@ -11700,8 +11646,8 @@
   ],
   "18422": [
    "Payment delay in the most recent month",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
-   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
+   "Repeated payment delays across the last six months"
   ],
   "22852": [
    "Payment delay in the most recent month",
@@ -11721,7 +11667,7 @@
   "29471": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "20217": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -11739,8 +11685,7 @@
    "Low most recent payment amount"
   ],
   "7948": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "2707": [
    "Payment delay in the most recent month",
@@ -11785,7 +11730,7 @@
   "5493": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "25983": [
    "Payment delay in the most recent month",
@@ -11805,7 +11750,7 @@
   "4901": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "7417": [
    "Payment delay in the most recent month",
@@ -11862,8 +11807,7 @@
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "9555": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "17807": [
    "Payment delay in the most recent month",
@@ -11928,7 +11872,7 @@
   "14028": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "24320": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -12058,7 +12002,7 @@
   "5532": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "4503": [
    "Payment delay in the most recent month",
@@ -12113,7 +12057,7 @@
   "18884": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "3046": [
    "Low most recent payment amount",
@@ -12122,7 +12066,7 @@
   "24928": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "1760": [
    "Payment delay in the most recent month",
@@ -12156,7 +12100,6 @@
   ],
   "20286": [
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
    "Low credit limit relative to approved applicants"
   ],
   "28345": [
@@ -12167,12 +12110,12 @@
   "9767": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "28269": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "21204": [
    "Payment delay in the most recent month",
@@ -12237,7 +12180,7 @@
   "6700": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "18059": [
    "Payment delay in the most recent month",
@@ -12380,7 +12323,7 @@
   "2860": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "14812": [
    "Low most recent payment amount"
@@ -12477,7 +12420,7 @@
   "11012": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "3860": [
    "Payment delay in the most recent month",
@@ -12492,31 +12435,30 @@
   "9714": [
    "Payment delay in the most recent month",
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Repeated payment delays across the last six months"
   ],
   "12661": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "23093": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "28401": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "26280": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "22554": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "15731": [
    "Low most recent payment amount",
@@ -12540,7 +12482,7 @@
   "2387": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "13345": [
    "Low most recent payment amount",
@@ -12559,7 +12501,7 @@
   "27": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "799": [
    "Payment delay in the most recent month",
@@ -12574,7 +12516,7 @@
   "16336": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "20563": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -12607,13 +12549,12 @@
    "High utilisation: the statement balance is high relative to the credit limit"
   ],
   "2160": [
-   "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Low most recent payment amount"
   ],
   "23614": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "25194": [
    "Payment delay in the most recent month",
@@ -12668,7 +12609,7 @@
   "9096": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "22530": [
    "Payment delay in the most recent month",
@@ -12688,7 +12629,7 @@
   "15661": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "27025": [
    "Payment delay in the most recent month",
@@ -12703,7 +12644,7 @@
   "17445": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "18463": [
    "High utilisation: the statement balance is high relative to the credit limit",
@@ -12738,7 +12679,7 @@
   "5066": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "26917": [
    "Payment delay in the most recent month",
@@ -12817,7 +12758,7 @@
   "25553": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "18607": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
@@ -12912,7 +12853,7 @@
   "20900": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "15936": [
    "Payment delay in the most recent month",
@@ -12931,8 +12872,8 @@
   ],
   "26571": [
    "Severe past delinquency: the worst payment status in the last six months shows an extended delay",
-   "Low repayment ratio: recent payments cover a small share of the statement balance",
-   "Repeated payment delays across the last six months"
+   "Repeated payment delays across the last six months",
+   "Low most recent payment amount"
   ],
   "17740": [
    "Low most recent payment amount",
@@ -12962,7 +12903,7 @@
   "7517": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "13154": [
    "Payment delay in the most recent month",
@@ -12987,7 +12928,7 @@
   "10314": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "27111": [
    "Repeated payment delays across the last six months",
@@ -13007,7 +12948,7 @@
   "9107": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "6338": [
    "Payment delay in the most recent month",
@@ -13032,7 +12973,7 @@
   "6354": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "11099": [
    "Payment delay in the most recent month",
@@ -13042,7 +12983,7 @@
   "12055": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "1000": [
    "Payment delay in the most recent month",
@@ -13052,7 +12993,7 @@
   "26380": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "12679": [
    "Payment delay in the most recent month",
@@ -13102,17 +13043,17 @@
   "8092": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "8575": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ],
   "14889": [
    "Payment delay in the most recent month",
    "Low most recent payment amount",
-   "Low repayment ratio: recent payments cover a small share of the statement balance"
+   "Severe past delinquency: the worst payment status in the last six months shows an extended delay"
   ]
  }
 }

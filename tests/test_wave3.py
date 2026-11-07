@@ -104,3 +104,18 @@ def test_rigor_multi_seed_reported():
     for side in ("v1", "v2"):
         assert 0.70 < ms[side]["mean_auc"] < 0.85
         assert ms[side]["std_auc"] >= 0
+
+
+def test_low_repayment_ratio_needs_a_positive_balance():
+    # "Payments cover a small share of the statement balance" is
+    # meaningless when there is no balance (BILL_AMT1 == 0) or a credit
+    # balance (BILL_AMT1 < 0), so those applicants must never get it.
+    import credit_risk_lab as pipe
+
+    rc = _load("reason_codes.json")
+    low = rc["reason_map"]["pay_ratio"]
+    bill = pipe.load().set_index("ID")["BILL_AMT1"]
+    ids = [int(k) for k, v in rc["per_applicant"].items() if low in v]
+    assert ids, "expected some applicants with the reason"
+    bad = [i for i in ids if bill.loc[i] <= 0]
+    assert not bad, f"{len(bad)} of {len(ids)} have BILL_AMT1 <= 0: {bad[:5]}"

@@ -160,11 +160,12 @@ recorded there):
   regression AUC 0.8022 (CI 0.7391 to 0.8560), gradient boosting AUC
   0.7848 (CI 0.7203 to 0.8437). The method transports; the wide
   intervals on 300 test accounts are part of the result.
-- **Reason codes**: across the 2,625 rejected test applicants (7,744
+- **Reason codes**: across the 2,625 rejected test applicants (7,685
   reason assignments), the most frequent principal reasons are a
-  payment delay in the most recent month (1,831 applicants), repeated
-  payment delays across six months (1,256), and severe past
-  delinquency (1,199). Model-derived explanations, not causal
+  payment delay in the most recent month (1,831 applicants), severe
+  past delinquency (1,468), and repeated payment delays across six
+  months (1,280). The low-repayment-ratio reason is given only to
+  applicants with a positive statement balance. Model-derived explanations, not causal
   findings.
 
 ## Model grades (results/model_grades.json, computed from the run)
