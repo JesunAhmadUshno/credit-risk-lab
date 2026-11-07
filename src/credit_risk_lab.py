@@ -248,7 +248,9 @@ def staging(df: pd.DataFrame, pd_scores: np.ndarray, cfg: dict = None) -> pd.Dat
     return out
 
 
-def main(cfg: dict = None) -> dict:
+def main(cfg: dict = None, out: Path = OUT) -> dict:
+    """Run the pipeline and write results to `out` (tests pass a temp path
+    so they never overwrite the published results/results.json)."""
     cfg = cfg or load_config()
     seed = int(cfg["seed"])
     raw = load()
@@ -311,8 +313,8 @@ def main(cfg: dict = None) -> dict:
         "total_ecl": round(float(staged["ecl"].sum()), 2),
         "total_ead": round(float(staged["ead"].sum()), 2),
     }
-    OUT.parent.mkdir(exist_ok=True)
-    OUT.write_text(json.dumps(results, indent=1))
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(results, indent=1))
     return results
 
 

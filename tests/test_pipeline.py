@@ -1,11 +1,14 @@
 import json
 import sys
+import tempfile
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from credit_risk_lab import main, FEATURES, CATS  # noqa: E402
 
-R = main()
+# Write to a temp file: the published results/results.json carries extra
+# blocks merged in by validation_pack and rigor, and must not be overwritten.
+R = main(out=Path(tempfile.mkdtemp()) / "results.json")
 
 
 def test_dataset_shape():
