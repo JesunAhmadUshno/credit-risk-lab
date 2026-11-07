@@ -4,10 +4,20 @@ Credit risk modelling done in the open: probability-of-default models,
 model validation, IFRS 9 style staging, and expected credit loss, built on a
 public dataset with every number measured and reproducible.
 
-**Live dashboard: https://jesunahmadushno.github.io/credit-risk-lab/**
+**Live dashboard: https://jesunahmadushno.github.io/credit-risk-lab/lab/**
+(Lab OS research dashboard in `site/`: a live risk-appetite cut-off explorer,
+ECL sensitivity simulator and scenario-weight mixer, the fairness explorer,
+hypothesis verdicts and the gap register, all read from `results/*.json` at
+build time and checked by `npm run build`.)
+
+**App dashboard: https://jesunahmadushno.github.io/credit-risk-lab/**
 (React app in `web/`: model grades, ROC curves, staging, calibration, gains,
 drift, and an ECL sensitivity simulator. An offline single-file fallback,
 `dashboard.html`, is described below.)
+
+Note: `results/behavioural_v2.json` records the single-seed wave 2 verdict
+("v2 beats v1"); it is superseded by the pre-registered multi-seed test H3,
+which is INCONCLUSIVE (`results/rigor.json`, `HYPOTHESES.md`).
 
 **Research: [RESEARCH.md](RESEARCH.md)** — the fair access thesis behind
 this lab (creditworthy rejects, thin-file applicants, fairness), the Canada
