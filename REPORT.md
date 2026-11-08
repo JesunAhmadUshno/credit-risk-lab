@@ -302,8 +302,9 @@ Headline numbers and the files they come from:
     python3 -c "import json; r=json.load(open('results/rigor.json'))['taiwan']; print(r['creditworthy_reject_share'], r['champion_auc'])"
 
 To regenerate them from the raw data: `python src/run_all.py` (full
-rebuild in dependency order, about 8 minutes on the development
-machine). The steps share state through `results/results.json`, so
+rebuild in dependency order, 19 s on the development machine and 36 s
+on the CI runner on 2026-11-08; the 2026-11-05 manifest recorded 457 s
+on a loaded machine). The steps share state through `results/results.json`, so
 running one step alone can leave that file without the blocks later
 steps merge in (gap G11); use the full rebuild.
 

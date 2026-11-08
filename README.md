@@ -12,7 +12,8 @@ model validation (data science, risk).
 
 **Verdict.** Functional, not pre-registered. Tests pass in CI, one
 command rebuilds every result from the raw data, and the full rebuild
-has run end to end (results/run_manifest.json). The hypotheses H1 to
+has run end to end (results/run_manifest.json); CI reruns it on
+every pull request and the committed results match. The hypotheses H1 to
 H4 were written before the wave 3 code but after earlier results, so
 the repo is capped at Functional (docs/decisions/0002).
 
@@ -36,9 +37,10 @@ python3 -m venv .venv
 ```
 
 Python 3.12 (the pins require it). `src/run_all.py` rebuilds every file
-in results/ from data/ (about 8 minutes), asserts the headline
-invariants and writes results/run_manifest.json. CI runs the same
-rebuild and fails if any committed output differs.
+in results/ from data/ (under a minute: 36 s on the CI runner on
+2026-11-08), asserts the headline invariants and writes
+results/run_manifest.json. CI runs the same rebuild and fails if any
+committed output differs.
 
 ## Lifecycle
 
