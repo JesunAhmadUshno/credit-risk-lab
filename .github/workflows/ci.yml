@@ -1,0 +1,51 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Standard checks (layout, no public grade)
+        run: python tests/test_layout.py
+      - name: Byte-compile all Python
+        run: python -m compileall -q src scripts tests
+      # The pinned freeze needs Python 3.12 (docs/decisions/0003).
+      - name: Install the pinned environment
+        if: matrix.python-version == '3.12'
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Full test suite
+        if: matrix.python-version == '3.12'
+        run: python -m pytest tests/ -q
+      - name: Tests must not modify published results
+        if: matrix.python-version == '3.12'
+        run: git diff --exit-code results/
+  reproduce:
+    # Rebuilds every result from data/ and fails if any committed output differs.
+    # Runs on arm64, the architecture of the machine that produced the published files.
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install the pinned environment
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Rebuild everything (src/run_all.py)
+        run: python src/run_all.py
+      - name: Results reproduced from the raw data
+        run: git diff --stat --exit-code -- . ':(exclude)results/run_manifest.json'
