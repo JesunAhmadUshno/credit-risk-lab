@@ -20,11 +20,11 @@
   "brier": 0.1355
  },
  "v2_gradient_boosting_plus_transitions": {
-  "auc": 0.7818,
-  "ks": 0.4185,
-  "brier": 0.1354
+  "auc": 0.7799,
+  "ks": 0.4173,
+  "brier": 0.1357
  },
- "delta_auc": 0.0008,
- "v2_beats_v1": true,
- "verdict": "v2 beats v1 on held-out AUC"
+ "delta_auc": -0.0011,
+ "v2_beats_v1": false,
+ "verdict": "v2 does not beat v1 on held-out AUC"
 }

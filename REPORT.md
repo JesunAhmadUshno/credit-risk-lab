@@ -25,7 +25,7 @@ method transports to German Credit (H4 CONFIRMED).
 | --- | --- | --- | --- | --- |
 | H1 second look | recovery >= 15% and cost <= 1.00 pt | recovery 0.8% (10 of 1,218), cost +0.02 pt | REFUTED (miss) | results/second_look.json |
 | H2 thin file | gap no worse than -0.03 AUC | 0.7687 vs 0.7810, gap -0.0123 | CONFIRMED | results/study.json |
-| H3 v2 across seeds | mean(v2) >= mean(v1) | 0.7824 vs 0.7830, delta -0.0006 | INCONCLUSIVE (miss) | results/rigor.json |
+| H3 v2 across seeds | mean(v2) >= mean(v1) | 0.7820 vs 0.7830, delta -0.0010 | INCONCLUSIVE (miss) | results/rigor.json |
 | H4 German Credit | GBM >= 0.65 and LR >= 0.60 | GBM 0.7848, LR 0.8022 | CONFIRMED | results/external_validation.json |
 
 The site build (`site/src/model.check.mjs`) re-applies each registered
@@ -52,9 +52,12 @@ build time and checked by `npm run build`.)
 drift, and an ECL sensitivity simulator. An offline single-file fallback,
 `dashboard.html`, is described below.)
 
-Note: `results/behavioural_v2.json` records the single-seed wave 2 verdict
-("v2 beats v1"); it is superseded by the pre-registered multi-seed test H3,
-which is INCONCLUSIVE (`results/rigor.json`, `HYPOTHESES.md`).
+Note: `results/behavioural_v2.json` once recorded the single-seed wave 2
+verdict ("v2 beats v1"); it was superseded by the pre-registered
+multi-seed test H3, which is INCONCLUSIVE (`results/rigor.json`,
+`HYPOTHESES.md`). Correction 2026-11-08: the published behavioural v2 numbers did not
+reproduce under the pinned environment (section 7); the regenerated
+files are now committed.
 
 **Research: [RESEARCH.md](RESEARCH.md)** — the fair access thesis behind
 this lab (creditworthy rejects, thin-file applicants, fairness), the Canada
@@ -177,11 +180,12 @@ Basel floor view: portfolio EL is **NT$187,548,414** at the lab's 45% LGD
 assumption and **NT$208,387,127** at the Basel QRRE foundation LGD floor of
 50%, both from the same staging code path (`results/scenarios.json`).
 
-Behavioural PD v2 (`results/behavioural_v2.json`): v2 scores AUC 0.7818
-against v1's 0.7810 (delta +0.0008) with KS 0.4185 against 0.4196 and Brier
-0.1354 against 0.1355. Verdict, reported as measured: v2 beats v1 on AUC by
-a marginal 0.0008 only; the transition features add almost nothing the level
-features do not already carry.
+Behavioural PD v2 (`results/behavioural_v2.json`): v2 scores AUC 0.7799
+against v1's 0.7810 (delta -0.0011) with KS 0.4173 against 0.4196 and Brier
+0.1357 against 0.1355. Verdict, reported as measured: v2 does not beat v1;
+the transition features add nothing the level features do not already
+carry. (Published until 2026-11-08 as AUC 0.7818, delta +0.0008, "v2 beats
+v1"; that file did not reproduce, see section 7.)
 
 Fair access study headlines (`results/study.json`, `STUDY.md`, test set of
 9,000): at the cut-off that holds the approved book at the Stage 1 default
@@ -201,10 +205,10 @@ recorded there):
   CI 0.7567 to 0.7799; creditworthy-reject share 51.0%, CI 45.9% to
   55.4% (each resample re-selects the cut-off, so the interval prices
   the whole procedure). Across 5 seeds, champion AUC
-  averages 0.7830 (std 0.0069) and behavioural v2 averages 0.7824
-  (std 0.0066), mean delta -0.0006: hypothesis H3 is INCONCLUSIVE
-  under its registered rule, and the v2 edge is reported as a
-  single-seed artefact.
+  averages 0.7830 (std 0.0069) and behavioural v2 averages 0.7820
+  (std 0.0067), mean delta -0.0010: hypothesis H3 is INCONCLUSIVE
+  under its registered rule; v2 is behind v1 on every seed in the
+  regenerated run (published until 2026-11-08 as 0.7824, -0.0006).
 - **Second look**: at the pre-registered band (a reject's thin-file
   behavioural PD at or below the approved median, 0.1170), the policy
   recovered 10 of the 1,218 creditworthy rejects (0.8%) at the price
@@ -318,14 +322,23 @@ registered parameter after results existed. Under METHOD section 7
 the repo is therefore labelled "not pre-registered", no proposal tag
 is applied, and the verdict is capped at Functional.
 
-**Manifest lags the current results.** `results/run_manifest.json` is
-the receipt of the full rebuild at fee580d. Commits f2d1da1 and d12cccb
-regenerated `results.json`, `study.json`, `second_look.json`,
-`reason_codes.json` and `rigor.json` without re-running `run_all.py`,
-so those five files no longer match the manifest's output hashes (the
-dataset hashes still match). The CI job "reproduce" now runs the full
-rebuild on every pull request and fails if any committed output
-differs.
+**Results that did not reproduce (corrected 2026-11-08).** Until this
+migration `results/run_manifest.json` was the receipt of the full
+rebuild at fee580d, and commits f2d1da1 and d12cccb had regenerated five
+results files without re-running `run_all.py`. The new CI job
+"reproduce" runs the full rebuild on every pull request and fails if any
+committed output differs. Its first run showed that every file
+reproduced exactly except the behavioural v2 numbers: under the pinned
+requirements, v2 AUC on seed 42 is 0.7799, not the published 0.7818, and
+the 5-seed v2 mean is 0.7820, not 0.7824 (mean delta -0.0010, not
+-0.0006). The regenerated value is the same at commit fee580d, on 1, 2
+and 8 threads, on the development machine and on a GitHub arm64 runner,
+so the published file most likely came from a library version before
+the pins were frozen. The regenerated `behavioural_v2.json`,
+`rigor.json`, `web/src/data/results.ts` and a fresh `run_manifest.json`
+are committed. H3 stays INCONCLUSIVE (the REFUTED line is -0.002);
+the single-seed "v2 beats v1" claim is withdrawn. HYPOTHESES.md keeps
+its appended verdict text and gains a dated amendment below it.
 
 **Single split, no time dimension.** See the review notes below (G9,
 G10) and `docs/analysis/GAP_ANALYSIS.md`.
@@ -392,7 +405,8 @@ measured only as approval-rate gaps.
 4. **Inconsistent recorded verdict.** `results/behavioural_v2.json` still
    says "v2 beats v1" (single seed, +0.0008). It is not hand-edited (that
    needs a rerun); the README and dashboard now label it superseded by H3
-   (INCONCLUSIVE, mean delta -0.0006 over 5 seeds).
+   (INCONCLUSIVE, mean delta -0.0006 over 5 seeds). Resolved 2026-11-08:
+   the rerun gives -0.0011 and "v2 does not beat v1" (section 7).
 
 ### Remaining gaps and exactly what each needs
 

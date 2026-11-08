@@ -2035,12 +2035,12 @@ export const data = {
     "brier": 0.1355
    },
    "v2": {
-    "auc": 0.7818,
-    "ks": 0.4185,
-    "brier": 0.1354
+    "auc": 0.7799,
+    "ks": 0.4173,
+    "brier": 0.1357
    },
-   "deltaAuc": 0.0008,
-   "beatsV1": true,
+   "deltaAuc": -0.0011,
+   "beatsV1": false,
    "transitionFeatures": [
     "dpd_worsen_steps",
     "dpd_max_consec",

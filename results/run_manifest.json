@@ -1,12 +1,12 @@
 {
- "built_at_utc": "2026-11-05T01:24:16.224631+00:00",
- "finished_at_utc": "2026-11-05T01:31:53.714635+00:00",
- "git_commit": "fee580d0beee43c76dc57c6c366c211533054956",
+ "built_at_utc": "2026-11-08T13:42:27.614581+00:00",
+ "finished_at_utc": "2026-11-08T13:42:46.143286+00:00",
+ "git_commit": "665ae8467ba93cb11544ed074f234d897eff3875",
  "complete": true,
  "steps": [
   {
    "step": "pipeline",
-   "seconds": 18.26
+   "seconds": 1.43
   },
   {
    "step": "grading",
@@ -18,31 +18,31 @@
   },
   {
    "step": "scenarios",
-   "seconds": 6.9
+   "seconds": 0.76
   },
   {
    "step": "behavioural_v2",
-   "seconds": 14.03
+   "seconds": 0.88
   },
   {
    "step": "study",
-   "seconds": 7.04
+   "seconds": 0.78
   },
   {
    "step": "second_look",
-   "seconds": 12.46
+   "seconds": 0.8
   },
   {
    "step": "reason_codes",
-   "seconds": 274.09
+   "seconds": 2.3
   },
   {
    "step": "external_validation",
-   "seconds": 2.46
+   "seconds": 0.17
   },
   {
    "step": "validation_pack",
-   "seconds": 6.55
+   "seconds": 1.12
   },
   {
    "step": "monitoring",
@@ -50,32 +50,33 @@
   },
   {
    "step": "database",
-   "seconds": 12.89
+   "seconds": 1.7
   },
   {
    "step": "rigor",
-   "seconds": 61.03
+   "seconds": 7.25
   },
   {
    "step": "dashboard_export",
-   "seconds": 41.24
+   "seconds": 1.27
   }
  ],
- "total_seconds": 456.95,
+ "total_seconds": 18.46,
  "dataset_sha256": {
   "data/default of credit card clients.xls": "30c6be3abd8dcfd3e6096c828bad8c2f011238620f5369220bd60cfc82700933",
   "data/german.data": "b21f3d81db8071257d5ff1deaeba1fd4303b62712e6fcc9715c7a86202cb5871"
  },
  "output_sha256": {
-  "behavioural_v2.json": "8e5423ad2ca1a22f60cb3bf76c0d32fc7c80f5099ed32175c1f7496d14e8428d",
+  "behavioural_v2.json": "13d860808cc8c14f8d1aa09d211c7addf2a390d06987c2cc63adcc155e5193a3",
+  "dashboard_data.json": "d4f9915e0a6ede7d56311035ceea6e16502bef2980f32e8134655cb34f05c7e1",
   "external_validation.json": "6181802034202c952948355954dff24276a0ead9412a3fcf6837d2e8a00b87e0",
   "model_grades.json": "d7d19b86698887f3d7c9d2122617561a12f9d19a726ccf1ff925cabde178e1bd",
-  "reason_codes.json": "f93e3f3d086e018af349076fea985fcae4238fa2d549654bd48aed6619a24597",
-  "results.json": "bfcc45b3b88ed2ce28b0633fa5ff2e9676ef73322fe73218b488f1a60fd887bd",
-  "rigor.json": "73bcd4b28dab176023b67c19781c08d4dfa7b91c2cb6732c536d1247a6a1844e",
+  "reason_codes.json": "6214b5e9f55537ef51164b06c9eb8bd11f595ba95b355952421d8307f7d2d088",
+  "results.json": "d4cc4fecdb3b25ea75b581ad4db72e7bc90dad3432422f13e5e7b327f56f98d1",
+  "rigor.json": "76695269eb33f40fdc4afcbeea1a3f129f6d0fdf6bae8787185478923cdd28ac",
   "scenarios.json": "6f494ae4782f4a7065d9e27207e792c2f2e470b4520c5bc26f8700b0906c985e",
-  "second_look.json": "97528c9a91d6dbf347ba522454289d5c4acebf16aafdbf7ae9e32723c9e48cff",
-  "study.json": "0705628aa3dbe0dac66daaa7f39d23669aa15c21115cd1339a6af08e8d68a69f"
+  "second_look.json": "97b2c88a25b455e4cdfd9b405ff37c6fe78e0265d48a54901c92d37fd68dfb79",
+  "study.json": "31ce4add8c791f1db20e9c0c46b81d8147469529411a52763118ef4542b101f9"
  },
  "invariants_verified": {
   "logistic_auc": 0.7518,
