@@ -559,7 +559,7 @@ function Reproduce() {
     ['MODEL_CARD.md', 'Model card', 'Intended use and limits'],
     ['STUDY.md', 'Fair access study', 'Creditworthy rejects, thin file'],
     ['docs/analysis/GAP_ANALYSIS.md', 'Gap register', 'Open and closed gaps'],
-    ['docs/research-review.md', 'Research review', 'Graded against a PhD rubric'],
+    ['REPORT.md', 'Report', 'Results, misses, threats, review notes'],
   ];
   return (
     <section id="reproduce" className="card window reveal" data-title="Terminal — python src/run_all.py">

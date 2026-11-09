@@ -184,6 +184,8 @@ just the proportion. The second-look recovery rate of 0.8% carries
 CI 0.0% to 1.8%: small under every resample, which is what makes the H1
 refutation solid rather than a knife-edge call. Across five seeds (each
 with its own split), champion AUC averaged 0.7830 (std 0.0069) and
-behavioural v2 averaged 0.7824 (std 0.0066), mean delta -0.0006: H3 is
-INCONCLUSIVE under its registered rule, and the v2 transition features'
-single-seed edge is reported as exactly that - a single-seed edge.
+behavioural v2 averaged 0.7820 (std 0.0067), mean delta -0.0010: H3 is
+INCONCLUSIVE under its registered rule, and the v2 transition features
+show no edge. (Corrected 2026-11-08 from 0.7824 and -0.0006, published
+before the pinned rebuild; the single-seed edge did not reproduce. See
+REPORT.md section 7.)

@@ -109,3 +109,14 @@ numbers.
   places: -0.0038. The intervals are wide, as 300 test accounts
   deserve. Source: results/external_validation.json,
   results/rigor.json.
+
+## Amendment 2026-11-08 (appended; the verdicts above are unchanged text)
+
+- **H3 numbers corrected, verdict unchanged: INCONCLUSIVE.** The full
+  rebuild under the pinned requirements (CI job "reproduce") gives v2
+  mean AUC 0.7820 (std 0.0067) against v1 0.7830 (std 0.0069), mean
+  delta -0.0010; per-seed deltas -0.0011 (seed 42), -0.0007, -0.0015,
+  -0.0010, -0.0005. Still inside the inconclusive band (the REFUTED
+  line is -0.002). The published v2 numbers above (0.7824, -0.0006,
+  +0.0008 on seed 42) did not reproduce; REPORT.md section 7 records
+  how this was found. Source: results/rigor.json.
