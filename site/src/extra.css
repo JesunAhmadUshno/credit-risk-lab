@@ -1,3 +1,10 @@
+/* Hallmark · v2.0.0 · Batch 1 rollout 2026-11-15 · Archetype A study dashboard: tokens, labels, focus and motion standardised; data, copy and structure preserved */
+/* Hallmark · pre-emit critique: P3 H4 E4 S4 R5 V3 · weakest: V, one of the Lab OS dashboards on a shared house pattern; this pass adds the money links and the chat widget and brings the CSS to the floor only */
+:root {
+  --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-serif: 'Instrument Serif', 'Iowan Old Style', Georgia, serif;
+}
 /* Small additions on top of the Lab OS base (styles.css is kept verbatim from the reference build). */
 .tiles.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .tile .num.sm { font-size: 30px; }
@@ -10,7 +17,7 @@
 .funnel { display: grid; gap: 10px; }
 .funnel .row { display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr) 70px; gap: 12px; align-items: center; font-size: 13px; }
 .funnel .row b { text-align: right; font-variant-numeric: tabular-nums; }
-.funnel .bar { height: 22px; border-radius: 6px; background: var(--primary); min-width: 3px; transition: width .5s cubic-bezier(.2,.8,.2,1); }
+.funnel .bar { height: 22px; border-radius: 6px; background: var(--primary); min-width: 3px; transition: transform .5s cubic-bezier(.2,.8,.2,1); }
 .gaps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 .gaps div { background: var(--surface-strong); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; font-size: 13px; }
 .gaps b { margin-right: 6px; }
@@ -19,3 +26,14 @@
   .funnel .row { grid-template-columns: minmax(0, 1fr) 60px; }
   .funnel .row .bar-wrap { grid-column: 1 / -1; grid-row: 2; }
 }
+
+/* Batch 1 rollout additions: support links and skip link */
+.support { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-top: 20px; }
+.support a { color: inherit; font-weight: 600; padding: 8px 4px; }
+.support a:hover { opacity: 0.75; }
+.skip { position: absolute; left: 16px; top: -48px; z-index: 100; background: var(--surface-strong); color: var(--text); padding: 8px 16px; border-radius: var(--radius-md); transition: transform 0.18s ease, opacity 0.18s ease; opacity: 0; }
+.skip:focus-visible { top: 36px; opacity: 1; outline: 3px solid var(--primary); outline-offset: 2px; }
+.btn:active { transform: translateY(1px); }
+.dock a:active { transform: translateY(-2px); }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
