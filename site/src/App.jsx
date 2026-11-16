@@ -91,7 +91,7 @@ const Verdict = ({ v }) => <span className={`pill ${v === 'CONFIRMED' ? 'good' :
 export default function App() {
   useReveal();
   return (
-    <div className="wrap">
+    <div className="wrap"><a className="skip" href="#top">Skip to content</a>
       <MenuBar />
       <div className="glow" aria-hidden="true" />
       <Hero />
@@ -108,7 +108,7 @@ export default function App() {
       <Dock />
       <footer>
         Data: UCI Default of Credit Card Clients (Yeh and Lien, 2009) and UCI Statlog German Credit. Every number on this page is read from <code>results/</code>, <code>HYPOTHESES.md</code> or the gap register at build time; the calculators run in your browser on those recorded figures.
-      </footer>
+      <nav className="support" aria-label="Support this work"><a href="https://github.com/sponsors/JesunAhmadUshno">Sponsor this work</a><a href="https://github.com/sponsors/JesunAhmadUshno">Donate</a><a href="https://buymeacoffee.com/jesun">Buy Me a Coffee</a><a href="https://calendly.com/jesunahmadushno/30min">Work with me</a></nav></footer>
     </div>
   );
 }
@@ -117,7 +117,7 @@ function Hero() {
   const g = grades.models[grades.champion];
   const ci = rigor.taiwan.champion_auc;
   return (
-    <header className="card hero window" id="top" data-title="credit-risk-lab — README">
+    <header className="card hero window" id="top" data-title="credit-risk-lab - README">
       <div className="head">
         <p className="eyebrow">PD models · IFRS 9 · pre-registered fair access study</p>
         <span className="pill info">● Public data, not a production system</span>
@@ -159,7 +159,7 @@ function Models() {
   const g = grades.models[view];
   const metrics = [['AUC', 'auc'], ['KS', 'ks'], ['Gini', 'gini'], ['Brier (lower is better)', 'brier']];
   return (
-    <section id="models" className="card window reveal" data-title="pd_models.py — logistic vs gradient boosting">
+    <section id="models" className="card window reveal" data-title="pd_models.py - logistic vs gradient boosting">
       <p className="eyebrow">Discrimination</p>
       <h2>Gradient boosting beats the logistic baseline on all four metrics.</h2>
       <p className="sub">Both models train on {fmt(results.dataset.train_rows)} accounts and are scored on the same {fmt(results.dataset.test_rows)}-account test split (seed {results.config.seed}). ROC points and deciles are recorded from the pipeline run, not recomputed here.</p>
@@ -226,7 +226,7 @@ function Calibration() {
   const sx = (v) => pad.l + (v / max) * (W - pad.l - pad.r), sy = (v) => pad.t + (1 - v / max) * (H - pad.t - pad.b);
   const ticks = Array.from({ length: Math.round(max / 0.2) + 1 }, (_, i) => +(i * 0.2).toFixed(1));
   return (
-    <section id="calibration" className="card window reveal" data-title="validation_pack.py — calibration">
+    <section id="calibration" className="card window reveal" data-title="validation_pack.py - calibration">
       <p className="eyebrow">Calibration · open gap G9</p>
       <h2>The champion ranks better but fails a strict calibration test. The baseline passes.</h2>
       <p className="sub">Test accounts are split into ten bins of predicted PD; each point compares the mean predicted PD with the observed default rate. Hosmer-Lemeshow with {hl[champ].dof} degrees of freedom: a small p-value says the predicted probabilities are off somewhere. Silent recalibration was rejected because it would move every published PD, stage and ECL figure.</p>
@@ -269,7 +269,7 @@ function Appetite() {
   const bw = (W - pad.l - pad.r) / bins.length;
   const sx = (v) => pad.l + v * (W - pad.l - pad.r), sy = (n) => pad.t + (1 - n / maxN) * (H - pad.t - pad.b);
   return (
-    <section id="appetite" className="card window reveal" data-title="cutoff_explorer.app — live">
+    <section id="appetite" className="card window reveal" data-title="cutoff_explorer.app - live">
       <div className="head">
         <div>
           <p className="eyebrow">Live calculator · risk appetite</p>
@@ -322,7 +322,7 @@ function Ifrs9() {
   const maxEcl = Math.max(...sim.rows.flatMap((r) => [r.sim, r.base]));
   const d = sim.total - sim.baseTotal;
   return (
-    <section id="ifrs9" className="card window reveal" data-title="ifrs9_staging.py — staging · ECL · scenarios">
+    <section id="ifrs9" className="card window reveal" data-title="ifrs9_staging.py - staging · ECL · scenarios">
       <p className="eyebrow">IFRS 9 style staging and expected credit loss</p>
       <h2>Stage 2 holds a quarter of the accounts and most of the loss allowance.</h2>
       <p className="sub">Champion PDs are refit on all {fmt(results.dataset.rows)} accounts and staged by the written policy below. ECL = applied PD × LGD × EAD, where LGD is an assumed {pct(results.staging.lgd_assumption, 0)} and EAD is the current bill.</p>
@@ -401,7 +401,7 @@ function Fairness() {
   const id = useId();
   const tf = study.thin_file;
   return (
-    <section id="fairness" className="card window reveal" data-title="study.py — fair access">
+    <section id="fairness" className="card window reveal" data-title="study.py - fair access">
       <p className="eyebrow">Fair access study</p>
       <h2>{fmt(cr.creditworthy_rejects)} of {fmt(cr.rejected)} rejects never default, and a model without bureau-style fields nearly keeps up.</h2>
       <p className="sub">The thin-file model uses behavioural payment features only ({tf.features.length} of them; limit, age, sex, education, marriage, bills and payment amounts excluded). It reaches AUC {tf.auc} against the full model's {tf.full_model_auc}, a gap of {tf.auc_gap_vs_full} (bootstrap 95% CI for thin-file AUC {rigor.taiwan.thin_file_auc.lo95} to {rigor.taiwan.thin_file_auc.hi95}).</p>
@@ -434,7 +434,7 @@ function SecondLook() {
   const h = secondLook.headline, ci = secondLook.bootstrap_ci95.recovery_rate_of_creditworthy;
   const steps = [['Test accounts', h.test_accounts], ['Rejected at stage 1', h.stage1_rejected], ['Of whom never default', h.creditworthy_rejects_stage1], ['Recovered on second look (creditworthy)', h.recovered_creditworthy]];
   return (
-    <section id="second" className="card window reveal" data-title="second_look.py — Second-Look Recovery Policy">
+    <section id="second" className="card window reveal" data-title="second_look.py - Second-Look Recovery Policy">
       <p className="eyebrow">Pre-registered policy test · H1</p>
       <h2>A second look by the thin-file model recovers almost no one.</h2>
       <p className="sub">{secondLook.policy.stage2} {secondLook.policy.band_rule} (threshold {secondLook.policy.band_threshold_thin_pd}).</p>
@@ -464,7 +464,7 @@ function Hypotheses() {
     ['H4', 'The approach transports to German Credit', `German AUC: gradient boosting ${m.gradient_boosting.auc} (bar 0.65), logistic ${m.logistic_regression.auc} (bar 0.60).`],
   ];
   return (
-    <section id="hypotheses" className="card window reveal" data-title="HYPOTHESES.md — registered before the runs">
+    <section id="hypotheses" className="card window reveal" data-title="HYPOTHESES.md - registered before the runs">
       <p className="eyebrow">Pre-registered hypotheses · verdicts as recorded</p>
       <h2>Four hypotheses, thresholds written first. One refuted, one inconclusive.</h2>
       <p className="sub">Verdicts are read from <a href={blob('HYPOTHESES.md')}>HYPOTHESES.md</a>. The build re-applies each registered rule to the results files and fails if it disagrees with the recorded verdict.</p>
@@ -504,7 +504,7 @@ function External() {
   const W = 960, rowH = 46, H = rows.length * rowH + 50, l = 300, r = 20, lo = 0.65, hi = 0.9;
   const x = (v) => l + ((v - lo) / (hi - lo)) * (W - l - r);
   return (
-    <section id="external" className="card window reveal" data-title="german_credit.py — external validation">
+    <section id="external" className="card window reveal" data-title="german_credit.py - external validation">
       <p className="eyebrow">External validation · H4</p>
       <h2>The same recipe reaches similar AUC on a different population, with intervals five times wider.</h2>
       <p className="note" style={{ marginTop: 12 }}>{external.dataset.population_note}</p>
@@ -531,7 +531,7 @@ function External() {
 function Reasons() {
   const max = reasonFreq[0].count;
   return (
-    <section id="reasons" className="card window reveal" data-title="reason_codes.py — principal reasons">
+    <section id="reasons" className="card window reveal" data-title="reason_codes.py - principal reasons">
       <p className="eyebrow">Reason codes</p>
       <h2>Recent payment delay is the most common principal reason for rejection.</h2>
       <p className="sub">Up to three reasons for each of the {fmt(reasonRejected)} applicants rejected at cut-off {reasonCutoff}, from permutation importance on the champion. Share of rejects that carry each reason:</p>
@@ -562,7 +562,7 @@ function Reproduce() {
     ['REPORT.md', 'Report', 'Results, misses, threats, review notes'],
   ];
   return (
-    <section id="reproduce" className="card window reveal" data-title="Terminal — python src/run_all.py">
+    <section id="reproduce" className="card window reveal" data-title="Terminal - python src/run_all.py">
       <p className="eyebrow">Reproduce it · limits</p>
       <h2>One command rebuilds every results file and checks its invariants.</h2>
       <ol className="steps" style={{ marginTop: 16 }}>
