@@ -1,0 +1,27 @@
+src:
+  - changed-files:
+      - any-glob-to-any-file: ["src/**"]
+web:
+  - changed-files:
+      - any-glob-to-any-file: ["web/**"]
+scripts:
+  - changed-files:
+      - any-glob-to-any-file: ["scripts/**"]
+sql:
+  - changed-files:
+      - any-glob-to-any-file: ["sql/**"]
+data:
+  - changed-files:
+      - any-glob-to-any-file: ["data/**"]
+tests:
+  - changed-files:
+      - any-glob-to-any-file: ["tests/**"]
+docs:
+  - changed-files:
+      - any-glob-to-any-file: ["docs/**", "README.md", "REPORT.md", "CHANGELOG.md"]
+site:
+  - changed-files:
+      - any-glob-to-any-file: ["site/**"]
+automation:
+  - changed-files:
+      - any-glob-to-any-file: [".github/**"]
