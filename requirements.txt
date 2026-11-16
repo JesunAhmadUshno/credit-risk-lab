@@ -15,6 +15,6 @@ pytest==9.2.0
 python-dateutil==4.0.0
 scikit-learn==1.9.1
 scipy==1.18.1
-threadpoolctl==3.7.0
+threadpoolctl==3.8.0
 tzdata==2026.6
 xlrd==2.0.2
