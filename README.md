@@ -75,3 +75,11 @@ committed output differs.
 No experiments/ folder: the raw inputs are the two datasets in data/
 (docs/decisions/0001). No LICENSE yet: the licence is the Owner's
 choice.
+
+## Paper
+
+Jesun Ahmad Ushno. "Creditworthy Rejects: A Pre-registered Fair-Access Study of a Credit Scorecard, a Thin-File Model, and a Second-Look Policy That Failed Its Own Test." Preprint, Zenodo, version 2 (2026). CC-BY 4.0.
+
+- Concept DOI: [10.5281/zenodo.24282031](https://doi.org/10.5281/zenodo.24282031)
+- Version 2 DOI: [10.5281/zenodo.24283751](https://doi.org/10.5281/zenodo.24283751)
+- Software DOI for this code (release v1.0.0): [10.5281/zenodo.24282377](https://doi.org/10.5281/zenodo.24282377)
