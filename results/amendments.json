@@ -1,0 +1,114 @@
+{
+ "registered_in": "AMENDMENTS.md (2026-11-16, before this run)",
+ "status": "exploratory post-hoc amendments; no registered verdict changes",
+ "stage1": {
+  "cutoff_pd": 0.2293,
+  "approved": 6375,
+  "rejected": 2625,
+  "creditworthy_rejects": 1399,
+  "approved_book_default_rate": 0.12,
+  "registered_band_thin_pd": 0.114442
+ },
+ "A1_band_sweep": {
+  "rows": [
+   {
+    "multiplier": 1.0,
+    "band_threshold_thin_pd": 0.114442,
+    "recovered_total": 21,
+    "recovered_creditworthy": 17,
+    "admitted_defaults": 4,
+    "recovery_rate_of_creditworthy": 0.0122,
+    "approved_book_default_rate_after": 0.1202,
+    "cost_default_rate_pp": 0.023
+   },
+   {
+    "multiplier": 1.25,
+    "band_threshold_thin_pd": 0.143052,
+    "recovered_total": 53,
+    "recovered_creditworthy": 40,
+    "admitted_defaults": 13,
+    "recovery_rate_of_creditworthy": 0.0286,
+    "approved_book_default_rate_after": 0.121,
+    "cost_default_rate_pp": 0.103
+   },
+   {
+    "multiplier": 1.5,
+    "band_threshold_thin_pd": 0.171663,
+    "recovered_total": 103,
+    "recovered_creditworthy": 74,
+    "admitted_defaults": 29,
+    "recovery_rate_of_creditworthy": 0.0529,
+    "approved_book_default_rate_after": 0.1226,
+    "cost_default_rate_pp": 0.257
+   },
+   {
+    "multiplier": 1.75,
+    "band_threshold_thin_pd": 0.200273,
+    "recovered_total": 173,
+    "recovered_creditworthy": 122,
+    "admitted_defaults": 51,
+    "recovery_rate_of_creditworthy": 0.0872,
+    "approved_book_default_rate_after": 0.1246,
+    "cost_default_rate_pp": 0.462
+   },
+   {
+    "multiplier": 2.0,
+    "band_threshold_thin_pd": 0.228884,
+    "recovered_total": 304,
+    "recovered_creditworthy": 225,
+    "admitted_defaults": 79,
+    "recovery_rate_of_creditworthy": 0.1608,
+    "approved_book_default_rate_after": 0.1264,
+    "cost_default_rate_pp": 0.637
+   },
+   {
+    "multiplier": 2.5,
+    "band_threshold_thin_pd": 0.286105,
+    "recovered_total": 711,
+    "recovered_creditworthy": 515,
+    "admitted_defaults": 196,
+    "recovery_rate_of_creditworthy": 0.3681,
+    "approved_book_default_rate_after": 0.1356,
+    "cost_default_rate_pp": 1.562
+   },
+   {
+    "multiplier": 3.0,
+    "band_threshold_thin_pd": 0.343326,
+    "recovered_total": 1168,
+    "recovered_creditworthy": 808,
+    "admitted_defaults": 360,
+    "recovery_rate_of_creditworthy": 0.5776,
+    "approved_book_default_rate_after": 0.1491,
+    "cost_default_rate_pp": 2.914
+   }
+  ],
+  "first_band_reaching_15pct_recovery": {
+   "multiplier": 2.0,
+   "band_threshold_thin_pd": 0.228884,
+   "recovered_total": 304,
+   "recovered_creditworthy": 225,
+   "admitted_defaults": 79,
+   "recovery_rate_of_creditworthy": 0.1608,
+   "approved_book_default_rate_after": 0.1264,
+   "cost_default_rate_pp": 0.637
+  },
+  "validation_k1_must_match_published": {
+   "recovered_total": 21,
+   "recovered_creditworthy": 17,
+   "recovery_rate_of_creditworthy": 0.0122,
+   "cost_default_rate_pp": 0.023
+  }
+ },
+ "A2_auc_gap_bootstrap": {
+  "auc_full": 0.781,
+  "auc_thin": 0.7687,
+  "point_gap_thin_minus_full": -0.0123,
+  "n_resamples": 2000,
+  "seed": 20261116,
+  "bootstrap_mean_gap": -0.0122,
+  "ci95_percentile": [
+   -0.0176,
+   -0.0069
+  ]
+ }
+}
